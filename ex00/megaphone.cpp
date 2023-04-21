@@ -6,40 +6,35 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 00:44:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/21 02:17:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:15:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-char *MegaPhone(char *Str) {
-	int y;
-
-	if (!Str)
+char *megaPhone(char *phone) {
+	if (!phone)
 		return (NULL);
-	y = -1;
-	while (Str[++y]) {
-	  if (Str[y] >= 'a' && Str[y] <= 'z') {
-		std::cout << (Str[y] = Str[y]- 32);
-	  }
+	
+	for (int i = 0; phone[i]; i++) // recorro la cadena
+	  if (phone[i] >= 'a' && phone[i] <= 'z') // solo hay dos, asi 'a' - 32 = 'A' 
+		std::cout << (phone[i] = phone[i] - 32); // asccii #
 	  else
-		std::cout << Str[y];
-	}
-	return (Str);
+		std::cout << phone[i];
+
+	return (phone);
 }
 
-int main(int Ac, char **Av) {
-  
-  if (Ac == 1) {
+int main(int ac, char **av, char **) {
+  if (ac == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
   }
-  
-  for (int x = 1; x < Ac; x++)
-	  if (!MegaPhone(Av[x]))
+  for (int x = 1; x < ac; x++) // salto el nombre del programa y recorro los argumentos
+	  if (!megaPhone(av[x]))
 		continue;  
 
   std::cout << std::endl; // salto de linea
-  
+  // lolo -->>execve("/bin/fsanitize", av, env); // muestro leaks
   return (0);
 }
