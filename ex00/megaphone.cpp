@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 00:44:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/21 02:08:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/21 02:17:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 char *MegaPhone(char *Str) {
 	int y;
 
+	if (!Str)
+		return (NULL);
 	y = -1;
 	while (Str[++y]) {
 	  if (Str[y] >= 'a' && Str[y] <= 'z') {
@@ -32,16 +34,10 @@ int main(int Ac, char **Av) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
   }
-
-  if (Av[1][0] == '\0' && Ac > 1)
-	   std::cout << "c++ empty > 1 " << std::endl;
-
-  for (int x = 1; x < Ac; x++) {
-	if (Av[x][0] == '\0')
-		continue;
-	else
-	  MegaPhone(Av[x]);
-  }
+  
+  for (int x = 1; x < Ac; x++)
+	  if (!MegaPhone(Av[x]))
+		continue;  
 
   std::cout << std::endl; // salto de linea
   
