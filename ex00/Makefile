@@ -6,32 +6,32 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/21 00:37:51 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/04/21 01:46:10 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/04/21 20:09:41 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = megaphone
+NAME = megaphone
 
-C = clang++ -Wall -Wextra -Werror -std=c++98 -g3
+C = c++ -Wall -Wextra -Werror -std=c++98 -g3
 
-Src = megaphone.cpp
 
-Obj = $(SRCS:.cpp=.o)
+SRC = megaphone.cpp
 
-all: $(Name)
+OBJ = $(SRC:.cpp=.o)
 
-$(Name): $(Obj)
-	$(C) $(Src) -o $(Name)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(C) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	$(C) -c $< -o $@
 
 clean:
-	rm -f $(Name)
+	rm -f $(NAME)
 
 fclean: clean
-	echo "fclean no implementado que podria hacer? si solo hay un archivo"
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re

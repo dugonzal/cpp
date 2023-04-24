@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 00:44:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/21 12:15:23 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:33:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ char *megaPhone(char *phone) {
 	if (!phone)
 		return (NULL);
 	
-	for (int i = 0; phone[i]; i++) // recorro la cadena
+	for (int i = -1; phone[i]; i++) // recorro la cadena
 	  if (phone[i] >= 'a' && phone[i] <= 'z') // solo hay dos, asi 'a' - 32 = 'A' 
 		std::cout << (phone[i] = phone[i] - 32); // asccii #
 	  else
 		std::cout << phone[i];
-
+	
 	return (phone);
 }
 
