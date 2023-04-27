@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:32:23 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/27 20:30:17 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:45:52 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,31 @@ phoneBook::~phoneBook (void) { //desctructor de la clase
 }
 
 void phoneBook::openBook(void) {
-std::cout << "----------------------------------" << std::endl;
-std::cout << "| phoneBook empieza la diversion |" << std::endl;
-std::cout << "|     tus opciones son:          |" << std::endl;
-std::cout << "| 1. ADD                         |" << std::endl;
-std::cout << "| 2. SEARCH                      |" << std::endl;
-std::cout << "| 3. EXIT                        |" << std::endl;
-std::cout << "|--------------------------------|" << std::endl;
+  std::string option;
+  std::cout << "----------------------------------" << std::endl;
+  std::cout << "|     phoneBook que empiece      |" << std::endl;
+  std::cout << "|   la divercion tus opciones    |" << std::endl;
+  std::cout << "|       tus opciones son:        |" << std::endl;
+  std::cout << "| 1. ADD   2. SEARCH   3. EXIT   |" << std::endl;
+  std::cout << "|        By: Dugonzal            |" << std::endl;
+  std::cout << "|--------------------------------|" << std::endl;
+  while (1)
+  {
+	std::cout << "Introduce una opcion: ";
+	std::cin >> option;
+	if (option == "ADD" || option == "1")
+	  std::cout << "ADD" << std::endl;
+	else if (option == "SEARCH" || option == "2")
+	  std::cout << "SEARCH" << std::endl;
+	else if (option == "EXIT" || option == "3")
+	{
+	  std::cout << "EXIT" << std::endl;
+	  exit(0);
+	}
+	else
+	{
+	  std::cout << "Opcion no valida" << std::endl;
+	  continue;
+	}
+  }
 }
