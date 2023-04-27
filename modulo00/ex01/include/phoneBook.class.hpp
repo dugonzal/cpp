@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 18:36:49 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/27 20:46:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:48:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class phoneBook {
   phoneBook (void); // constructor 
   ~phoneBook (void); // Destructor
 
-  void openBook(void);
+  void Book(void);
   private:
 	int _nbContact;
 };
