@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:32:23 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/04/27 20:49:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:51:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void phoneBook::Book(void) {
   std::string option;
   std::cout << "----------------------------------" << std::endl;
   std::cout << "|     phoneBook que empiece      |" << std::endl;
-  std::cout << "|   la divercion, tus opciones   |" << std::endl;
+  std::cout << "|         la divercion           |" << std::endl;
   std::cout << "|       tus opciones son:        |" << std::endl;
   std::cout << "| 1. ADD   2. SEARCH   3. EXIT   |" << std::endl;
   std::cout << "|        By: Dugonzal            |" << std::endl;
   std::cout << "|--------------------------------|" << std::endl;
-  while (1)
+  while (42)
   {
 	std::cout << "Introduce una opcion: ";
 	std::cin >> option;
