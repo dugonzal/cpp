@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 18:30:26 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/27 13:05:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:24:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../include/phoneBookClass.hpp"
 
-int main(void)
+int main( void )
 {
   phoneBook phonebook;
 

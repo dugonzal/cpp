@@ -6,20 +6,20 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:32:23 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/27 15:12:11 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:34:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/phoneBookClass.hpp"
 
 phoneBook::phoneBook( void ) {
-  std::cout << "inicio de la clase phoneBook" << std::endl;
+  std::cout << "init class phoneBook" << std::endl;
 	for (int i = 0; i < 8; i++)
 		this->_contact[i].cleanContact();
 }
 
 phoneBook::~phoneBook( void ) {
-  std::cout << BLUE << "phoneBook libreta de conctactos terminada" << RESET<< std::endl;
+  std::cout << BLUE << "phoneBook destroy"  << RESET<< std::endl;
 }
 
 void	phoneBook::banner ( void ) {
@@ -43,13 +43,14 @@ std::string	phoneBook::getInput( std::string s ){
 	return (str);
 }
 
-void	phoneBook::setContact( int index ) {
+int	phoneBook::setContact( int index ) {
 	this->_contact[index].setFirstName(phoneBook::getInput("First Name"));
 	this->_contact[index].setLastName(phoneBook::getInput("Last Name"));
 	this->_contact[index].setNickname(phoneBook::getInput("nickname"));
 	this->_contact[index].setPhoneNumber(phoneBook::getInput("Phone Number"));
 	this->_contact[index].setDarkestSecret(phoneBook::getInput("Darkest Secret"));
 	std::system("clear");
+	return (index + 1);
 }
 
 void	phoneBook::getContacts( void ) {
@@ -90,23 +91,30 @@ void	phoneBook::open( void ) {
 	while (true) {
 	  std::getline(std::cin, opcion);
 	  if (opcion == "ADD" || opcion == "add" || opcion == "1") {
+		
 		  this->option(0);
 		  if (index == 8)
 			index = 0;
-		  this->setContact(index++);
+		  index = this->setContact(index);
 		  this->option(0);
 	  }
 	  else if (opcion == "SEARCH" || opcion == "search" || opcion == "2"){
-		  
+		
 		  this->option(0);
 		  this->getContacts();
 		  std::cout << std::endl << std::endl;
-		  indexContactStr  = this->getInput("elije un index de contacto");
+		  indexContactStr  = this->getInput("index contact");
 		  int indexContact = std::atoi(indexContactStr.c_str());
-		  std::cout << indexContact << std::endl;
-		  if (indexContact < 0 or indexContact > 7){
-			  std::cout << "index no valido por defecto el contacto 0 actual" << std::endl;
-			  indexContact = 0;
+		  if ((indexContact == 0 && indexContactStr.size() > 1) \
+		  || (indexContactStr.size() == 1 && indexContactStr != "0")){
+			  this->option(1);
+			  std::cout << std::endl << "index contact no valid" << std::endl;
+			  continue;
+		  }
+		  else if (indexContact < 0 or indexContact > 7){
+			  this->option(1);
+			  std::cout << std::endl << "index contact no valid " << std::endl;
+			  continue;
 		  }
 		  this->_contact[indexContact].searchContact();
 	  }

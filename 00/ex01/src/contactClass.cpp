@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 20:17:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/27 15:10:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:34:18 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ contact::~contact( void ) {
   std::cout << "fin del contact" << std::endl;
 }
 
-// voy hacer los sets y luyego los gets osea gettters y setter
 void contact::setFirstName( std::string str ) {
 	this->_firstName = str;
 }
@@ -44,19 +43,17 @@ void contact::setDarkestSecret( std::string str ) {
 
 std::string	contact::getFirstName( void ) {
    return (this->_firstName);
-  // return (this->truncate(this->_firstName));
 }
 
 std::string	contact::getLastName( void ) {
 	return (this->_lastName);
-	//return (this->truncate(this->_lastName));
 }
 
 std::string	contact::getNickName( void ) {
 	return (this->_nickname);
 }
 
-std::string contact::truncate(std::string str) {
+std::string contact::truncate( std::string str ) {
 	if (str.size() > 10)
 		return (str.substr(0, 9) + ".");
 	return (str);
