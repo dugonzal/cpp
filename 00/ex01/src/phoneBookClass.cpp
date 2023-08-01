@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:32:23 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/08/01 14:49:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:59:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	phoneBook::banner ( void ) {
 
 std::string	phoneBook::getInput( std::string s ){
 	
-	std::cout << std::endl << s << std::endl;
+	std::cout << YELLOW << std::endl << s << RESET << std::endl << std::endl;
 	std::string str;
 	std::getline(std::cin, str);
 	
@@ -55,7 +55,7 @@ int	phoneBook::setContact( int index ) {
 
 void	phoneBook::getContacts( void ) {
 
-	std::cout  << std::setw(10) << "index" << "|" << std::setw(10) \
+	std::cout << std::setw(10) << "index" << "|" << std::setw(10) \
 	<< "first name" << "|" <<   std::setw(10) << "last name" \
 	<< "|" << std::setw(10) << "nickname" << "|" << std::endl;
 	
@@ -66,7 +66,7 @@ void	phoneBook::getContacts( void ) {
 		<< this->_contact[i].truncate(this->_contact[i].getFirstName())	<< "|" \
 		<< std::setw(10) << this->_contact[i].truncate(this->_contact[i].getLastName()) \
 		<< "|"  << std::setw(10) << this->_contact[i].truncate(this->_contact[i].getNickName()) \
-		<< "|" << std::endl;	
+		<< "|" << std::endl;
 	}
 }
 
@@ -75,10 +75,9 @@ void phoneBook::option( int i ){
 	this->banner();
 	if (i == 1) {
 		std::cout <<  std::endl;
-		std::cout <<  "elije una opcion: " << std::endl;
+		std::cout << BLUE <<  "elije una opcion: " << RESET << std::endl;
 	}
-	else
-		std::cout <<  std::endl;
+	std::cout <<  std::endl;
 }
 
 void	phoneBook::open( void ) {
@@ -104,17 +103,17 @@ void	phoneBook::open( void ) {
 		  this->option(0);
 		  this->getContacts();
 		  std::cout << std::endl << std::endl;
-		  indexContactStr  = this->getInput("index contact");
+		  indexContactStr  = this->getInput("index contact -> : ");
 		  int indexContact = std::atoi(indexContactStr.c_str());
 		  if ((indexContact == 0 && indexContactStr.size() > 1) \
 		  || (indexContactStr.size() == 1 && !std::isdigit(indexContactStr[0]))){
 			  this->option(1);
-			  std::cout << std::endl << "index contact no valid" << std::endl;
+			  std::cout << RED << std::endl << "index contact no valid" << std::endl << RESET<< std::endl;
 			  continue;
 		  }
 		  else if (indexContact < 0 or indexContact > 7){
 			  this->option(1);
-			  std::cout << std::endl << "index contact no valid " << std::endl;
+			  std::cout << RED <<std::endl << "index contact no valid " << std::endl << RESET << std::endl;
 			  continue;
 		  }
 		  this->_contact[indexContact].searchContact();

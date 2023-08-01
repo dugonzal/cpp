@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 20:17:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/08/01 14:34:18 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:55:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ void contact::cleanContact( void ) {
 }
 
 void contact::searchContact( void ) {
-	if (this->_firstName.empty())
+	if (this->_firstName.empty()){
+	  std::cout << RED << "No contact to show" << RESET << std::endl;
 	  return ;
+	}
 	
 	std::cout << std::endl 	<< "First name: " << std::endl \
 	<< this->_firstName << std::endl << std::endl << "Last name: " << std::endl \
