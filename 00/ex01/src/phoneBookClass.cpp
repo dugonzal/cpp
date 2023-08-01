@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 19:32:23 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/08/01 14:34:01 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:49:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ void	phoneBook::open( void ) {
 		  if (index == 8)
 			index = 0;
 		  index = this->setContact(index);
-		  this->option(0);
+		  this->option(1);
+		  continue;
 	  }
 	  else if (opcion == "SEARCH" || opcion == "search" || opcion == "2"){
 		
@@ -106,7 +107,7 @@ void	phoneBook::open( void ) {
 		  indexContactStr  = this->getInput("index contact");
 		  int indexContact = std::atoi(indexContactStr.c_str());
 		  if ((indexContact == 0 && indexContactStr.size() > 1) \
-		  || (indexContactStr.size() == 1 && indexContactStr != "0")){
+		  || (indexContactStr.size() == 1 && !std::isdigit(indexContactStr[0]))){
 			  this->option(1);
 			  std::cout << std::endl << "index contact no valid" << std::endl;
 			  continue;
@@ -120,7 +121,7 @@ void	phoneBook::open( void ) {
 	  }
 	  else if (opcion == "EXIT" || opcion == "exit" || opcion == "3") 
 			return;
-	  else{
+	  else {
 		  this->option(1);
 		  continue;
 	  }
