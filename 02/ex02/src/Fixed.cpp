@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 02:39:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/13 10:59:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,14 @@ const Fixed	&Fixed::min(const Fixed &a, const  Fixed &b ) <%
 	return ( (a.getFixed() < b.getFixed()) ? a : b );
 %>
 
+const Fixed	&Fixed::min(Fixed &a, Fixed &b ) <%
+	return ( (a.getFixed() < b.getFixed()) ? a : b );
+%>
+
 const Fixed &Fixed::max(const Fixed &a, const  Fixed &b ) <%
+	return ( (a.getFixed() > b.getFixed()) ? a : b );
+%>
+
+const Fixed &Fixed::max(Fixed &a, Fixed &b ) <%
 	return ( (a.getFixed() > b.getFixed()) ? a : b );
 %>

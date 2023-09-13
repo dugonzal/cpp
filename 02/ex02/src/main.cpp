@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:46:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 03:14:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:00:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main( void ) <%
 	std::cout << a / b << std::endl;
 	std::cout << Fixed::min(a, b) << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-	
+	a = Fixed::max( a, b ) ;
+	std::cout << a << std::endl;
 	return 0;
 %>
