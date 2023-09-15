@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:46:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/15 10:30:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:46:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,16 @@
 
 int		main( void ) <%
 	Fixed	a;
-	Fixed const b( 10 );
+	Fixed const b( 10.02f );
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 
 	a = Fixed( 1234.4321f );
 
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;

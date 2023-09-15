@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/15 10:31:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:50:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ Fixed::Fixed( const Fixed &obj ) <%
 %>
 
 Fixed::Fixed( const int n ): tmp(n << fraccion) <%
-	std::cout << "constructor integer called  " << tmp << "  " << n << std::endl;
+	std::cout << "constructor integer called  " << std::endl;
 
 %>
 
-Fixed::Fixed( const float n ) <%
-	std::cout << "constructor float called  " << "  " << n << std::endl;
-	tmp = static_cast<int>(n * pow(2, fraccion));
-	std::cout << tmp << std::endl;
+Fixed::Fixed( const float n ) : tmp(static_cast<int>(n * pow(2, fraccion))) <%
+	std::cout << "constructor float called" << std::endl;
 %>
 
 Fixed::~Fixed( void ) <%
@@ -38,9 +36,9 @@ Fixed::~Fixed( void ) <%
 
 Fixed &Fixed::operator=( const Fixed &obj ) <%
   std::cout << "assignation operator called" << std::endl;
-  if ( this != &obj ) <% // evitamos la autoasignacion con esta condicion, para que no se copie asi mismo
+  if ( this != &obj ) <%
 	this->tmp = obj.tmp;
- %>
+  %>
   return (*this);
 %>
 
@@ -55,9 +53,7 @@ void Fixed::setRawBits( int const raw ) <%
 %>
 
 float Fixed::toFloat( void ) const <%
-
-return (static_cast<float>(tmp) / pow(2, fraccion));
-
+	return (static_cast<float>(tmp) / pow(2, fraccion));
 %>
 
 int Fixed::toInt( void ) const <%
