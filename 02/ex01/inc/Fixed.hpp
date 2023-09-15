@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:58:48 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 03:28:32 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:32:11 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@ class Fixed <%
 	private:
 	  int tmp;
 	  static const int fraccion = 8;
-
+	
 	public:
 	  Fixed( void );
-	  Fixed( const int obj );
-	  Fixed( const float obj );
+	  Fixed( const Fixed &obj );
+	  Fixed( const int n );
+	  Fixed( const float n );
 	  ~Fixed( void );
-	  Fixed &operator=( const Fixed &obj );
+	  Fixed& operator=( const Fixed &obj );
+	  int getRawBits( void ) const;
+	  void setRawBits( int const raw );
 	  float toFloat( void ) const;
 	  int toInt( void ) const;
 %>;
 
-std::ostream &operator<<(std::ostream &os, const Fixed &obj );
-
+std::ostream	&operator<<(std::ostream &os, const Fixed &obj);
 #endif

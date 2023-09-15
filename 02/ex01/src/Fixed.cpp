@@ -3,25 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 03:28:07 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:31:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
-Fixed::Fixed( void ) <%
+Fixed::Fixed( void ) : tmp(0) <%
   std::cout << "Default constructor called" << std::endl;
 %>
 
-Fixed::Fixed( const int obj ) : tmp((int)static_cast<int>(obj)) <%
+Fixed::Fixed( const Fixed &obj ) <%
 	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
 %>
 
-Fixed::Fixed( const float obj ) : tmp((int)static_cast<int>(obj)) <%
-	std::cout << "Copy constructor called" << std::endl;
+Fixed::Fixed( const int n ): tmp(n << fraccion) <%
+	std::cout << "constructor integer called  " << tmp << "  " << n << std::endl;
+
+%>
+
+Fixed::Fixed( const float n ) <%
+	std::cout << "constructor float called  " << "  " << n << std::endl;
+	tmp = static_cast<int>(n * pow(2, fraccion));
+	std::cout << tmp << std::endl;
 %>
 
 Fixed::~Fixed( void ) <%
@@ -30,21 +38,33 @@ Fixed::~Fixed( void ) <%
 
 Fixed &Fixed::operator=( const Fixed &obj ) <%
   std::cout << "assignation operator called" << std::endl;
-  if ( this != &obj ) <%
-	  this->tmp = obj.tmp;
-  %>
+  if ( this != &obj ) <% // evitamos la autoasignacion con esta condicion, para que no se copie asi mismo
+	this->tmp = obj.tmp;
+ %>
   return (*this);
 %>
 
+ int Fixed::getRawBits( void ) const <%
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->tmp);
+ %>
+
+void Fixed::setRawBits( int const raw ) <%
+	std::cout << "setRawBits member function called" << std::endl;
+	this->tmp = raw;
+%>
+
 float Fixed::toFloat( void ) const <%
-  return ((float)static_cast<float>(tmp));
+
+return (static_cast<float>(tmp) / pow(2, fraccion));
+
 %>
 
-int Fixed::toInt( void ) const<%
-  return ((int)this->tmp >> this->fraccion);
+int Fixed::toInt( void ) const <%
+	return ((int)tmp >> (int)(fraccion));
 %>
 
-std::ostream &operator<<(std::ostream &os, const Fixed &obj ) <%
+std::ostream	&operator<<(std::ostream &os, const Fixed &obj) <%
   os << obj.toFloat();
   return (os);
 %>
