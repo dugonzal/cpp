@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 20:32:11 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/06 13:17:20 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/06 12:12:36 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= fixed
+NAME		:= fixed 
 
 C			:= c++ -Wall -Werror -Wextra -g3 -pedantic -std=c++98
 
@@ -42,4 +42,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re
