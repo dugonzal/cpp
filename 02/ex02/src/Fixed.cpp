@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 16:16:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:54:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ int Fixed::toInt( void ) const <%
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj) <%
   os << obj.toFloat();
-  
-  std::cout << std::endl << obj.toFloat();
   return (os);
 %>
 
@@ -100,14 +98,16 @@ Fixed	&Fixed::operator-( const Fixed &obj ) <%
 %>
 
 Fixed	Fixed::operator*( const Fixed &obj ) <%
-	setRawBits( getRawBits() * obj.getRawBits() );
-	return (*this);
+	float a = toFloat();
+	float b = obj.toFloat();
+	
+	return ( Fixed( a * b ) );
 %>
 
-Fixed	&Fixed::operator/( const Fixed &obj ) <%
-  if (obj.tmp != 0 && tmp != 0)
-	 setRawBits(tmp / obj.tmp);
-  return (*this);
+Fixed	Fixed::operator/( const Fixed &obj ) <%
+  float a = toFloat();
+  float b = obj.toFloat();
+  return ( Fixed (  a / b ) );
 %>
 
 Fixed	Fixed::operator++( void ) <%
@@ -127,7 +127,7 @@ Fixed	Fixed::operator++( int ) <%
 %>
 
 Fixed	Fixed::operator--( int ) <%
-  int tmp = toFloat();
+  int tmp = toInt();
   tmp--;
   Fixed  a(tmp);
   *this = a;

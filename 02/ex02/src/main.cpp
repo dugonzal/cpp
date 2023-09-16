@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:46:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 16:18:02 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:57:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,17 @@
 
 int		main( void ) <%
 	Fixed a( Fixed( 50.99923f ) );
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout  << std::endl;
+	Fixed const b( Fixed( 6 ) + Fixed( 2 ) );
 	
-	std::cout << a << std::endl;
+	
+	std::cout << a  << std::endl;
+	std::cout  << std::endl;
+	std::cout  << std::endl;
+	std::cout << b << std::endl;
 	std::cout  << std::endl;
 	std::cout  << std::endl;
 	std::cout  << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << --a << std::endl;
-	std::cout << a-- << std::endl;
-	std::cout << a + a<< std::endl;
-	std::cout  << std::endl;
-	std::cout  << std::endl;
-	std::cout  << std::endl;
-	std::cout  << std::endl;
-	std::cout  << std::endl;
-	std::cout << a + b  << std::endl;
-	std::cout << a + b  << std::endl;
-	std::cout << a * b  << std::endl;
+
 	std::cout  << std::endl;
 	std::cout  << std::endl;
 	std::cout  << std::endl;

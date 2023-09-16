@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:58:48 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/15 14:38:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:48:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Fixed <%
 	  Fixed( const float n );
 	  ~Fixed( void );
 	  Fixed& operator=( const Fixed &obj );
-	  int getRawBits( void ) const;
-	  void setRawBits( int const raw );
+	  int 	getRawBits( void ) const;
+	  void 	setRawBits( int const raw );
 	  float toFloat( void ) const;
-	  int toInt( void ) const;
+	  int 	toInt( void ) const;
 	  void  setFixed( int const n );
       int   getFixed( void ) const;
       bool  operator>( const Fixed &obj ) const;
@@ -43,7 +43,7 @@ class Fixed <%
       Fixed &operator+( const Fixed &obj );
 	  Fixed &operator-( const Fixed &obj );
       Fixed operator*( const Fixed &obj );
-      Fixed &operator/( const Fixed &obj );
+      Fixed operator/( const Fixed &obj );
       Fixed operator++( void );
       Fixed operator++( int );
 	  Fixed operator--( void );
