@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/15 14:38:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:16:41 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@ Fixed::Fixed( const Fixed &obj ) <%
 	*this = obj;
 %>
 
-Fixed::Fixed( const int n ): tmp(n << fraccion) <%
+Fixed::Fixed( const int n ): tmp( (int)(n << fraccion) ) <%
 	std::cout << "constructor integer called  " << std::endl;
-	//std::cout << tmp << "here" << std::endl;
-
 %>
 
-Fixed::Fixed( const float n ) : tmp( ( n * ((float)(1 << fraccion) )) ) <%
+Fixed::Fixed( const float n ) : tmp( ((float)n * ((float)(1 << fraccion))) ) <%
 	std::cout << "constructor float called" << std::endl;
 %>
 
@@ -54,7 +52,7 @@ void Fixed::setRawBits( int const raw ) <%
 %>
 
 float Fixed::toFloat( void ) const <%
-	return ( (tmp) / (1 << fraccion) );
+	return ( static_cast<float>((float)(tmp) / (float)(1 << fraccion)) );
 %>
 
 int Fixed::toInt( void ) const <%
@@ -63,6 +61,8 @@ int Fixed::toInt( void ) const <%
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj) <%
   os << obj.toFloat();
+  
+  std::cout << std::endl << obj.toFloat();
   return (os);
 %>
 
@@ -90,22 +90,17 @@ bool	Fixed::operator!=( const Fixed &obj ) const <%
 %>
 
 Fixed	&Fixed::operator+( const Fixed &obj ) <%
-
-	int tmp1 = getRawBits();
-	int tmp2 = obj.getRawBits();
-
-	setRawBits(tmp1 + tmp2);
-	std::cout << tmp << std::endl;
+	setRawBits( getRawBits() + obj.getRawBits() );
 	return (*this);
 %>
 
 Fixed	&Fixed::operator-( const Fixed &obj ) <%
-	setRawBits(tmp - obj.getRawBits());
+	setRawBits( getRawBits() - obj.getRawBits() );
 	return (*this);
 %>
 
 Fixed	Fixed::operator*( const Fixed &obj ) <%
-	Fixed(getRawBits() * obj.getRawBits());
+	setRawBits( getRawBits() * obj.getRawBits() );
 	return (*this);
 %>
 
@@ -116,38 +111,34 @@ Fixed	&Fixed::operator/( const Fixed &obj ) <%
 %>
 
 Fixed	Fixed::operator++( void ) <%
-  Fixed a;
-
   float tmp = toFloat();
   ++tmp;
-  a.setRawBits(tmp);
-  std::cout << "   : -> "	<< "  aa" << a <<  tmp<< std::endl;
+  Fixed  a(tmp);
+  *this = a;
   return (*this);
 %>
 
 Fixed	Fixed::operator++( int ) <%
-	int	a;
-
-	Fixed tmp(*this);
-	
-
-	a = getRawBits();
-
-	++a;
-	setRawBits(a);
-	return ( *this );
-%>
-
-
-Fixed	Fixed::operator--( void ) <%
-  --tmp;
+  int tmp = toFloat();
+  tmp++;
+  Fixed  a(tmp);
+  *this = a;
   return (*this);
 %>
 
 Fixed	Fixed::operator--( int ) <%
-  int tmp = this->getRawBits();
+  int tmp = toFloat();
   tmp--;
-  setRawBits(tmp) ;
+  Fixed  a(tmp);
+  *this = a;
+  return (*this);
+%>
+
+Fixed	Fixed::operator--( void ) <%
+  float tmp = toFloat();
+  --tmp;
+  Fixed  a(tmp);
+  *this = a;
   return (*this);
 %>
 
