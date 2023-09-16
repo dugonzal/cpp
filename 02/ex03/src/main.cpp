@@ -6,11 +6,12 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:46:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 18:04:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:16:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp" 
+#include "../inc/Point.hpp" 
 
 /*
  canonico-ortodoxa:
@@ -18,24 +19,18 @@
  - constructor de copia
  - sobrecarga de operador de asigancion
  - destructor
- */
+*/
 
-int		main( void ) <%
-	Fixed a( Fixed( 50.99923f ) );
-	Fixed const b( Fixed( 20000.9000345f ));
+/*
+ * funcion que indica si esta dentro o no del triangulo
+*/
 
+int	main( void ) <%
+	Fixed a;
+	Fixed b( Fixed( 1.0f ) * Fixed( 2 ) );
 	
-	
-	std::cout << a  << std::endl;
-	std::cout << b  << std::endl;
-	//sleep(1);
-	std::cout << a++  << std::endl;
-	std::cout << ++a  << std::endl;
-	std::cout << --a  << std::endl;
-	std::cout << a--  << std::endl;
-	std::cout << Fixed::min( a,b )  << std::endl;
-	std::cout << Fixed::max( a,b )  << std::endl;
-
-
+	a.setFixed(4.0f);
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 	return 0;
 %>

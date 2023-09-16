@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:58:48 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 16:48:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:05:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <unistd.h>
 
 class Fixed <%
 	private:
@@ -48,7 +49,7 @@ class Fixed <%
       Fixed operator++( int );
 	  Fixed operator--( void );
       Fixed operator--( int );
-	  static const Fixed    &min(const Fixed &a, const  Fixed &b );
+	  static const Fixed    &min(const Fixed &a, const  Fixed &b ) ;
       static const Fixed    &min(Fixed &a, Fixed &b );
       static const Fixed    &max(const Fixed &a, const  Fixed &b );
       static const Fixed    &max(Fixed &a, Fixed &b ); 

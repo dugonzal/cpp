@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 16:54:23 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:05:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,32 +112,33 @@ Fixed	Fixed::operator/( const Fixed &obj ) <%
 
 Fixed	Fixed::operator++( void ) <%
   float tmp = toFloat();
-  ++tmp;
-  Fixed  a(tmp);
+  //++tmp;
+  Fixed  a(tmp + 1);
   *this = a;
   return (*this);
 %>
 
 Fixed	Fixed::operator++( int ) <%
   int tmp = toFloat();
-  tmp++;
-  Fixed  a(tmp);
+  //tmp++;
+  Fixed  a(tmp + 1);
   *this = a;
-  return (*this);
+  return (*this); 
+ // return ( Fixed( a ) );
 %>
 
 Fixed	Fixed::operator--( int ) <%
   int tmp = toInt();
-  tmp--;
-  Fixed  a(tmp);
+  //tmp--;
+  Fixed  a(tmp - 1);
   *this = a;
   return (*this);
 %>
 
 Fixed	Fixed::operator--( void ) <%
   float tmp = toFloat();
-  --tmp;
-  Fixed  a(tmp);
+  //--tmp;
+  Fixed  a(tmp - 1);
   *this = a;
   return (*this);
 %>
