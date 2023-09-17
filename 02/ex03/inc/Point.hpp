@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:12:05 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 12:08:59 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/09/17 11:57:13 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/09/17 13:18:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@
 # include "Fixed.hpp"
 
 class Point <%
-
 	private:
-	  Fixed const y;
-	  Fixed const x;
-	public:
-	  Point( void ) : y(0), x(0) {};
-	  setPoint( void ) {
+		Fixed const x; 
+		Fixed const y; 
 
-	  }  
+	public:
+		Point( void );
+		Point( const Point &other ) ;
+		Point( const float a, const float b );
+		~Point( void ) ;
+		Point &operator=(const Point &other);
+		Fixed getX( void ) const;
+		Fixed getY( void ) const;
 %>;
 
-std::iostream &operator<<(std::iostream os, const  Point obj) {
+
+std::ostream &operator<<(std::ostream &os, Point const &o);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 
-  os << obj.y;
-  return (os);
-}
-
-#endif // !P
+#endif

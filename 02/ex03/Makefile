@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 20:32:11 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/06 13:17:20 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/17 12:17:58 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= fixed
+NAME		:= fixed 
 
 C			:= c++ -Wall -Werror -Wextra -g3 -pedantic -std=c++98
 
@@ -20,7 +20,7 @@ SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES	:= main Fixed
+SRC_FILES	:= main Fixed Point bsp
 
 SRC			:= $(addprefix ${SRC_DIR}, ${addsuffix .cpp, ${SRC_FILES}})
 OBJ			:= $(addprefix ${OBJ_DIR}, ${addsuffix .o, ${SRC_FILES}})
@@ -42,4 +42,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re
