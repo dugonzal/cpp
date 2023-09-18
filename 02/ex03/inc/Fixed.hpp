@@ -6,17 +6,19 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:58:48 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 11:18:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/19 00:43:57 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FIXED_HPP
+#ifndef 	FIXED_HPP
 # define	FIXED_HPP
 
 # include <iostream>
 # include <cmath>
 # include <unistd.h>
 
+using std::cout;
+using std::endl;
 class Fixed <%
 	private:
 	  int tmp;
@@ -33,8 +35,6 @@ class Fixed <%
 	  void 	setRawBits( int const raw );
 	  float toFloat( void ) const;
 	  int 	toInt( void ) const;
-	  void  setFixed( int const n );
-      int   getFixed( void ) const;
       bool  operator>( const Fixed &obj ) const;
       bool  operator<( const Fixed &obj ) const;
       bool  operator<=( const Fixed &obj ) const;
@@ -56,5 +56,4 @@ class Fixed <%
 %>;
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj);
-
 #endif
