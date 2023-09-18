@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:55:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 11:13:10 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 11:18:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,3 @@ Fixed Point::getY( void ) const <%
 	return (y);
 %>
 
-int		Point::check(int const a) <%
-	return ( (a >= 0) ? a : -a );
-%>
