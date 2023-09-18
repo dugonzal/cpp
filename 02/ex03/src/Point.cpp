@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:55:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 11:18:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:32:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Point::Point( const Point &other ) <%
 
 Point::Point( const float a, const float b ): x(a), y(b) <%
 	std::cout << "constructor arguments" << std::endl;
-
 %>
 
 Point &Point::operator=(const Point &other) <%
@@ -39,17 +38,22 @@ Point &Point::operator=(const Point &other) <%
 	return (*this);
 %>
 
+/*
 std::ostream &operator<<(std::ostream &os, Point const &other) <%
-	os << other.getY().toFloat() << std::endl;
-	os << other.getY().toFloat() << std::endl;
+	//os << other.getY().toFloat() << std::endl;
+	//os << other.getY().toFloat() << std::endl;
+	std::cout << other.getX().toFloat() << "<<<<<<-----------dsdsd" <<  std::endl;
+	std::cout << other.getY().toFloat() << "<<<<<<-----------dsdsd" <<  std::endl;
+	sleep(5);
 	return (os);
 %>
+*/ 
 
-Fixed Point::getX( void ) const <%
-  	return (x);
+Fixed const Point::getX( void ) const <%
+	return (x);
 %>
 
-Fixed Point::getY( void ) const <%
+Fixed const Point::getY( void ) const <%
 	return (y);
 %>
 
