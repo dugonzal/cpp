@@ -6,48 +6,48 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 21:52:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:59:12 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
 Fixed::Fixed( void ) <%
-  ///std::cout << "Default constructor called" << std::endl;
+  std::cout << "Default constructor called" << std::endl;
 %>
 
 Fixed::Fixed( const Fixed &obj ) <%
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 %>
 
 Fixed::Fixed( const int n ): tmp( (int)(n << fraccion) ) <%
-	//std::cout << "constructor integer called  " << std::endl;
+	std::cout << "constructor integer called  " << std::endl;
 %>
 
 Fixed::Fixed( const float n ) : tmp( ((float)n * ((float)(1 << fraccion))) ) <%
-	//std::cout << "constructor float called" << std::endl;
+	std::cout << "constructor float called" << std::endl;
 %>
 
 Fixed::~Fixed( void ) <%
-  //std::cout << "Destructor default called" << std::endl;
+	std::cout << "Destructor default called" << std::endl;
 %>
 
 Fixed &Fixed::operator=( const Fixed &obj ) <%
- // std::cout << "assignation operator called" << std::endl;
-  if ( this != &obj ) <%
-	tmp = obj.tmp;
-  %>
-  return (*this);
+	std::cout << "assignation operator called" << std::endl;
+	if ( this != &obj ) <%
+		tmp = obj.tmp;
+	%>
+	return (*this);
 %>
 
  int Fixed::getRawBits( void ) const <%
-	//std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (tmp >> fraccion);
  %>
 
 void Fixed::setRawBits( int const n ) <%
-//	std::cout << "setRawBits member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	tmp = n;
 %>
 
@@ -114,7 +114,7 @@ Fixed	Fixed::operator++( int ) <%
 	return (_tmp);
 %>
 
-Fixed	Fixed::operator++( void ) <% // predcremento
+Fixed	Fixed::operator++( void ) <% // preincremento
 	int a = getRawBits() + 1;
 	Fixed _tmp(a);
 	*this = _tmp;
