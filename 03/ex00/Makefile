@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 18:01:24 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/18 18:15:36 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/18 18:17:35 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR		:= src/
 
 OBJ_DIR		:=	obj/
 
-SRC_FILES	:= main
+SRC_FILES	:= main ClapTrap
 
 SRC			:= $(addprefix ${SRC_DIR}, ${addsuffix .cpp, ${SRC_FILES}})
 OBJ			:= $(addprefix ${OBJ_DIR}, ${addsuffix .o, ${SRC_FILES}})
