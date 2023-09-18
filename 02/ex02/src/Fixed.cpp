@@ -6,35 +6,35 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/16 18:12:55 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:43:18 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
 Fixed::Fixed( void ) <%
-  std::cout << "Default constructor called" << std::endl;
+  ///std::cout << "Default constructor called" << std::endl;
 %>
 
 Fixed::Fixed( const Fixed &obj ) <%
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 %>
 
 Fixed::Fixed( const int n ): tmp( (int)(n << fraccion) ) <%
-	std::cout << "constructor integer called  " << std::endl;
+	//std::cout << "constructor integer called  " << std::endl;
 %>
 
 Fixed::Fixed( const float n ) : tmp( ((float)n * ((float)(1 << fraccion))) ) <%
-	std::cout << "constructor float called" << std::endl;
+	//std::cout << "constructor float called" << std::endl;
 %>
 
 Fixed::~Fixed( void ) <%
-  std::cout << "Destructor default called" << std::endl;
+  //std::cout << "Destructor default called" << std::endl;
 %>
 
 Fixed &Fixed::operator=( const Fixed &obj ) <%
-  std::cout << "assignation operator called" << std::endl;
+ // std::cout << "assignation operator called" << std::endl;
   if ( this != &obj ) <%
 	tmp = obj.tmp;
   %>
@@ -42,21 +42,21 @@ Fixed &Fixed::operator=( const Fixed &obj ) <%
 %>
 
  int Fixed::getRawBits( void ) const <%
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->tmp);
+	//std::cout << "getRawBits member function called" << std::endl;
+	return (tmp >> fraccion);
  %>
 
-void Fixed::setRawBits( int const raw ) <%
-	std::cout << "setRawBits member function called" << std::endl;
-	tmp = raw;
+void Fixed::setRawBits( int const n ) <%
+//	std::cout << "setRawBits member function called" << std::endl;
+	tmp = n;
 %>
 
 float Fixed::toFloat( void ) const <%
-	return ( static_cast<float>((float)(tmp) / (float)(1 << fraccion)) );
+	return ( (float)(tmp) / (float)(1 << fraccion) );
 %>
 
 int Fixed::toInt( void ) const <%
-	return ( tmp >> (int)(fraccion) );
+	return ( tmp >> fraccion );
 %>
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj) <%
@@ -98,49 +98,38 @@ Fixed	&Fixed::operator-( const Fixed &obj ) <%
 %>
 
 Fixed	Fixed::operator*( const Fixed &obj ) <%
-	float a = toFloat();
-	float b = obj.toFloat();
 	
-	return ( Fixed( a * b ) );
+	return ( Fixed( getRawBits() * obj.getRawBits() ) );
 %>
 
 Fixed	Fixed::operator/( const Fixed &obj ) <%
-  float a = toFloat();
-  float b = obj.toFloat();
-  return ( Fixed (  a / b ) );
+  return ( Fixed (  getRawBits() / obj.getRawBits() ) );
 %>
 
 Fixed	Fixed::operator++( void ) <%
-  float tmp = toFloat();
-  //++tmp;
-  Fixed  a(tmp + 1);
+  Fixed a(getRawBits());
   *this = a;
-  return (*this);
+  tmp += 1;// no puedo usar tmp sin mover los bits
+  return (*this); 
 %>
 
 Fixed	Fixed::operator++( int ) <%
-  int tmp = toFloat();
-  //tmp++;
-  Fixed  a(tmp + 1);
-  *this = a;
+  cout << "    _" << getRawBits() << endl;
   return (*this); 
  // return ( Fixed( a ) );
 %>
 
 Fixed	Fixed::operator--( int ) <%
-  int tmp = toInt();
-  //tmp--;
-  Fixed  a(tmp - 1);
-  *this = a;
+  cout << "    _" << getRawBits() << endl;
   return (*this);
 %>
 
-Fixed	Fixed::operator--( void ) <%
-  float tmp = toFloat();
-  //--tmp;
-  Fixed  a(tmp - 1);
-  *this = a;
-  return (*this);
+Fixed	Fixed::operator--( void ) <% // predcremento
+	int a = getRawBits();
+	--a;
+	Fixed _tmp(a);
+	*this = _tmp;
+	return (*this);
 %>
 
 const Fixed	&Fixed::min(const Fixed &a, const  Fixed &b ) <%
