@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 21:49:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:52:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,19 @@ Fixed	Fixed::operator/( const Fixed &obj ) <%
   return ( Fixed (  getRawBits() / obj.getRawBits() ) );
 %>
 
-Fixed	Fixed::operator++( void ) <%
-  Fixed a(getRawBits());
-  *this = a;
-  tmp += 1;// no puedo usar tmp sin mover los bits
-  return (*this); 
+Fixed	Fixed::operator++( int ) <%
+	Fixed _tmp(*this);
+	int a = getRawBits() + 1;
+	Fixed xd(a);
+	*this = xd;
+	return (_tmp);
 %>
 
-Fixed	Fixed::operator++( int ) <%
-  cout << "    _" << getRawBits() << endl;
-  return (*this); 
- // return ( Fixed( a ) );
+Fixed	Fixed::operator++( void ) <% // predcremento
+	int a = getRawBits() + 1;
+	Fixed _tmp(a);
+	*this = _tmp;
+	return (*this);
 %>
 
 Fixed	Fixed::operator--( int ) <%
