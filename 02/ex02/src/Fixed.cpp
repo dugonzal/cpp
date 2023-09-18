@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 21:43:18 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:49:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,11 @@ Fixed	Fixed::operator++( int ) <%
 %>
 
 Fixed	Fixed::operator--( int ) <%
-  cout << "    _" << getRawBits() << endl;
-  return (*this);
+	Fixed _tmp(*this);
+	int a = getRawBits() - 1;
+	Fixed xd(a);
+	*this = xd;
+	return (_tmp);
 %>
 
 Fixed	Fixed::operator--( void ) <% // predcremento
