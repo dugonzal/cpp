@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 18:41:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:59:48 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::string;
+
 class ClapTrap <%
 	private:
 		std::string	name;
+		int hitPoint;  
+		int energyPoint;  
+		int attackDamage;  
 	public:
 		ClapTrap( void );
 		ClapTrap( std::string _name );
@@ -26,11 +33,4 @@ class ClapTrap <%
 		const ClapTrap &operator=(const ClapTrap &other);
 %>;
 
-/*
-std::ostream &operator(std::ostream &os, const ClapTrap &other) <%
-
-	os << other.name;
-	return (os);
-%>
-*/
 #endif
