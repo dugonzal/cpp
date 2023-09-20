@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/20 14:04:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:23:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ class ClapTrap <%
 		ClapTrap( const ClapTrap &other );
 		~ClapTrap( void ); 
 		const ClapTrap &operator=(const ClapTrap &other);
+//ClapTrap <name> attacks <target>, causing <damage> points of damage!
 		void attack(const string &target);
+		void takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
+		void beRepaired(unsigned int amount);
+
+
 %>;
 
 #endif
