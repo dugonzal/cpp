@@ -6,17 +6,16 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/19 13:05:10 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:14:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) : name("bob -> (.*."), hitPoint(10), energyPoint(10), attackDamage(0)  <%
+ClapTrap::ClapTrap( void ) : name("bob -> (.*.)"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
 	std::cout << "constructor default" << std::endl;
 
 %>
-
 
 ClapTrap::~ClapTrap( void ) <%
 	std::cout << "destructor default" << std::endl;
@@ -25,7 +24,6 @@ ClapTrap::~ClapTrap( void ) <%
 ClapTrap::ClapTrap( std::string _name ) : name("bob -> (.*."), hitPoint(10), energyPoint(10), attackDamage(0) <%
 	std::cout << "constructor with name" << std::endl;
 	name = _name;
-	cout << name << "   "<< hitPoint << "   " << attackDamage << "   " << hitPoint << endl;
 %>
 
 ClapTrap::ClapTrap( const ClapTrap &other ) <%
@@ -40,4 +38,13 @@ const ClapTrap &ClapTrap::operator=(const ClapTrap &other) <%
 		*this = other;
 	%>
 	return (*this);
+%>
+
+void ClapTrap::attack(const string &target) <%
+	if (energyPoint < 1 or hitPoint < 1) <%
+		cout << "tu energyPoint o hitPoint son < a 1" << endl;
+		return ;
+	%>
+	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+	cout << "ClapTrap " << name << " attacks " << target << " points of damage " << attackDamage << endl;
 %>
