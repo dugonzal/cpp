@@ -6,14 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/20 21:23:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 02:21:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <iostream>
+# include <iostream>
 
 using std::cout;
 using std::endl;
@@ -22,12 +22,14 @@ using std::string;
 class ClapTrap <%
 	
 	private:
-		std::string	name;
-		int hitPoint; // life point 
-		int energyPoint;  
-		int attackDamage;  
+
+		string	name;
+		int 	hitPoint; // life point 
+		int 	energyPoint;  
+		int 	attackDamage;  
 	
 	public:
+
 		ClapTrap( void );
 		ClapTrap( std::string _name );
 		ClapTrap( const ClapTrap &other );
@@ -37,7 +39,6 @@ class ClapTrap <%
 		void attack(const string &target);
 		void takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
 		void beRepaired(unsigned int amount);
-
 
 %>;
 

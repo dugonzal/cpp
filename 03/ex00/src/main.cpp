@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:14:36 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/20 21:24:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 02:32:02 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int, char const**, char const **) <%
 
 	a.attack("el mejor ataque del mundo xd");
 
-	a.takeDamage(23);
-	a.beRepaired(32);
+	a.takeDamage(1);
+	a.beRepaired(100 + 1);
 	return (0);
 %>

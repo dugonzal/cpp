@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/20 21:24:11 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 02:30:42 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,27 @@ void ClapTrap::attack(const string &target) <%
 
 void ClapTrap::takeDamage(unsigned int amount) <%
 	cout << amount << endl;
+	energyPoint--;	
+	hitPoint -= amount;
+	cout << "ClapTrap " << name << " attacks " << " points of damage " << attackDamage << endl;
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
 %>
 
 
 void ClapTrap::beRepaired(unsigned int amount) <%
   cout << amount << endl;
-
+	energyPoint--;	
+	hitPoint += amount;
+	cout << "ClapTrap " << name << hitPoint <<" attacks " << " points of damage " << attackDamage << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
+	cout << hitPoint << endl;
 %>
