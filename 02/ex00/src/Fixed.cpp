@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/13 03:29:11 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:55:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed &Fixed::operator=( const Fixed &obj ) <%
 	return (this->tmp);
  %>
 
-void Fixed::setRawBits( int const raw ) <%
+void Fixed::setRawBits( int const n ) <%
 	std::cout << "setRawBits member function called" << std::endl;
-	this->tmp = raw;
+	tmp =  (n);
 %>

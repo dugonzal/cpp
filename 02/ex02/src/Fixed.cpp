@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/18 21:59:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:47:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Fixed &Fixed::operator=( const Fixed &obj ) <%
 
 void Fixed::setRawBits( int const n ) <%
 	std::cout << "setRawBits member function called" << std::endl;
-	tmp = n;
+	tmp =  (n * (1 << fraccion));
 %>
 
 float Fixed::toFloat( void ) const <%
@@ -60,8 +60,8 @@ int Fixed::toInt( void ) const <%
 %>
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj) <%
-  os << obj.toFloat();
-  return (os);
+	os << obj.toFloat();
+	return (os);
 %>
 
 bool	Fixed::operator>( const Fixed &obj1 ) const <%
@@ -88,22 +88,32 @@ bool	Fixed::operator!=( const Fixed &obj ) const <%
 %>
 
 Fixed	&Fixed::operator+( const Fixed &obj ) <%
-	setRawBits( getRawBits() + obj.getRawBits() );
-	return (*this);
+	Fixed _tmp;
+	_tmp = ((tmp / 256) + obj.getRawBits());
+	*this = _tmp;
+	return ( *this );
 %>
 
 Fixed	&Fixed::operator-( const Fixed &obj ) <%
-	setRawBits( getRawBits() - obj.getRawBits() );
-	return (*this);
+	Fixed _tmp;
+	_tmp = ((tmp / 256) - obj.getRawBits());
+	*this = _tmp;
+	return ( *this );
 %>
 
 Fixed	Fixed::operator*( const Fixed &obj ) <%
-	
-	return ( Fixed( getRawBits() * obj.getRawBits() ) );
+	Fixed _tmp;
+	_tmp = ((tmp / 256) * obj.getRawBits());
+	return ( _tmp );
 %>
 
 Fixed	Fixed::operator/( const Fixed &obj ) <%
-  return ( Fixed (  getRawBits() / obj.getRawBits() ) );
+	Fixed _tmp;
+	if ( obj.getRawBits() ) <%
+		_tmp = ((tmp / 256) / obj.getRawBits());
+		return ( _tmp );
+	%>
+	return (*this);
 %>
 
 Fixed	Fixed::operator++( int ) <%

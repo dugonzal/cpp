@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:41:14 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/15 10:50:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:56:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Fixed &Fixed::operator=( const Fixed &obj ) <%
 
 void Fixed::setRawBits( int const raw ) <%
 	std::cout << "setRawBits member function called" << std::endl;
-	this->tmp = raw;
+	this->tmp = (raw * (1 << fraccion) );
 %>
 
 float Fixed::toFloat( void ) const <%
