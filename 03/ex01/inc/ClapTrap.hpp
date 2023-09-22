@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 13:04:37 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:10:31 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 using std::cout;
 using std::endl;
 using std::string;
+#include <unistd.h>
 
 class ClapTrap <%
 	
@@ -39,7 +40,7 @@ class ClapTrap <%
 		void 	attack(const string &target);
 		void 	takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
 		void 	beRepaired(unsigned int amount);
-		string	getName( void ) const;
+		const string	&getName( void ) const;
 		int		getHitPoint( void ) const;
 		int		getEnergyPoint( void ) const;
 		int		getAttackDamage( void ) const;

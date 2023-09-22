@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 13:11:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:20:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ ScavTrap::ScavTrap( string _name ) : hitPoint(100), energyPoint(50), attackDamag
   name = _name;
 %>
 
+//hay que inicializar la clase base explicitamente
+ScavTrap::ScavTrap( const ScavTrap &other ): ClapTrap(other) <%
+		*this = other;
+%>
+
 // tendre que hacer los getters porque no puedo igualarlo directamente el obbjeto
 const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 	if (this != &other) <%
@@ -43,13 +48,9 @@ void	ScavTrap::guardGate( void ) <%
 
 	cout << "klk" << endl;
 %>
-/*
-ScavTrap::ScavTrap( const ScavTrap &other ) <%
-		*this = other;
-%>*/
 
 
-string	ScavTrap::getName( void ) const <%
+const string	&ScavTrap::getName( void ) const <%
 	return (name);
 %>
 

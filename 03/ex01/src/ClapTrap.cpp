@@ -6,18 +6,18 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 13:12:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:18:24 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) : name("bob -> (.*.)"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
-	std::cout << "constructor default" << std::endl;
+	std::cout << "constructor default ClapTrap" << std::endl;
 %>
 
 ClapTrap::~ClapTrap( void ) <%
-	std::cout << "destructor default" << std::endl;
+	std::cout << "destructor ClapTrap" << std::endl;
 %>
 
 ClapTrap::ClapTrap( std::string _name ) : hitPoint(10), energyPoint(10), attackDamage(0) <%
@@ -70,7 +70,7 @@ void ClapTrap::beRepaired(unsigned int amount) <%
 	cout << "ClapTrap " << name << "  " << hitPoint << " beRepaired " << " points of damage " << attackDamage << endl;
 %>
 
-string	ClapTrap::getName( void ) const <%
+const string	&ClapTrap::getName( void ) const <%
 	  return (name);
 %>
 
