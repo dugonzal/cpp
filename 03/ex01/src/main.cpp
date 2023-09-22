@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:14:36 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 10:29:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:37:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	main(int, char const**, char const **) <%
 	ScavTrap a("pepe");
-	//ScavTrap b;
-
+	ScavTrap c;
+	ClapTrap b;
 
 	return (0);
 %>

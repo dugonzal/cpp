@@ -6,14 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:15:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 10:32:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:36:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef		SCAVTRAP_HPP
 # define	SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap <%
 	  private:
