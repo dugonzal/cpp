@@ -6,14 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/21 02:21:51 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 16:59:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef 	CLAPTRAP_HPP
+# define 	CLAPTRAP_HPP
 
 # include <iostream>
+# include <unistd.h>
 
 using std::cout;
 using std::endl;
@@ -35,11 +36,17 @@ class ClapTrap <%
 		ClapTrap( const ClapTrap &other );
 		~ClapTrap( void ); 
 		const ClapTrap &operator=(const ClapTrap &other);
-//ClapTrap <name> attacks <target>, causing <damage> points of damage!
-		void attack(const string &target);
-		void takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
-		void beRepaired(unsigned int amount);
-
+		void 	attack(const string &target);
+		void 	takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
+		void 	beRepaired(unsigned int amount);
+		const string	&getName( void ) const ;
+		int		getHitPoint( void ) const;
+		int		getEnergyPoint( void ) const;
+		int		getAttackDamage( void ) const;
+		void	setHitPoint( int const hp ) ;
+		void	setEnergyPoint( int const ep );
+		void	setAttackDamage( int const ad );
+		void	setName( const string &_name );
 %>;
 
 #endif

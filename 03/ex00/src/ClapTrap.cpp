@@ -6,36 +6,39 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/21 02:30:42 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:01:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) : name("bob -> (.*.)"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
-	std::cout << "constructor default" << std::endl;
-
+ClapTrap::ClapTrap( void ) : name("default"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
+	std::cout << "constructor default ClapTrap" << std::endl;
 %>
 
 ClapTrap::~ClapTrap( void ) <%
-	std::cout << "destructor default" << std::endl;
+	std::cout << "destructor ClapTrap" << std::endl;
 %>
 
-ClapTrap::ClapTrap( std::string _name ) : name("bob -> (.*."), hitPoint(10), energyPoint(10), attackDamage(0) <%
-	std::cout << "constructor with name" << std::endl;
+ClapTrap::ClapTrap( std::string _name ) : hitPoint(10), energyPoint(10), attackDamage(0) <%
+	std::cout << "constructor with name ClapTrap" << std::endl;
+	if (_name.empty()) <%
+		_name = "default";
+	%>
 	name = _name;
 %>
 
 ClapTrap::ClapTrap( const ClapTrap &other ) <%
-	std::cout << "constructor copy" << std::endl;
-	if (this != &other) <%
-		*this = other;
-	%>
+	std::cout << "constructor copy ClapTrap" << std::endl;
+	*this = other;
 %>
 
 const ClapTrap &ClapTrap::operator=(const ClapTrap &other) <%
 	if (this != &other) <%
-		*this = other;
+		name = other.getName();
+		hitPoint = other.getHitPoint();
+		energyPoint = other.getEnergyPoint();
+		attackDamage = other.getAttackDamage();
 	%>
 	return (*this);
 %>
@@ -46,11 +49,8 @@ void ClapTrap::attack(const string &target) <%
 		return ;
 	%>
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
-	cout << "ClapTrap " << name << " attacks " << target << " points of damage " << attackDamage << endl;
 	energyPoint--;	
-	  
-	// creo que tengoo que dismunir  no lo termino de entender
-	cout << energyPoint << endl;
+	cout << "ClapTrap " << name << " attacks " << target << " points of damage " << attackDamage << endl;
 	
 %>
 
@@ -58,25 +58,46 @@ void ClapTrap::takeDamage(unsigned int amount) <%
 	cout << amount << endl;
 	energyPoint--;	
 	hitPoint -= amount;
-	cout << "ClapTrap " << name << " attacks " << " points of damage " << attackDamage << endl;
+	cout << "ClapTrap " << name << " tackeDamage " << " points of damage " << attackDamage << endl;
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
 
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
 %>
-
 
 void ClapTrap::beRepaired(unsigned int amount) <%
   cout << amount << endl;
 	energyPoint--;	
 	hitPoint += amount;
-	cout << "ClapTrap " << name << hitPoint <<" attacks " << " points of damage " << attackDamage << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
-	cout << hitPoint << endl;
+	cout << "ClapTrap " << name << "  " << hitPoint << " beRepaired " << " points of damage " << attackDamage << endl;
+%>
+
+const string	&ClapTrap::getName( void ) const <%
+   return (name);
+%>
+
+int		ClapTrap::getHitPoint( void ) const <%
+	  return (hitPoint);
+%>
+
+int		ClapTrap::getEnergyPoint( void ) const <%
+	  return (energyPoint);
+%>
+
+int		ClapTrap::getAttackDamage( void ) const <%
+	  return (attackDamage);
+%>
+
+void	ClapTrap::setName( const string &_name ) <%
+	name = _name;
+%>
+
+void	ClapTrap::setHitPoint( int const hp ) <%
+	  hitPoint = hp;
+%>
+
+void	ClapTrap::setEnergyPoint( int const ep ) <%
+	  energyPoint = ep;
+%>
+
+void	ClapTrap::setAttackDamage( int const ad ) <%
+	  attackDamage = ad;
 %>
