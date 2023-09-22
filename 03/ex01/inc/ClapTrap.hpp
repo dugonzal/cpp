@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 15:21:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ class ClapTrap <%
 		void 	attack(const string &target);
 		void 	takeDamage(unsigned int amount);// ¿puede ser que estable attackDamage?
 		void 	beRepaired(unsigned int amount);
-		const string	&getName( void ) const;
+		const string	&getName( void ) const ;
 		int		getHitPoint( void ) const;
 		int		getEnergyPoint( void ) const;
-		int		getAttackDamage( void ) const;
-		void	setHitPoint( int const hp );
+		int		getAttackDamage( void ) ;
+		void	setHitPoint( int const hp ) ;
 		void	setEnergyPoint( int const ep );
 		void	setAttackDamage( int const ad );
+		void	setName( const string &_name );
 %>;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 15:21:11 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ ClapTrap::ClapTrap( std::string _name ) : hitPoint(10), energyPoint(10), attackD
 
 ClapTrap::ClapTrap( const ClapTrap &other ) <%
 	std::cout << "constructor copy" << std::endl;
-		*this = other;
+	*this = other;
 %>
 
 const ClapTrap &ClapTrap::operator=(const ClapTrap &other) <%
 	if (this != &other) <%
 		name = other.getName();
-		hitPoint = getHitPoint();
-		energyPoint = getEnergyPoint();
-		attackDamage = getAttackDamage();
-	%>
+		hitPoint = other.getHitPoint();
+		/*energyPoint = other.getEnergyPoint();
+		attackDamage = other.getAttackDamage();
+	*/%>
 	return (*this);
 %>
 
@@ -71,19 +71,23 @@ void ClapTrap::beRepaired(unsigned int amount) <%
 %>
 
 const string	&ClapTrap::getName( void ) const <%
-	  return (name);
+   return (name);
 %>
 
 int		ClapTrap::getHitPoint( void ) const <%
 	  return (hitPoint);
 %>
 
-int		ClapTrap::getEnergyPoint( void ) const <%
+int		ClapTrap::getEnergyPoint( void ) const<%
 	  return (energyPoint);
 %>
 
-int		ClapTrap::getAttackDamage( void ) const<%
+/*
+int		ClapTrap::getAttackDamage( void ) <%
 	  return (attackDamage);
+%>*/ 
+void	ClapTrap::setName( const string &_name ) <%
+	name = _name;
 %>
 
 void	ClapTrap::setHitPoint( int const hp ) <%
@@ -98,4 +102,3 @@ void	ClapTrap::setEnergyPoint( int const ep ) <%
 void	ClapTrap::setAttackDamage( int const ad ) <%
 	  attackDamage = ad;
 %>
-
