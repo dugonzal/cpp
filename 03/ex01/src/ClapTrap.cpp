@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 14:18:24 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:45:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,17 @@ int		ClapTrap::getEnergyPoint( void ) const <%
 int		ClapTrap::getAttackDamage( void ) const<%
 	  return (attackDamage);
 %>
+
+void	ClapTrap::setHitPoint( int const hp ) <%
+
+	  hitPoint = hp;
+%>
+
+void	ClapTrap::setEnergyPoint( int const ep ) <%
+	  energyPoint = ep;
+%>
+
+void	ClapTrap::setAttackDamage( int const ad ) <%
+	  attackDamage = ad;
+%>
+

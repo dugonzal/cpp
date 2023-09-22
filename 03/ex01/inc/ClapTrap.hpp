@@ -6,19 +6,19 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 14:10:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:45:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef 	CLAPTRAP_HPP
+# define 	CLAPTRAP_HPP
 
 # include <iostream>
+# include <unistd.h>
 
 using std::cout;
 using std::endl;
 using std::string;
-#include <unistd.h>
 
 class ClapTrap <%
 	
@@ -44,6 +44,9 @@ class ClapTrap <%
 		int		getHitPoint( void ) const;
 		int		getEnergyPoint( void ) const;
 		int		getAttackDamage( void ) const;
+		void	setHitPoint( int const hp );
+		void	setEnergyPoint( int const ep );
+		void	setAttackDamage( int const ad );
 %>;
 
 #endif
