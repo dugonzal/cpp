@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:36:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 19:14:56 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 19:32:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ FragTrap::FragTrap( const FragTrap &other ): ClapTrap(other) <%
 	  
 const FragTrap &FragTrap::operator=( const FragTrap &other )<%
 	if (this != &other) <%
-		setName(other.getName());
-		setHitPoint(other.getHitPoint());
-		setEnergyPoint(other.getEnergyPoint());
-		setAttackDamage(other.getAttackDamage());
+		ClapTrap::operator=(other);
 	%>
 	return (*this);
 %>
