@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 12:53:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:56:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ ScavTrap::ScavTrap( string _name ) : hitPoints(100), energyPoints(50), attackDam
 %>
 
 // tendre que hacer los getters porque no puedo igualarlo directamente el obbjeto
-/*ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
-	*this = other;
+const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
+	if (this != &other) <%
+		*this = other;
+		return (*this);
+	%>
 	return (*this);
-%>*/ 
+%> 
 
 
 void	ScavTrap::guardGate( void ) <%
