@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 17:02:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:15:12 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ ScavTrap::ScavTrap( string _name ): ClapTrap(_name)  <%
 ScavTrap::ScavTrap( const ScavTrap &other ): ClapTrap(other) <%
 	*this = other;
 %>
-// tendre que hacer los getters porque no puedo igualarlo directamente el obbjeto
 
 const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 	if (this != &other) <%
@@ -41,8 +40,7 @@ const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 		setHitPoint(other.getHitPoint());
 		setEnergyPoint(other.getEnergyPoint());
 		setAttackDamage(other.getAttackDamage());
-		return (*this);
-	%> 
+	%>
 	return (*this);
 %>
 

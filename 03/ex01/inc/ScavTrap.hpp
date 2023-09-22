@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:15:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 15:08:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:12:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap <%
+	
 	public:
 
 		ScavTrap( void );
