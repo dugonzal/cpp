@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:14:36 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 12:57:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:11:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int, char const**, char const **) <%
 	a.attack("primer ataque con herencia");
 
 	b = ClapTrap("");
-	//a = ScavTrap("hola ");
+	a = ScavTrap("hola ");
 	a.guardGate();
 	return (0);
 %>

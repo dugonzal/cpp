@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:15:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 12:55:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:10:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class ScavTrap: public ClapTrap, string <%
 	  
 	private:
 		  string	name;
-		  int		hitPoints;
-		  int		energyPoints;
+		  int		hitPoint;
+		  int		energyPoint;
 		  int		attackDamage;
 
 	public:
@@ -31,6 +31,10 @@ class ScavTrap: public ClapTrap, string <%
 		ScavTrap( const ScavTrap &other );
 		const ScavTrap &operator=( const ScavTrap & other );
 		void	guardGate( void );
+		string	getName( void ) const;
+		int		getHitPoint( void ) const;
+		int		getEnergyPoint( void ) const;
+		int		getAttackDamage( void ) const;
 
 %>;
 
