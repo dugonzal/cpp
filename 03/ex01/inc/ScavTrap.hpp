@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:15:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 10:36:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:43:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap: public ClapTrap <%
 		~ScavTrap( void );
 		ScavTrap( string _name );
 		ScavTrap( const ScavTrap &other );
+		void	guardGate( void );
 %>;
 
 
