@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 22:03:18 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:04:49 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap &other ): FragTrap(other), ScavTrap(
 
 const DiamondTrap &DiamondTrap::operator=( const DiamondTrap &other )<%
 	if (this != &other) <%
-		ClapTrap::operator=(other);
+		FragTrap::operator=(other);
 	%>
 	return (*this);
 %>
