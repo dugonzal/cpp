@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 15:21:11 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:01:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) : name("bob -> (.*.)"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
+ClapTrap::ClapTrap( void ) : name("default"), hitPoint(10), energyPoint(10), attackDamage(0)  <%
 	std::cout << "constructor default ClapTrap" << std::endl;
 %>
 
@@ -21,7 +21,7 @@ ClapTrap::~ClapTrap( void ) <%
 %>
 
 ClapTrap::ClapTrap( std::string _name ) : hitPoint(10), energyPoint(10), attackDamage(0) <%
-	std::cout << "constructor with name" << std::endl;
+	std::cout << "constructor with name ClapTrap" << std::endl;
 	if (_name.empty()) <%
 		_name = "default";
 	%>
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap( std::string _name ) : hitPoint(10), energyPoint(10), attackD
 %>
 
 ClapTrap::ClapTrap( const ClapTrap &other ) <%
-	std::cout << "constructor copy" << std::endl;
+	std::cout << "constructor copy ClapTrap" << std::endl;
 	*this = other;
 %>
 
@@ -37,9 +37,9 @@ const ClapTrap &ClapTrap::operator=(const ClapTrap &other) <%
 	if (this != &other) <%
 		name = other.getName();
 		hitPoint = other.getHitPoint();
-		/*energyPoint = other.getEnergyPoint();
+		energyPoint = other.getEnergyPoint();
 		attackDamage = other.getAttackDamage();
-	*/%>
+	%>
 	return (*this);
 %>
 
@@ -78,20 +78,19 @@ int		ClapTrap::getHitPoint( void ) const <%
 	  return (hitPoint);
 %>
 
-int		ClapTrap::getEnergyPoint( void ) const<%
+int		ClapTrap::getEnergyPoint( void ) const <%
 	  return (energyPoint);
 %>
 
-/*
-int		ClapTrap::getAttackDamage( void ) <%
+int		ClapTrap::getAttackDamage( void ) const <%
 	  return (attackDamage);
-%>*/ 
+%>
+
 void	ClapTrap::setName( const string &_name ) <%
 	name = _name;
 %>
 
 void	ClapTrap::setHitPoint( int const hp ) <%
-
 	  hitPoint = hp;
 %>
 

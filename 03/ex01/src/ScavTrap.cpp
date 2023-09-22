@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 15:16:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:02:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ ScavTrap::ScavTrap( const ScavTrap &other ): ClapTrap(other) <%
 
 const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 	if (this != &other) <%
-		string a = getName();
-		setName(a);
-		/*setHitPoint(other.getHitPoint());
+		setName(other.getName());
+		setHitPoint(other.getHitPoint());
 		setEnergyPoint(other.getEnergyPoint());
 		setAttackDamage(other.getAttackDamage());
-		*/return (*this);
+		return (*this);
 	%> 
 	return (*this);
 %>
