@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:15:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 10:43:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:44:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,23 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap <%
-	  private:
+class ScavTrap: public ClapTrap, string <%
+	  
+	private:
 		  string	name;
 		  int		hitPoints;
 		  int		energyPoints;
 		  int		attackDamage;
-	  public:
+
+	public:
+
 		ScavTrap( void );
 		~ScavTrap( void );
 		ScavTrap( string _name );
 		ScavTrap( const ScavTrap &other );
+		ScavTrap &operator=( const ScavTrap & other );
 		void	guardGate( void );
-%>;
 
+%>;
 
 #endif
