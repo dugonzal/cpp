@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:14:36 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:12:30 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:51:57 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int		main(int, char const**, char const **) <%
 
 	a.attack("");
 	cout << a.FragTrap::getName() << endl;
+	a.whoAmi();
 	return (0);
 %>

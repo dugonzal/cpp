@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 14:14:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:52:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap &other ): FragTrap(other), ScavTrap(
 	*this = other;
 %>
 
-DiamondTrap::DiamondTrap( const string & n ): FragTrap(n + "_clap_name"), ScavTrap(n + "_clap_name"), name(n + "_clap_name") <%
+DiamondTrap::DiamondTrap( const string & n ): FragTrap(n + "_clap_name"), ScavTrap(n + "_clap_name"), name(n) <%
 	cout << "constructor DiamondTrap with name" << endl;
 	FragTrap::setHitPoint(FragTrap::getHitPoint());
 	ScavTrap::setHitPoint(ScavTrap::getHitPoint());
@@ -61,6 +61,6 @@ void DiamondTrap::attack(const std::string& target)<%
 %>
 
 //I am DiamondTrap <name>, and my ClapTrap name is <clap_name>.
-void	DiamondTrap::woAmi( void ) <%
-  cout << "I am DiamondTrap " << DiamondTrap::name << "and my ClapTrap name is " << FragTrap::getName() << end;
+void	DiamondTrap::whoAmi( void )<%
+  cout << "I am DiamondTrap " << DiamondTrap::name << " and my ClapTrap name is " << FragTrap::getName() << endl;
 %>
