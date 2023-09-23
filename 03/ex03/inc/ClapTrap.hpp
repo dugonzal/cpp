@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 18:24:23 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:07:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class ClapTrap <%
 		void	setEnergyPoint( int const ep );
 		void	setAttackDamage( int const ad );
 		void	setName( const string &_name );
+
 %>;
 
 #endif

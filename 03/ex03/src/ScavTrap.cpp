@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 23:23:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:16:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,4 @@ const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 void	ScavTrap::guardGate( void ) <%
 	cout << "klk" << endl;
 %>
+
