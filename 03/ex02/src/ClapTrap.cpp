@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 17:01:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 21:56:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ ClapTrap::ClapTrap( const ClapTrap &other ) <%
 
 const ClapTrap &ClapTrap::operator=(const ClapTrap &other) <%
 	if (this != &other) <%
-		name = other.getName();
-		hitPoint = other.getHitPoint();
-		energyPoint = other.getEnergyPoint();
-		attackDamage = other.getAttackDamage();
+		ClapTrap::operator=(other);
 	%>
 	return (*this);
 %>
@@ -71,7 +68,7 @@ void ClapTrap::beRepaired(unsigned int amount) <%
 %>
 
 const string	&ClapTrap::getName( void ) const <%
-   return (name);
+	 return (name);
 %>
 
 int		ClapTrap::getHitPoint( void ) const <%

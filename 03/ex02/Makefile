@@ -6,13 +6,13 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 18:01:24 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/22 17:19:16 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/22 21:19:08 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= trap
 
-C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3
+C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3 -Wno-shadow
 
 R			:= rm -rf
 

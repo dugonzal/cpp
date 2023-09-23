@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 19:27:21 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 19:30:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap( void ): ClapTrap(NULL) <%
 %>
 
 ScavTrap::~ScavTrap( void ) <%
-	cout << "desctructor ScavTrap" << endl;
+	cout << "destructor ScavTrap" << endl;
 %>
 ScavTrap::ScavTrap( string _name ): ClapTrap(_name)  <%
 	cout << "constructor with name" << endl;
