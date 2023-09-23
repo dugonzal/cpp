@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:36:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:27:24 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:09:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ const FragTrap &FragTrap::operator=( const FragTrap &other )<%
 %>
 
 void FragTrap::highFivesGuys(void)<%
-	cout << "high fives request" << endl;
+	cout << "request a high five from everyone!" << endl;
 %>

@@ -6,14 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:36:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:25:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:09:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/FragTrap.hpp"
 
 FragTrap::FragTrap( void ): ClapTrap("") <%
-	cout << "constructor default FragTrap" << endl;
+	cout << "constructor FragTrap" << endl;
 	setHitPoint(100);
 	setEnergyPoint(100);
 	setAttackDamage(30);
@@ -24,7 +24,7 @@ FragTrap::~FragTrap( void ) <%
 %>
 
 FragTrap::FragTrap( const string &_name ): ClapTrap(_name)<%
-	cout << "constructor with name FragTrap " << endl;
+	cout << "constructor with name" << endl;
 	setHitPoint(100);
 	setEnergyPoint(100);
 	setAttackDamage(30);
@@ -45,5 +45,5 @@ const FragTrap &FragTrap::operator=( const FragTrap &other )<%
 %>
 
 void FragTrap::highFivesGuys(void)<%
-	cout << "high fives request" << endl;
+	cout << "request a high five from everyone!" << endl;
 %>
