@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 17:52:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 21:28:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 DiamondTrap::DiamondTrap( void ): FragTrap(""), ScavTrap("") <%
 	cout << "constructor DiamondTrap" << endl;
 	FragTrap::setHitPoint( FragTrap::getHitPoint() );
-	ScavTrap::setHitPoint(ScavTrap::getHitPoint());
-	FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	ScavTrap::setHitPoint( ScavTrap::getHitPoint() );
+	FragTrap::setAttackDamage( FragTrap::getAttackDamage() );
 	cout << FragTrap::getHitPoint() << endl;
 	cout << ScavTrap::getEnergyPoint() << endl;
 %>
@@ -28,17 +28,17 @@ DiamondTrap::~DiamondTrap( void )<%
 
 DiamondTrap::DiamondTrap( const DiamondTrap &other ): FragTrap(other), ScavTrap(other) <%
 	cout << "constructor DiamondTrap with copy" << endl;
-	FragTrap::setHitPoint(FragTrap::getHitPoint());
-	ScavTrap::setHitPoint(ScavTrap::getEnergyPoint());
-	FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	FragTrap::setHitPoint( FragTrap::getHitPoint() );
+	ScavTrap::setHitPoint( ScavTrap::getEnergyPoint() );
+	FragTrap::setAttackDamage( FragTrap::getAttackDamage() );
 	*this = other;
 %>
 
 DiamondTrap::DiamondTrap( const string & n ): FragTrap(n + "_clap_name"), ScavTrap(n + "_clap_name"), name(n) <%
 	cout << "constructor DiamondTrap with name" << endl;
-	FragTrap::setHitPoint(FragTrap::getHitPoint());
-	ScavTrap::setHitPoint(ScavTrap::getHitPoint());
-	FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+	FragTrap::setHitPoint( FragTrap::getHitPoint() );
+	ScavTrap::setHitPoint( ScavTrap::getHitPoint() );
+	FragTrap::setAttackDamage( FragTrap::getAttackDamage() );
 	/*
 	 llamando a la derivada, se establece en la derivada de la derivada es alucinante
 	*/
