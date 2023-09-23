@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:24:52 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:02:29 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,27 @@ void ClapTrap::attack(const string &target) <%
 		cout << "tu energyPoint o hitPoint son < a 1" << endl;
 		return ;
 	%>
-	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
-	energyPoint--;	
 	cout << "ClapTrap " << name << " attacks " << target << " points of damage " << attackDamage << endl;
-	
-%>
-
-void ClapTrap::takeDamage(unsigned int amount) <%
-	cout << amount << endl;
 	energyPoint--;	
-	hitPoint -= amount;
-	cout << "ClapTrap " << name << " tackeDamage " << " points of damage " << attackDamage << endl;
-	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+%>
+
+// ClapTrap <name> takes <damage> points of damage!
+void ClapTrap::takeDamage(unsigned int amount) <%
+	if (hitPoint > 0) <%
+		hitPoint -= amount;
+		cout << "ClapTrap " << name << " take Damage " << attackDamage << " points of damage " << endl;
+	%>
+	else 
+		cout << name << "is dead" << endl;
+	energyPoint--;
 
 %>
 
+// ClapTrap <name> is repaired for <health> points!
 void ClapTrap::beRepaired(unsigned int amount) <%
-  cout << amount << endl;
 	energyPoint--;	
 	hitPoint += amount;
-	cout << "ClapTrap " << name << "  " << hitPoint << " beRepaired " << " points of damage " << attackDamage << endl;
+	cout << name << " is repaired for " << hitPoint "points!" << endl;
 %>
 
 const string	&ClapTrap::getName( void ) const <%
