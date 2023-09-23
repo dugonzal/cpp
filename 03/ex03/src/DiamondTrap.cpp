@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 13:46:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:14:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,9 @@ void DiamondTrap::attack(const std::string& target)<%
 	  //no funciona ->ClavTrap::attack(target);
 	  //ScavTrap::attack(target);
 	  // ahora si funciona no entiendo nada
+%>
+
+//I am DiamondTrap <name>, and my ClapTrap name is <clap_name>.
+void	DiamondTrap::woAmi( void ) <%
+  cout << "I am DiamondTrap " << DiamondTrap::name << "and my ClapTrap name is " << FragTrap::getName() << end;
 %>

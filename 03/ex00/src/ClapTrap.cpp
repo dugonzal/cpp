@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 14:02:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:15:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void ClapTrap::takeDamage(unsigned int amount) <%
 void ClapTrap::beRepaired(unsigned int amount) <%
 	energyPoint--;	
 	hitPoint += amount;
-	cout << name << " is repaired for " << hitPoint "points!" << endl;
+	cout << name << " is repaired for " << hitPoint << " points!" << endl;
 %>
 
 const string	&ClapTrap::getName( void ) const <%
