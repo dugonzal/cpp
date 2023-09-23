@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:36:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 19:32:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:27:24 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/FragTrap.hpp"
 
-FragTrap::FragTrap( void ): ClapTrap(NULL) <%
+FragTrap::FragTrap( void ): ClapTrap("") <%
 	cout << "constructor FragTrap" << endl;
 	setHitPoint(100);
 	setEnergyPoint(100);

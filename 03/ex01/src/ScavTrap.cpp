@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/22 19:30:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:26:49 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ): ClapTrap(NULL) <%
+ScavTrap::ScavTrap( void ): ClapTrap("") <%
 	cout << "constructor ScavTrap default" << endl;
 	setHitPoint(100);
 	setEnergyPoint(50);
