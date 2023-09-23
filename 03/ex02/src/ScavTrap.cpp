@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:27:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:07:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap( void ): ClapTrap("") <%
 %>
 
 ScavTrap::~ScavTrap( void ) <%
-	cout << "desctructor ScavTrap" << endl;
+	cout << "destructor ScavTrap" << endl;
 %>
 ScavTrap::ScavTrap( string _name ): ClapTrap(_name)  <%
 	cout << "constructor with name" << endl;
@@ -41,6 +41,7 @@ const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 	return (*this);
 %>
 
+// ScavTrap <name> is now in Gatekeeper mode.
 void	ScavTrap::guardGate( void ) <%
-	cout << "klk" << endl;
+	cout << name << " is now in Gatekeeper mode." << endl;
 %>
