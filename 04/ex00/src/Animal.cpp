@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:05:04 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 10:13:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 12:36:41 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ const string &Animal::getType( void ) const<%
 const Animal &Animal::operator=( const Animal & other )<%
 	  type = other.getType();
 	  return (*this);
+%>
+
+void	Animal::makeSound( void ) const<%
+	cout << "este es un sonido muy animal" << endl;
 %>

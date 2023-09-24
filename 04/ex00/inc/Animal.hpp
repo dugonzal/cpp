@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:56:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 10:01:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 12:38:47 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ class Animal <%
 	public:
 	  Animal( void );
 	  Animal( const Animal &other );
-	  ~Animal( void );
+	  virtual ~Animal( void );
 	  Animal( const string &_type );
 	  const Animal &operator=( const Animal & other );
 	  const string &getType( void ) const;
+	  virtual void	makeSound( void )const;
 %>;
 
 #endif // ANIMAL_HPP

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 11:50:26 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 12:37:29 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int main() <%
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
 
-	/*i->makeSound(); //will output the cat sound!
+	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound();*/
+	meta->makeSound();
 
 	delete  j;
 	delete  i;
