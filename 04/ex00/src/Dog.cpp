@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 10:20:21 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 11:43:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Dog::Dog( const Dog &other ): Animal(other) <%
 	*this = other;
 %>
 
+// me gusta cpp, pero es demasiado abstracto
 const Dog &Dog::operator=( const Dog &other)<%
-	// me gusta cpp, pero es demasiado abstracto
 	Animal::operator=(other);
 	return (*this);
 %>

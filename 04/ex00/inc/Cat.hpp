@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:35:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 11:37:59 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 11:49:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat: public Animal <%
 		Cat( void );
 		~Cat( void );
 		Cat( const Cat &other );
-		operator=( const Cat &other);
+		const Cat &operator=( const Cat &other);
 
 %>;
 
