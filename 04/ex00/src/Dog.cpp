@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 23:56:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 10:01:31 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/09/24 10:15:03 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "../inc/Dog.hpp"
 
-# include <iostream>
-using std::cout; 
-using std::endl;
-using std::string;
 
-class Animal <%
-	protected:
-		string type;
-	public:
-	  Animal( void );
-	  Animal( const Animal &other );
-	  ~Animal( void );
-	  Animal( const string &_type );
-	  const Animal &operator=( const Animal & other );
-	  const string &getType( void ) const;
-%>;
+Dog::Dog( void ): Animal("Dog") <%
+	cout << "constructor Dog" << endl;
+%>
 
-#endif // ANIMAL_HPP
+Dog::~Dog( void )<%
+	cout << "destructor Dog" << endl;
+%>
+
+Dog::Dog( const Dog &other ): Animal(other) <%
+	*this = other;
+%>
+
+const Dog &Dog::operator=( const Dog &other)<%
+	// me gusta cpp, pero es demasiado abstracto
+	Animal::operator=(other);
+	return (*this);
+
+%>

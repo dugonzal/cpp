@@ -6,14 +6,26 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 00:14:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 10:18:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/Dog.hpp"
 
-int	main(int, const char**, const char**) <%
-	Animal a;
-	cout << "animal"<< endl;
-  return (9);
+int main() <%
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+//	const Animal* i = new Cat();
+	
+	std::cout << j->getType() << " " << std::endl;
+//	std::cout << i->getType() << " " << std::endl;
+
+	(void)meta;
+	/*i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();*/
+
+	delete  j;
+	delete meta;
+	return 0;
 %>

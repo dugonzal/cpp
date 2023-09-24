@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 23:56:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 10:01:31 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/09/24 10:03:18 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/09/24 10:09:55 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
-using std::cout; 
-using std::endl;
-using std::string;
+# include "Animal.hpp"
 
-class Animal <%
-	protected:
-		string type;
-	public:
-	  Animal( void );
-	  Animal( const Animal &other );
-	  ~Animal( void );
-	  Animal( const string &_type );
-	  const Animal &operator=( const Animal & other );
-	  const string &getType( void ) const;
+class Dog: public Animal <%
+	  
+	  public:
+		  Dog( void );
+		  ~Dog( void );
+		  Dog( const Dog &other );
+		  const Dog &operator=( const Dog &other);
+
 %>;
 
-#endif // ANIMAL_HPP
+
+# endif
