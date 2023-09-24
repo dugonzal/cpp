@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:03:18 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 13:17:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 13:19:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Dog: public Animal <%
 	  private:
-		string ideas[100];
 
 	  public:
 		  Dog( void );

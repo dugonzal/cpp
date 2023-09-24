@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:35:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 13:16:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 13:19:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Cat: public Animal <%
 	private:
-		string ideas[100];
 	public:
 		Cat( void );
 		~Cat( void );

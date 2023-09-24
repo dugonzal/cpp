@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 13:17:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 13:19:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 Cat::Cat( void ): Animal("Cat")<%
 	cout << "constructor default Cat" << endl;
-	ideas[0] = "hpña";
-
-	cout << ideas[0] << endl;
 %>
 
 Cat::~Cat( void ) <%
