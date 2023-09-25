@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 13:47:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:53:10 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat( void ): Animal("Cat"), level(new Brain())  <%
 
 Cat::~Cat( void ) <%
 	std::cout << "destructor default" << std::endl;
-	delete level;
+	delete  level;
 %>
 
 Cat::Cat( const Cat &other ): Animal(other) <%
