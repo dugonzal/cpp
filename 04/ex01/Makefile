@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 23:39:46 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/24 11:49:20 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/24 20:32:20 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,13 @@ SRC_DIR		:= src/
 OBJ_DIR		:= obj/
 
 
-SRC_FILES	:= main Animal Dog Cat
+SRC_FILES	:= main Animal Dog Cat Brain
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
 
 all: ${NAME}
-
+	@echo "$^"; #sleep  4 
 ${NAME}: ${OBJ}
 	${C} $^ -o $@
 

@@ -6,26 +6,26 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 13:19:01 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:59:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Cat.hpp"
 
 Cat::Cat( void ): Animal("Cat")<%
-	cout << "constructor default Cat" << endl;
+	std::cout << "constructor default Cat" << std::endl;
 %>
 
 Cat::~Cat( void ) <%
-	cout << "destructor default" << endl;
+	std::cout << "destructor default" << std::endl;
 %>
 
 Cat::Cat( const Cat &other ): Animal(other) <%
-	cout << "constructor copy" << endl;
+	std::cout << "constructor copy" << std::endl;
 %>
 
 const Cat &Cat::operator=( const Cat &other) <%
-	cout << "operator `=`" << endl;
+	std::cout << "operator `=`" << std::endl;
 	Animal::operator=(other);
 	return (*this);
 

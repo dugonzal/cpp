@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:56:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 12:38:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:31:57 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+
 using std::cout; 
 using std::endl;
 using std::string;
