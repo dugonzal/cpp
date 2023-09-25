@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 18:28:49 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/25 18:46:43 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/25 18:56:10 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR	:= src/
 
 OBJ_DIR := obj/
 
-SRC_FILES := main
+SRC_FILES := main Amateria
 
 
 SRC		:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
