@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 15:42:03 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/09/24 14:57:13 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/09/25 13:56:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
-#include "../inc/Cat.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main() <%
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-  
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	  
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+#include <string>
+#include <iostream>
 
-	delete  j;
-	delete  i;
-	return 0;
-%>
+class Brain <%
+	private:
+	  std::string *ideas;
+
+	public:
+		Brain( void );
+		~Brain( void );
+		Brain( const Brain &other );
+		Brain &operator=( const Brain &other );
+		std::string *getIdeas( void ) const;
+
+%>;
+
+
+
+#endif

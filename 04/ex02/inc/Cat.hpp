@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 15:42:03 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/09/24 11:35:27 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/09/25 14:23:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
-#include "../inc/Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main() <%
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-  
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	  
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-	delete  j;
-	delete  i;
-	return 0;
-%>
+class Cat: public Animal <%
+	private:
+		Brain *brain;
+	public:
+		Cat( void );
+		~Cat( void );
+		Cat( const Cat &other );
+		const Cat &operator=( const Cat &other);
+		void	makeSound( void ) const;
+%>;
+
+
+# endif
