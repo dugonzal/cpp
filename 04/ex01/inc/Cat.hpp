@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:35:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 20:21:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:23:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@
 
 class Cat: public Animal <%
 	private:
-		Brain *level;
+		Brain *brain;
 	public:
 		Cat( void );
 		~Cat( void );
 		Cat( const Cat &other );
 		const Cat &operator=( const Cat &other);
-		void	makeSound( void ) const{
-			std::cout << "yo soy un gato" << std::endl;
-		};
+		void	makeSound( void ) const;
 %>;
 
 

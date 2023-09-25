@@ -6,12 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:05:04 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 13:12:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:57:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Animal.hpp"
-
 
 Animal::Animal( void ): type("default")<%
 	cout << "constructor default Animal" << endl;
