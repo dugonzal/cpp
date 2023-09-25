@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 14:28:37 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:31:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Cat.hpp"
 
-Cat::Cat( void ): Animal("Cat"), brain(new Brain())  <%
+Cat::Cat( void ): Animal("Cat"), brain(new Brain)  <%
 	std::cout << "constructor default Cat" << std::endl;
 
 %>
