@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:28:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 15:30:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/22 16:59:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ using std::string;
 
 class ClapTrap <%
 	
-	protected:
+	private:
 
 		string	name;
 		int 	hitPoint; // life point 
@@ -43,6 +43,10 @@ class ClapTrap <%
 		int		getHitPoint( void ) const;
 		int		getEnergyPoint( void ) const;
 		int		getAttackDamage( void ) const;
+		void	setHitPoint( int const hp ) ;
+		void	setEnergyPoint( int const ep );
+		void	setAttackDamage( int const ad );
+		void	setName( const string &_name );
 %>;
 
 #endif

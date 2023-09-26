@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 17:50:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:27:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ScavTrap::ScavTrap( void ): ClapTrap("") <%
 	cout << "constructor ScavTrap default" << endl;
-	setHitPoint(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamage = 20;
 %>
 
 ScavTrap::~ScavTrap( void ) <%
@@ -24,9 +24,9 @@ ScavTrap::~ScavTrap( void ) <%
 %>
 ScavTrap::ScavTrap( string _name ): ClapTrap(_name)  <%
 	cout << "constructor with name" << endl;
-	setHitPoint(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamage = 20;
 %>
 
 //hay que inicializar la clase base explicitamente
@@ -41,7 +41,7 @@ const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 	return (*this);
 %>
 
-// ScavTrap <name> is now in Gatekeeper mode.
 void	ScavTrap::guardGate( void ) <%
-	cout << getName() << " is now in Gatekeeper mode." << endl;
+// ScavTrap <name> is now in Gatekeeper mode.
+	cout << name << " is now in Gatekeeper mode." << endl;
 %>

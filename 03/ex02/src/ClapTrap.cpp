@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:30:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 14:16:23 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:28:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void ClapTrap::takeDamage(unsigned int amount) <%
 	else 
 		cout << name << "is dead" << endl;
 	energyPoint--;
+
 %>
 
 // ClapTrap <name> is repaired for <health> points!
@@ -84,20 +85,4 @@ int		ClapTrap::getEnergyPoint( void ) const <%
 
 int		ClapTrap::getAttackDamage( void ) const <%
 	  return (attackDamage);
-%>
-
-void	ClapTrap::setName( const string &_name ) <%
-	  name = _name;
-%>
-
-void	ClapTrap::setHitPoint( int const hp ) <%
-	  hitPoint = hp;
-%>
-
-void	ClapTrap::setEnergyPoint( int const ep ) <%
-	  energyPoint = ep;
-%>
-
-void	ClapTrap::setAttackDamage( int const ad ) <%
-	  attackDamage = ad;
 %>

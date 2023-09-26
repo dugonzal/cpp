@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:34:47 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 12:07:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:31:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap: public ClapTrap <%
+class FragTrap: virtual public ClapTrap <%
 
 	public:
 	  FragTrap( void );

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:36:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 14:09:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:55:38 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 FragTrap::FragTrap( void ): ClapTrap("") <%
 	cout << "constructor FragTrap" << endl;
-	setHitPoint(100);
-	setEnergyPoint(100);
-	setAttackDamage(30);
+
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
 %>
 
 FragTrap::~FragTrap( void ) <%
@@ -25,15 +26,15 @@ FragTrap::~FragTrap( void ) <%
 
 FragTrap::FragTrap( const string &_name ): ClapTrap(_name)<%
 	cout << "constructor with name" << endl;
-	setHitPoint(100);
-	setEnergyPoint(100);
-	setAttackDamage(30);
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
 %>
 
 FragTrap::FragTrap( const FragTrap &other ): ClapTrap(other) <%
-	setHitPoint(100);
-	setEnergyPoint(100);
-	setAttackDamage(30);
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
 	*this = other;
 %>
 	  

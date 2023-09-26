@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 12:27:30 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:05:37 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ const ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) <%
 void	ScavTrap::guardGate( void ) <%
 // ScavTrap <name> is now in Gatekeeper mode.
 	cout << name << " is now in Gatekeeper mode." << endl;
+%>
+		
+
+void	ScavTrap::attack( void ) const <%
+
+	std::cout << "ScavTrap attack <<>>>" << std::endl;
 %>

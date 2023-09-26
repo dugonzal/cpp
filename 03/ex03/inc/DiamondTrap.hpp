@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:20:43 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/23 17:49:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:31:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "FragTrap.hpp"
 
-class DiamondTrap:  public FragTrap, public ScavTrap <%
+class DiamondTrap:  public virtual FragTrap, virtual public ScavTrap <%
 	
 	private:
 		string name;
