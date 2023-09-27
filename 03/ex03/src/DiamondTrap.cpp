@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 15:32:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/27 09:59:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ const DiamondTrap &DiamondTrap::operator=( const DiamondTrap &other )<%
 
 void DiamondTrap::attack(const std::string& target)<%
 	  FragTrap::attack(target);
-	  //no funciona ->ClavTrap::attack(target);
-	  //ScavTrap::attack(target);
-	  // ahora si funciona no entiendo nada
 %>
 
 //I am DiamondTrap <name>, and my ClapTrap name is <clap_name>.
