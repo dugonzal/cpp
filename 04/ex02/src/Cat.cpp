@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 14:31:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:01:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Cat::Cat( void ): Animal("Cat"), brain(new Brain)  <%
 	std::cout << "constructor default Cat" << std::endl;
-
 %>
 
 Cat::~Cat( void ) <%
@@ -30,7 +29,6 @@ const Cat &Cat::operator=( const Cat &other) <%
 	std::cout << "operator `=`" << std::endl;
 	Animal::operator=(other);
 	return (*this);
-
 %>
 
 void	Cat::makeSound( void ) const <%

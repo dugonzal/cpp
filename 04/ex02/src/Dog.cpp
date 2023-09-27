@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 15:17:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:02:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog( void ): Animal("Dog") /*,brain(new Brain)*/ <%
 	std::cout << "constructor Dog" << std::endl;
-	  brain = new Brain;
+	brain = new Brain;
 %>
 
 Dog::~Dog( void )<%
