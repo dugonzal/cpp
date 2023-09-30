@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:52:56 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/30 12:00:20 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:44:26 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class AMateria <%
 		const AMateria &operator=( const AMateria &other);
 		string const &getType( void ) const;
 		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 %>;
 
 
