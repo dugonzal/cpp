@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 18:28:49 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/25 18:56:10 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/09/30 11:57:16 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= aa 
+NAME	:= antiMateria 
 
 C		:= c++ -g3 -Wall -Werror -Wextra -pedantic -std=c++98 -fsanitize=address
 
@@ -18,7 +18,7 @@ SRC_DIR	:= src/
 
 OBJ_DIR := obj/
 
-SRC_FILES := main Amateria
+SRC_FILES := main AMateria
 
 
 SRC		:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:52:56 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 16:42:58 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/30 12:00:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ using std::cout;
 using std::endl;
 using std::string;
 
-class Amateria <%
+class AMateria <%
 	protected:
-
+		string type;
+	  
 	public:
-		Amateria( void );
-		~Amateria( void );
-		Amateria( const Amateria &other );
-		const Amateria &operator=( const Amateria &other);
-
-
+		AMateria( void );
+		~AMateria( void );
+		AMateria( const AMateria &other );
+		AMateria( const string &_type );
+		const AMateria &operator=( const AMateria &other);
+		string const &getType( void ) const;
+		virtual AMateria* clone() const = 0;
 %>;
 
 

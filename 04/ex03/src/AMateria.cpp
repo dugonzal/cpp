@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:38:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 16:43:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/30 11:58:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Amateria.hpp"
+#include "../inc/AMateria.hpp"
 
-
-Amateria::Amateria( void ) <%
-	cout << "constructor Amateria" << endl;
-
+AMateria::AMateria( void ) <%
+	cout << "constructor AMateria" << endl;
 %>
 
-Amateria::~Amateria( void ) <%
-	cout << "destructor Amateria" << endl;
-
-
+AMateria::~AMateria( void ) <%
+	cout << "destructor AMateria" << endl;
 %>
-Amateria::Amateria( const Amateria &other ) <%
+
+AMateria::AMateria( const AMateria &other ) <%
 	*this = other;
 %>
 
-const Amateria &Amateria::operator=( const Amateria &other)<%
-	(void)other;
-// no se que atributos tiene esta clase
-  return (*this);
+AMateria::AMateria( const string &_type ): type(_type) <%
+	cout << "constructor type AMateria" << endl;
+%>
+const AMateria &AMateria::operator=( const AMateria &other)<%
+	type = other.getType();
+	return (*this);
+%>
+
+string const &AMateria::getType( void ) const <%
+	return (type);
 %>
