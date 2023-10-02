@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 21:44:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/27 09:59:00 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:11:03 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 DiamondTrap::DiamondTrap( void ): FragTrap(""), ScavTrap("") <%
 	cout << "constructor DiamondTrap" << endl;
 	FragTrap::hitPoint =  FragTrap::hitPoint ;
-	FragTrap::energyPoint = FragTrap::energyPoint;
+	FragTrap::energyPoint = ScavTrap::energyPoint;
 	FragTrap::attackDamage = FragTrap::attackDamage;
 %>
 
@@ -27,7 +27,7 @@ DiamondTrap::~DiamondTrap( void )<%
 DiamondTrap::DiamondTrap( const DiamondTrap &other ): ClapTrap(other), FragTrap(other), ScavTrap(other) <%
 	cout << "constructor DiamondTrap with copy" << endl;
 	FragTrap::hitPoint =  FragTrap::hitPoint ;
-	FragTrap::energyPoint = FragTrap::energyPoint;
+	FragTrap::energyPoint = ScavTrap::energyPoint;
 	FragTrap::attackDamage = FragTrap::attackDamage;
 	*this = other;
 %>
@@ -35,7 +35,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap &other ): ClapTrap(other), FragTrap(
 DiamondTrap::DiamondTrap( const string & n ): FragTrap(n + "_clap_name"), ScavTrap(n + "_clap_name"), name(n) <%
 	cout << "constructor DiamondTrap with name" << endl;
 	FragTrap::hitPoint =  FragTrap::hitPoint ;
-	FragTrap::energyPoint = FragTrap::energyPoint;
+	FragTrap::energyPoint = ScavTrap::energyPoint;
 	FragTrap::attackDamage = FragTrap::attackDamage;
 %>
 
