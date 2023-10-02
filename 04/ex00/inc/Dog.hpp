@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:03:18 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 12:40:59 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:41:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ class Dog: public Animal <%
 		  ~Dog( void );
 		  Dog( const Dog &other );
 		  const Dog &operator=( const Dog &other);
-		  void	makeSound( void ) const <%
-			  cout << "yo soy un perro hua hua" << endl;
-		  %>
+		  void	makeSound( void ) const ;
 %>;
 
 

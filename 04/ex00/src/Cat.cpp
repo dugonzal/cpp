@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 11:50:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:43:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ const Cat &Cat::operator=( const Cat &other) <%
 	cout << "operator `=`" << endl;
 	Animal::operator=(other);
 	return (*this);
+%>
 
+void	Cat::makeSound( void ) const <%
+	  std::cout << "yo soy un gato" << std::endl;
 %>

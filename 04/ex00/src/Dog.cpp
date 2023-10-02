@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/24 11:43:00 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:40:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,8 @@ Dog::Dog( const Dog &other ): Animal(other) <%
 const Dog &Dog::operator=( const Dog &other)<%
 	Animal::operator=(other);
 	return (*this);
+%>
+
+void	Dog::makeSound( void ) const <%
+	cout << "yo soy un perro hua hua" << endl;
 %>
