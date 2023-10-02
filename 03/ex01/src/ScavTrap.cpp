@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:21:21 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/26 15:05:37 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:08:10 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ void	ScavTrap::guardGate( void ) <%
 // ScavTrap <name> is now in Gatekeeper mode.
 	cout << name << " is now in Gatekeeper mode." << endl;
 %>
-		
 
 void	ScavTrap::attack( void ) const <%
-
 	std::cout << "ScavTrap attack <<>>>" << std::endl;
 %>
