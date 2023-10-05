@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/02 18:44:10 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/04 09:49:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ Cat::~Cat( void ) <%
 	delete  brain; 
 %>
 
-Cat::Cat( const Cat &other ): Animal(other) <%
+Cat::Cat( const Cat &other ): Animal(other), brain(other.brain)<%
 	std::cout << "constructor copy" << std::endl;
 %>
 
 const Cat &Cat::operator=( const Cat &other) <%
 	std::cout << "operator `=`" << std::endl;
-	Animal::operator=(other);
+//	delete [] brain;
+	*(brain) = *(other.brain);
 	return (*this);
 %>
 

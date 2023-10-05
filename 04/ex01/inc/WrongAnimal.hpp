@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 11:35:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/05 06:32:07 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/10/05 18:20:22 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/10/05 21:18:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef		WRONGANIMAL_HPP
+# define	WRONGANIMAL_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+#include <iostream>
 
-class Cat: public Animal <%
-	
+class WrongAnimal <%
+
 	private:
-		Brain *brain;
-	
+		std::string type;
 	public:
-		Cat( void );
-		~Cat( void );
-		Cat( const Cat &other );
-		const Cat &operator=( const Cat &other);
-		void	makeSound( void ) const;
-
+	  WrongAnimal( void );
+	  ~WrongAnimal( void );
+	  WrongAnimal( const WrongAnimal &other );
+	  WrongAnimal &operator=( const WrongAnimal &other );
+	  WrongAnimal(const std::string &type );
+	  void	makeSound( void ) const;
 %>;
 
-# endif
+#endif

@@ -6,13 +6,13 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 23:39:46 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/24 20:32:20 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/05 18:15:35 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= animal
 
-C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3 -fsanitize=address
+C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3  -fsanitize=address
 
 
 SRC_DIR		:= src/
@@ -20,7 +20,7 @@ SRC_DIR		:= src/
 OBJ_DIR		:= obj/
 
 
-SRC_FILES	:= main Animal Dog Cat Brain
+SRC_FILES	:= main Animal Dog Cat Brain WrongCat
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))

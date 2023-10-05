@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:00:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 14:20:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:18:50 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ Brain::~Brain( void ) <%
 %>
 
 Brain::Brain( const Brain &other ) <%
-	*this = other;
+  	delete [] this->getIdeas();
+
+	ideas = other.ideas;
 %>
 
 std::string *Brain::getIdeas( void ) const <%
@@ -32,6 +34,8 @@ std::string *Brain::getIdeas( void ) const <%
 %>
 
 Brain &Brain::operator=( const Brain &other )<%
-	ideas = other.getIdeas();
+  	delete ideas;
+
+	*(ideas) = *(other.ideas);
 	return (*this);
 %>
