@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 23:39:46 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/27 10:01:04 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/05 21:15:05 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR		:= src/
 OBJ_DIR		:= obj/
 
 
-SRC_FILES	:= main Animal Dog Cat
+SRC_FILES	:= main Animal Dog Cat WrongCat WrongAnimal
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
