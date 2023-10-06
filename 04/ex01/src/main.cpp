@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 12:21:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:42:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ int main() <%
 	Dog aaa(dd);
 
 	aaa.makeSound();
+	Dog c;
+	Dog b;
+
+	c = b;
+
+	c.makeSound();
 	Brain pp;
 	Brain p(pp);
   

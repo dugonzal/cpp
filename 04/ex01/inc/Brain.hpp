@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 14:57:13 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 12:21:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:31:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Brain <%
 		Brain( const Brain &other );
 		Brain &operator=( const Brain &other );
 		//void allIdeas( void ) ;
-
 %>;
 
 

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:00:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 12:21:11 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:33:52 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ void Brain::allIdeas( void ) <%
 */ 
 
 Brain &Brain::operator=( const Brain &other )<%
-	for (int i = 0; i < 100; i++)
-	  ideas[i] = other.ideas[i];
+	if (this != &other) {
+		delete [] ideas;
+		ideas = new std::string[100];
+		for (int i = 0; i < 100; i++)
+			ideas[i] = other.ideas[i];
+	}
 	return (*this);
 %>
