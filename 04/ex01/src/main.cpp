@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 12:42:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:00:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ int main() <%
 	c.makeSound();
 	Brain pp;
 	Brain p(pp);
-  
+	Brain app;
+	
+	app = pp;
 	const Animal* o = new Cat();
 	
 	Cat ad(*static_cast<const Cat*>(o));
@@ -53,6 +55,7 @@ int main() <%
 	delete o;
 //	p.allIdeas();
 	(void)p;
+	(void)app;
 	deepCopyDog->makeSound();
 	deepCopyCat->makeSound();
 
