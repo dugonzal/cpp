@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 13:00:56 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:52:03 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@ int main() <%
   
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	  
+	 
+
+	Animal *gatoCat[10];
+	for (int i = 0; i <  10; i++) {
+		gatoCat[i] = new Cat();
+		gatoCat[i]->makeSound();
+		delete gatoCat[i];
+	}
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	const Animal* ii = new Cat();

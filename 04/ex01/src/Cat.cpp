@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:43:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 13:03:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:52:38 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ const Cat &Cat::operator=( const Cat &other) <%
 %>
 
 void	Cat::makeSound( void ) const <%
-	std::cout << "yo soy un gato" << std::endl;
+	std::cout << "miau Cat" << std::endl;
 %>
