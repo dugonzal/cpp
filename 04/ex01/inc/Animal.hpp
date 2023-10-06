@@ -6,15 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:56:15 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 15:41:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 02:49:11 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-
+# include <unistd.h>
 # include <iostream>
-
+#include <cstring>
 using std::cout; 
 using std::endl;
 using std::string;

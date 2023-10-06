@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 23:39:46 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/10/05 18:15:35 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/05 23:58:23 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,18 @@ NAME		:= animal
 
 C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3  -fsanitize=address
 
-
 SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
-
-SRC_FILES	:= main Animal Dog Cat Brain WrongCat
+SRC_FILES	:= main Animal Dog Cat Brain WrongCat WrongAnimal
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
 
 all: ${NAME}
 	@echo "$^"; #sleep  4 
+
 ${NAME}: ${OBJ}
 	${C} $^ -o $@
 
