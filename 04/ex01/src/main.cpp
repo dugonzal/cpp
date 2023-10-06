@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 03:19:03 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:10:49 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int main() <%
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	  
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
 	const Animal* ii = new Cat();
-	//const Animal* ia = new Cat();
 	const Animal *a = new Cat();
 	const Animal* deepCopyCat = new Cat(*static_cast<const Cat*>(a));
 
@@ -35,13 +36,20 @@ int main() <%
 	aaa.makeSound();
 	Brain pp;
 	Brain p(pp);
-
+  
+	const Animal* o = new Cat();
+	
+	Cat ad(*static_cast<const Cat*>(o));
+	
+	Cat ss = ad;
+	ad.makeSound();
+	ss.makeSound();
+	delete o;
+	p.allIdeas();
+  
 	deepCopyDog->makeSound();
 	deepCopyCat->makeSound();
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
 
-	(void)p;
 	delete tmp;
 	delete deepCopyDog;
 	delete a;

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 02:48:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:08:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@ Dog::~Dog( void )<%
 %>
 
 Dog::Dog( const Dog &other ): Animal(other) <%
-	brain = other.brain;
-	std::cout << brain << std::endl;
-
-	brain = new Brain();
-	std::cout << brain << std::endl;
-	sleep(2);
+	brain = new Brain(*(other.brain));
+//	sleep(2);
 %>
 
 // me gusta cpp, pero es demasiado abstracto
 const Dog &Dog::operator=( const Dog &other)<%
-	Animal::operator=(other);
+	if (this != &other) {
+		Animal::operator=(other);
+		*(brain) = *(other.brain);
+	}
 	return (*this);
 %>
 

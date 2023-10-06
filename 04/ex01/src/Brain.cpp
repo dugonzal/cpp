@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:00:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 02:25:01 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:09:55 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Brain::Brain( void ) <%
 	std::cout << "constructor Brain" << std::endl;
-	  for (int i = 0; i < 100; i++)
-		  ideas[i].clear();
+	  for (int i = 0; i < 3; i++)
+		  ideas[i] = "hola";
 %>
 
 Brain::~Brain( void ) <%
@@ -28,7 +28,8 @@ Brain::Brain( const Brain &other ) <%
 
 void Brain::allIdeas( void ) <%
 	for (int i = 0; i < 100; i++)
-	  std::cout << ideas[i] << std::endl;
+	  if (!ideas[i].empty())
+			std::cout << ideas[i] << std::endl;
 %>
 
 Brain &Brain::operator=( const Brain &other )<%
