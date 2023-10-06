@@ -6,15 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:05:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/27 10:02:20 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:03:19 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Dog.hpp"
 
-Dog::Dog( void ): Animal("Dog") /*,brain(new Brain)*/ <%
+Dog::Dog( void ): Animal("Dog"), brain(new Brain) <%
 	std::cout << "constructor Dog" << std::endl;
-	brain = new Brain;
 %>
 
 Dog::~Dog( void )<%
@@ -23,12 +22,18 @@ Dog::~Dog( void )<%
 %>
 
 Dog::Dog( const Dog &other ): Animal(other) <%
-	*this = other;
+	brain = new Brain(*(other.brain));
+//	sleep(2);
 %>
 
 // me gusta cpp, pero es demasiado abstracto
 const Dog &Dog::operator=( const Dog &other)<%
-	Animal::operator=(other);
+	if (this != &other) {
+		delete brain;
+		brain = new Brain();
+		*(brain) = *(other.brain);
+		Animal::operator=(other);
+	}
 	return (*this);
 %>
 

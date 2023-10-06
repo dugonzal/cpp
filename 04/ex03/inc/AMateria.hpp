@@ -6,16 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 18:52:56 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/30 13:44:26 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:57:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-#define AMATERIA_HPP
-#include <iostream>
+# include <iostream>
+
 using std::cout;
 using std::endl;
 using std::string;

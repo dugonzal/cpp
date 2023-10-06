@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 18:20:01 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/05 21:20:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:45:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ WrongAnimal &WrongAnimal::operator=( const WrongAnimal &other ) <%
 %>
 
 void	WrongAnimal::makeSound( void ) const <%
-	std::cout << "sonido muy animal" << std::endl;
+	std::cout << "WrongAnimal sound" << std::endl;
 %>
 

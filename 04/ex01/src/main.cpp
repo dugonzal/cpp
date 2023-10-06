@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 13:52:03 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:03:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main() <%
 	ad.makeSound();
 	ss.makeSound();
 	delete o;
-//	p.allIdeas();
+	p.allIdeas();
 	(void)p;
 	(void)app;
 	deepCopyDog->makeSound();

@@ -6,16 +6,17 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:00:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/09/25 14:20:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:08:26 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Brain.hpp"
 
-Brain::Brain( void ): ideas(new std::string[100]) <%
+Brain::Brain( void ) <%
 	std::cout << "constructor Brain" << std::endl;
-	  for (int i = 0; i < 100; i++)
-		  ideas[i].clear();
+	ideas = new std::string[100];
+	for (int i = 0; i < 100; i++)
+	  ideas[i].empty();
 %>
 
 Brain::~Brain( void ) <%
@@ -24,14 +25,26 @@ Brain::~Brain( void ) <%
 %>
 
 Brain::Brain( const Brain &other ) <%
-	*this = other;
+	ideas = new std::string[100];
+	for (int i = 0; i < 100; i++)
+		ideas[i] = other.ideas[i];
 %>
 
-std::string *Brain::getIdeas( void ) const <%
-	return (this->ideas);
+/*
+void Brain::allIdeas( void ) <%
+	for (int i = 0; i < 100; i++)
+	  if (!ideas[i].empty())
+			std::cout << ideas[i] << std::endl;
 %>
+*/ 
 
+//std::cout << (ideas) << std::endl;
 Brain &Brain::operator=( const Brain &other )<%
-	ideas = other.getIdeas();
+	if (this != &other) {
+		delete [] ideas;
+		ideas = new std::string[100];
+		for (int i = 0; i < 100; i++)
+			ideas[i] = other.ideas[i];
+	}
 	return (*this);
 %>

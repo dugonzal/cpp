@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:00:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/06 13:08:26 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:06:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Brain::~Brain( void ) <%
 Brain::Brain( const Brain &other ) <%
 	ideas = new std::string[100];
 	for (int i = 0; i < 100; i++)
-		ideas[i] = other.ideas[i];
+	  ideas[i] = other.ideas[i];
 %>
 
 /*

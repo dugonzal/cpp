@@ -6,14 +6,13 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 23:39:46 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/09/24 20:32:20 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/06 13:56:19 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= animal
 
 C			:= c++ -std=c++98 -Wall -Werror -Wextra -pedantic -g3 -fsanitize=address
-
 
 SRC_DIR		:= src/
 
@@ -26,7 +25,7 @@ SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
 
 all: ${NAME}
-	@echo "$^"; #sleep  4 
+
 ${NAME}: ${OBJ}
 	${C} $^ -o $@
 
