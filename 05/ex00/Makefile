@@ -6,7 +6,7 @@
 #    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 13:26:28 by dugonzal          #+#    #+#              #
-#    Updated: 2023/10/24 14:10:27 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/24 14:40:21 by dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR 	:= src/
 
 OBJ_DIR 	:= obj/
 
-SRC_FILES 	:= main
+SRC_FILES 	:= main Bureaucrat
 
 SRC			:= $(addprefix ${SRC_DIR}, ${addsuffix .cpp, ${SRC_FILES}})
 
