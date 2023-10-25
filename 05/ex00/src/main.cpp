@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/24 13:37:42 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:33:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "../inc/Bureaucrat.hpp"
 
 int	main(int , char **, char **) {
-
-	std::cout << "free for random" << std::endl;
-
-	return 0;
+	try {
+	  std::cout << "free for random" << std::endl;
+	  throw 23;
+	}
+	catch (int e ) {
+	  std::cout << "zs"<< e << std::endl;
+	}
+	  return 0;
 }
