@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/25 19:16:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 11:25:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int	main(int, char **, char **) {
 		i -= i == p +  i - 0 + 3;
 		std::cout << i << std::endl;
 		Bureaucrat tmp;
+		Bureaucrat tmp2("bob", -1242);
 		
-		if (tmp.getGrade() > 0)
-			throw Bureaucrat::GradeTooHighException() ;
+		//if (tmp.getGrade() > 0)
+		//	throw Bureaucrat::GradeTooHighException() ;
 	}
 	catch (Bureaucrat::GradeTooHighException &e) {
 	  std::cout << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/25 19:27:55 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 11:19:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Bureaucrat <%
 	
 	private:
 		std::string name;
-		int grade;
+		unsigned int grade;
 	
 	public:
 		Bureaucrat( void);

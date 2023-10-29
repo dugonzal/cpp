@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/25 21:08:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 11:23:50 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@ Bureaucrat::~Bureaucrat(void) <% %>
 
 Bureaucrat::Bureaucrat(void): name("free for random"), grade(42) <% %>
 
-Bureaucrat::Bureaucrat(const std::string &other, int g): name(other), grade(g) <%%>
+Bureaucrat::Bureaucrat(const std::string &other, int g): name(other) <%
+
+  if (g < 1)
+	throw  GradeTooHighException();
+  else if (g > 150)
+	std::cout << "error es mayor a 150" << std::endl;
+%>
 
 //void Bureaucrat::getName(const std::string &n) const <% name = n; %>;
 
