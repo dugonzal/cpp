@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 13:26:28 by dugonzal          #+#    #+#              #
-#    Updated: 2023/10/24 14:40:21 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/10/25 19:28:36 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		:= a
+NAME 		:= Bureaucrat 
 
-C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address
+C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
 SRC_DIR 	:= src/
 
@@ -22,7 +22,7 @@ SRC_FILES 	:= main Bureaucrat
 
 SRC			:= $(addprefix ${SRC_DIR}, ${addsuffix .cpp, ${SRC_FILES}})
 
-OBJ			:= $(addprefix ${OBJ_DIR}, ${addsuffix .o, ${SRC_FILES}  } )
+OBJ			:= $(addprefix ${OBJ_DIR}, ${addsuffix .o, ${SRC_FILES}})
 
 all: ${NAME}
 
@@ -35,6 +35,8 @@ ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
 
 clean:
 	rm -rf $@
+
 fclean: clean
 	rm -rf ${OBJ_DIR}
+
 re: fclean all

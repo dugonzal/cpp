@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/25 16:33:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/25 19:27:55 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,29 @@
 # include "../inc/Bureaucrat.hpp"
 
 #include <iostream>
+#include <exception>
 
 class Bureaucrat <%
+	
 	private:
-		const std::string name;
-		const int grade;
+		std::string name;
+		int grade;
+	
 	public:
-//	Bureaucrat( void);
 		Bureaucrat( void);
+		~Bureaucrat( void);
+		Bureaucrat(const std::string &other, int g);
+		Bureaucrat &operator=(Bureaucrat const &other);	
+		int getGrade(void) ;  
+	//	void setName(const std::string &n) const;
+	
+	public:		
+	  class max: public std::exception  <%
+		public:		
+		  virtual const char *what() const throw();
+	  %>;
+	  class GradeTooHighException: public std::exception  <%
+		public:
+		  virtual const char *what() const throw();
+	  %>;
 %>;
-
