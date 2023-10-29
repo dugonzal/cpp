@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 11:23:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:41:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ Bureaucrat::~Bureaucrat(void) <% %>
 
 Bureaucrat::Bureaucrat(void): name("free for random"), grade(42) <% %>
 
-Bureaucrat::Bureaucrat(const std::string &other, int g): name(other) <%
-
+void Bureaucrat::ex(int g) <%
   if (g < 1)
-	throw  GradeTooHighException();
+	throw GradeTooLowException();
   else if (g > 150)
-	std::cout << "error es mayor a 150" << std::endl;
+	throw GradeTooHighException();
 %>
 
-//void Bureaucrat::getName(const std::string &n) const <% name = n; %>;
+Bureaucrat::Bureaucrat(const std::string &other, int g): name(other) <%
+	ex(g);
+	grade = g;
+%>
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other) <% 
 	
@@ -37,4 +39,29 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other) <%
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() <% return ("min hahah"); %>
 
-int Bureaucrat::getGrade(void) <% return (grade); %>  
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()<% return (" hahah"); %>
+
+int Bureaucrat::getGrade(void) <% return (grade); %>
+
+std::string Bureaucrat::getName(void) <% return (name); %>
+
+
+void Bureaucrat::increment(void) <% 
+	if (grade > 149)
+	  throw GradeTooHighException();
+	else
+	  grade++;
+%>
+
+  void Bureaucrat::decrement(void) <% 
+	if (grade < 1)
+	  throw GradeTooLowException();
+	else
+		grade--;
+%>
+
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat &other) <%
+	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;
+	return (os);
+%>
