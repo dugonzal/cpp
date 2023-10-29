@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 23:36:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 23:51:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int main() <%
 		  delete [] Animal;
 		std::cerr << e.what() << std::endl;
 	%>
+
+
+
 	if (Animal != NULL)
 		delete [] Animal;
 	return 0;
