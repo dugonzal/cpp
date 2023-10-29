@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 21:44:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:50:37 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,23 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other) <%
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() <% return ("min hahah"); %>
 
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()<% return (" hahah"); %>
+const char *Bureaucrat::GradeTooLowException::what(void) const throw() <% return (" hahah"); %>
 
 int Bureaucrat::getGrade(void) <% return (grade); %>
 
 std::string Bureaucrat::getName(void) <% return (name); %>
 
-
 void Bureaucrat::increment(void) <% 
 	if (grade > 149)
 	  throw GradeTooHighException();
-	else
-	  grade++;
+	grade++;
 %>
 
   void Bureaucrat::decrement(void) <% 
 	if (grade < 1)
 	  throw GradeTooLowException();
-	else
-		grade--;
+	grade--;
 %>
-
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &other) <%
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;

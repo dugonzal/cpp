@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 21:40:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:48:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int main() <%
 		
 		tmp2.increment();
 		std::cout << tmp2 << std::endl;
-	
+		
+		Bureaucrat tmp(tmp2);
+
+		std::cout << tmp << std::endl;
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%
 		std::cerr << "Excepción capturada: " << e.what() << std::endl;

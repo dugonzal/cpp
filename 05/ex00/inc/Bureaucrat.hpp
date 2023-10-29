@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 21:44:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:51:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,17 @@ class Bureaucrat <%
 		std::string getName(void);
 		void decrement(void);
 		void increment(void);
+	
 	public:
-	  class GradeTooHighException: public std::exception  <%
-		public:
-		  virtual const char *what() const throw();
-	  %>;
-	  class GradeTooLowException: public std::exception  <%
-		public:
-		  virtual const char *what() const throw();
+		class GradeTooHighException: public std::exception  <%
+		
+		  public:
+			virtual const char *what() const throw();
+		%>;
+		class GradeTooLowException: public std::exception  <%
+		
+		  public:
+			virtual const char *what() const throw();
 	  %>;
 %>;
 
