@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 13:26:28 by dugonzal          #+#    #+#              #
-#    Updated: 2023/11/03 16:57:10 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/06 15:08:02 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		:= Bureaucrat 
+NAME 		:= Bureaucrat
 
 C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 

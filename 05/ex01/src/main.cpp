@@ -6,20 +6,28 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/04 22:32:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:31:40 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Bureaucrat.hpp"
+#include "../inc/Form.hpp"
 
 int main() <%
 	Bureaucrat *Animal = NULL;
+	Form a;
+	
+	Form z(a);
+
+	z = a;
+	std::cout << z.getName();
+	std::cout << z.getIsSigned();
+
 	try <%
 		std::cout << "free for random" << std::endl;
 		Bureaucrat tmp2("bob", 150);
 		std::cout << "[>>inicio <<]\n" << tmp2 << std::endl;
 		tmp2.decrement();
-		std::cout << tmp2 << std::endl;
+		std::cout << std::endl <<" *  * " << std::endl << tmp2 << "*   *" << std::endl;
 		
 		Bureaucrat *Animal = new Bureaucrat[10];
 		for (int i = 0; i < 10; i++) <%
