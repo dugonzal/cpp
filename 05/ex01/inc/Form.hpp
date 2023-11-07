@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 10:16:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:19:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class Form <%
 		int getGrade(void) const;
 		int getSgrade(void) const;
 		Form &operator=(const Form &other);
-	
+		void beSigned(const Bureaucrat &other);
+		void setIsSigned(bool v);
 	public:
 		class GradeTooHighException: public std::exception <%
 			public:

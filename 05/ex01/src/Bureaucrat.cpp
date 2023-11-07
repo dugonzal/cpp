@@ -6,11 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/31 16:29:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:09:10 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Bureaucrat.hpp"
+# include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::~Bureaucrat(void) <% %>
 
@@ -36,9 +36,9 @@ const char *Bureaucrat::GradeTooHighException::what(void) const throw() <% retur
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw() <% return ("lowest possible grade"); %>
 
-int Bureaucrat::getGrade(void) <% return (grade); %>
+int Bureaucrat::getGrade(void) const <% return (grade); %>
 
-std::string Bureaucrat::getName(void) <% return (name); %>
+const std::string Bureaucrat::getName(void) const<% return (name); %>
 
 void Bureaucrat::increment(void) <% 
 	if (grade > 149)
