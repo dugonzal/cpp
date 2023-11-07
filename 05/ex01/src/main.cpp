@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 10:24:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:42:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ int main() <%
 	Form z(a);
 
 	z = a;
-	std::cout << z.getName();
-	std::cout << z.getIsSigned();
+	std::cout << z.getName() << std::endl;
+	std::cout << z.getIsSigned() << std::endl ;
+	Bureaucrat tmpp("bob", 150);
 	
-	Form("hola mundo", 150, 2);
+	Form p("hola mundo", 150, 2);
+
+	p.beSigned(tmpp);
 	try <%
 		std::cout << "free for random" << std::endl;
 		Bureaucrat tmp2("bob", 150);

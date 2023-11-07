@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 13:19:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:42:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Form::~Form(void) <% %>
 
-Form::Form(void) : name("articulo 53"), isSigned(false), grade(42), sGrade(24) <% %>
+Form::Form(void): name("articulo 53"), isSigned(false), grade(42), sGrade(24) <% %>
 
 Form::Form(const Form &other): name(other.name), isSigned(other.isSigned), grade(other.grade), sGrade(other.sGrade) <% %>
 
@@ -35,7 +35,6 @@ Form::Form(const std::string _name, const int g, const int s): name(_name), isSi
 %>
 
 void Form::beSigned(const Bureaucrat &other) <%
-
 	if (other.getGrade() <= grade)
 	  isSigned = true;
 %>
