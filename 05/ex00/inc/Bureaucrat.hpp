@@ -6,13 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 23:38:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:34:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
-
-# include "../inc/Bureaucrat.hpp"
 
 #include <iostream>
 #include <exception>
@@ -20,7 +18,7 @@
 class Bureaucrat <%
 	
 	private:
-		std::string name;
+		const std::string name;
 		int grade;
 
 	public:

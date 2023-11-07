@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 23:36:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:29:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ Bureaucrat::Bureaucrat(const std::string &other, int g): name(other) <%
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other) <% 
 	if (this == &other)
 	  return (*this);
-	
-	name = other.name;
+	  // como el nombre es constante no puedo copiarlo
 	grade = other.grade;
 	return (*this);
 %>
