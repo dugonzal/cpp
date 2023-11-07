@@ -6,11 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 13:44:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:22:45 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Bureaucrat.hpp"
+# include "../inc/Form.hpp"
 
 Bureaucrat::~Bureaucrat(void) <% %>
 
@@ -50,6 +50,11 @@ void Bureaucrat::increment(void) <%
 	if (grade < 1)
 	  throw GradeTooLowException();
 	grade--;
+%>
+
+void Bureaucrat::signForm(Form &other) const<%
+	
+	  std::cout << name << "couldn’t sign";
 %>
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &other) <%

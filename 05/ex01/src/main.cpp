@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 13:42:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:10:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main() <%
 
 	p.beSigned(tmpp);
 	try <%
+		Form p("hola mundo", 150, 2);
 		std::cout << "free for random" << std::endl;
 		Bureaucrat tmp2("bob", 150);
 		std::cout << "[>>inicio <<]\n" << tmp2 << std::endl;
@@ -71,7 +72,15 @@ int main() <%
 		  delete [] Animal;
 		std::cerr << e.what() << std::endl;
 	%>
+	catch (const Form::GradeTooHighException &e) <%
+	
+		std::cerr << e.a() << std::endl;
 
+  %>
+  catch (const Form::GradeTooLowException &e) <%
+		std::cerr << e.what() << std::endl;
+  %>
+  
 	if (Animal != NULL)
 		delete [] Animal;
 	return 0;

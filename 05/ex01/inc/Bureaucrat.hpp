@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 13:09:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:24:15 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Bureaucrat <%
 		const std::string getName(void) const;
 		void decrement(void);
 		void increment(void);
-	
+		void signForm(void)const;	
 	public:
 		class GradeTooHighException: public std::exception  <%
 		

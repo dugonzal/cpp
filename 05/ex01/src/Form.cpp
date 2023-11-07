@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 13:42:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:13:41 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ int Form::getGrade(void) const <% return (grade); %>
 int Form::getSgrade(void) const <% return (sGrade); %>
 
 const char *Form::GradeTooHighException::what() const throw() <% return ("Grade too high"); %>
+
+const char *Form::GradeTooHighException::a() const throw() <% return ("Grade too high"); %>
 
 const char *Form::GradeTooLowException::what() const throw() <% return ("Grade too low"); %>
