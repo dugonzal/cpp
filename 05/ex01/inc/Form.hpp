@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/06 15:58:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:16:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class Form <%
 		~Form(void);
 		Form(const Form &other);
 		const std::string getName(void) const;
-		// no puedo retornarlo constante excepcion de getName -werror
+		Form(const std::string _name, const int g, const int s);
+		// no puedo retornarlo constante excepcion de getName
 		/*const*/bool getIsSigned(void) const;
 		int getGrade(void) const;
 		int getSgrade(void) const;
@@ -44,3 +45,5 @@ class Form <%
 				   virtual const char *what() const throw();
 		%>;
 %>;
+
+std::ostream &operator<<(std::ostream &os, const Form &other);

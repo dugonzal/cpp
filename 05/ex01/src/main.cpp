@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/06 15:31:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:24:40 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main() <%
 	z = a;
 	std::cout << z.getName();
 	std::cout << z.getIsSigned();
-
+	
+	Form("hola mundo", 150, 2);
 	try <%
 		std::cout << "free for random" << std::endl;
 		Bureaucrat tmp2("bob", 150);

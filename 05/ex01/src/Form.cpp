@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/06 15:29:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:31:34 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ Form &Form::operator=(const Form &other) <%
 		return (*this);
 	isSigned = other.isSigned;
 	return (*this);
+%>
+
+// el grado de sign  y grado de ejecucion, cumplen las reglas de los burocratas 
+Form::Form(const std::string _name, const int g, const int s): name(_name), isSigned(false), grade(g), sGrade(s) <%
+	if (g < 1 || s < 1)
+		throw (GradeTooLowException());
+	else if (g > 150 || s > 150)
+		throw GradeTooHighException();
 %>
 
 const std::string Form::getName(void) const <% return (name); %>
