@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 19:24:20 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:53:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <exception>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form <%
 	private:
 		const std::string name;
 		bool isSigned;
-		const int grade;
-		const int sGrade;
+		const int grade; const int sGrade;
 
 	public:
 		Form(void);

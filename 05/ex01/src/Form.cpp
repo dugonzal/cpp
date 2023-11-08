@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 19:13:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:53:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,9 @@ const char *Form::GradeTooHighException::what() const throw() <% return ("Grade 
 const char *Form::GradeTooHighException::a() const throw() <% return ("Grade too high"); %>
 
 const char *Form::GradeTooLowException::what() const throw() <% return ("Grade too low"); %>
+
+std::ostream &operator<<(std::ostream &os, const Form &other) <%
+	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;
+	return (os);
+%>
+

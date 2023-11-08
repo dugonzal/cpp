@@ -6,11 +6,12 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 19:10:21 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:45:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Form.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 int main() <%
 	Bureaucrat *Animal = NULL;
