@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/08 19:45:51 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 22:00:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ int Bureaucrat::getGrade(void) const <% return (grade); %>
 const std::string Bureaucrat::getName(void) const<% return (name); %>
 
 void Bureaucrat::increment(void) <% 
+	grade++;
 	if (grade > 149)
 	  throw GradeTooHighException();
-	grade++;
 %>
 
   void Bureaucrat::decrement(void) <% 
+	grade--;
 	if (grade < 1)
 	  throw GradeTooLowException();
-	grade--;
 %>
 
 void Bureaucrat::signForm(const Form &other) const<%
