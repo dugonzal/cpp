@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/08 19:04:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:15:42 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@ int main() <%
 	Form a;
 	
 	Form z(a);
+	Bureaucrat tmpp("bob", 150);
 
 	z = a;
 
-	std::cout << z << std::endl;
+	tmpp.signForm(z);
 	exit(2);
+	std::cout << z << std::endl;
 
 	std::cout << z.getName() << std::endl;
 	std::cout << z.getIsSigned() << std::endl ;
-	Bureaucrat tmpp("bob", 150);
 	
 	Form p("hola mundo", 150, 2);
 
