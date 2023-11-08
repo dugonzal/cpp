@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/08 19:42:57 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:45:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void Bureaucrat::increment(void) <%
 %>
 
 void Bureaucrat::signForm(const Form &other) const<%
-	  if (grade <= other.getGrade())
+	  if (other.getIsSigned())
 		std::cout << name << " signed " << other.getName() << std::endl;
 	  else 
 		std::cout << name << " couldn’t sign " << other.getName() << std::endl;
