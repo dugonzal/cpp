@@ -6,11 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 12:02:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:06:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/AForm.hpp"
+# include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::~Bureaucrat(void) <% %>
 

@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 13:26:28 by dugonzal          #+#    #+#              #
-#    Updated: 2023/11/09 11:57:34 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/09 12:05:33 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR 	:= src/
 
 OBJ_DIR 	:= obj/
 
-SRC_FILES 	:= main Bureaucrat AForm
+SRC_FILES 	:= main Bureaucrat AForm ShrubberyCreationForm
 
 SRC			:= $(addprefix ${SRC_DIR}, ${addsuffix .cpp, ${SRC_FILES}})
 
