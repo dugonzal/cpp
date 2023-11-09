@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/08 21:09:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:00:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class Bureaucrat;
 
 class Form <%
+	
 	private:
 		const std::string name;
 		bool isSigned;
@@ -39,13 +40,12 @@ class Form <%
 		Form &operator=(const Form &other);
 		void beSigned(const Bureaucrat &other);
 		void setIsSigned(bool v);
+	
 	public:
 		class GradeTooHighException: public std::exception <%
 			
 			  public:
 				  virtual const char *what() const throw();
-			  public:
-				  virtual const char *a() const throw() ;
 		%>;
 		class GradeTooLowException: public std::exception <%
 			

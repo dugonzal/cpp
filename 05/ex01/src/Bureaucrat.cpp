@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/08 22:00:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:01:10 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void Bureaucrat::increment(void) <%
 	  throw GradeTooHighException();
 %>
 
-  void Bureaucrat::decrement(void) <% 
+void Bureaucrat::decrement(void) <% 
 	grade--;
 	if (grade < 1)
 	  throw GradeTooLowException();
