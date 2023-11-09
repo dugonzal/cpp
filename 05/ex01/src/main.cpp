@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 11:11:48 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:19:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,37 +43,44 @@ int main() <%
 	try <%
 	  Animal = burocratas();
 	  formularios = _formularios();
-	  Bureaucrat test("bob", 1);
-	  Form a("test", 150, 3);
+	  Bureaucrat test("bob", 3);
+	  Form a("test", 1, 3);
 
 	  a.beSigned(test);
 	  std::cout << a << std::endl << test << std::endl;
 	  test.signForm(a);
+	  if (Animal != NULL)
+			delete [] Animal;
+	  if (formularios != NULL)
+			delete [] formularios;
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%
 		if (Animal != NULL)
-		  delete [] Animal;
+			delete [] Animal;
+		if (formularios != NULL)
+			delete [] formularios;
 		std::cerr << e.what() << std::endl;
 	%>	
 	catch (const Bureaucrat::GradeTooHighException &e) <%
 		if (Animal != NULL)
-		  delete [] Animal;
+			delete [] Animal;
+		if (formularios != NULL)
+			delete [] formularios;
 		std::cerr << e.what() << std::endl;
 	%>
 	catch (const Form::GradeTooHighException &e) <%
+		if (Animal != NULL)
+			delete [] Animal;
 		if (formularios != NULL)
 			delete [] formularios;
 		std::cerr << e.what() << std::endl;
 	%>
 	catch (const Form::GradeTooLowException &e) <%
-
-		if (formularios != NULL)
-			delete [] formularios;
 		std::cerr << e.what() << std::endl;
 	%>
-	if (Animal != NULL)
-		delete [] Animal;
-	if (formularios != NULL)
-		delete [] formularios;
+		if (Animal != NULL)
+			delete [] Animal;
+		if (formularios != NULL)
+			delete [] formularios;
 	return 0;
 %>

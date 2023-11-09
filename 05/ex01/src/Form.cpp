@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 11:02:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:15:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ Form::Form(const std::string _name, const int g, const int s): name(_name), isSi
 void Form::beSigned(const Bureaucrat &other) <%
 	if (other.getGrade() <= grade)
 	  isSigned = true;
+	else // lee mejor xd
+	  throw (GradeTooLowException());
 %>
 
 const std::string Form::getName(void) const <% return (name); %>
