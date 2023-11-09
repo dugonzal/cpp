@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 12:00:02 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:45:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ class AForm <%
 		const int sGrade;
 
 	public:
-		AForm(void);
-		~AForm(void);
+		virtual ~AForm(void) = 0; // con esto creo una clase abstracta pero hay mas formas
 		AForm(const AForm &other);
 		const std::string getName(void) const;
 		AForm(const std::string _name, const int g, const int s);
