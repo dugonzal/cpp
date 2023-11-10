@@ -6,13 +6,13 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 13:26:28 by dugonzal          #+#    #+#              #
-#    Updated: 2023/11/09 12:05:33 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/10 11:08:42 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		:= Bureaucrat
 
-C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
+C			:= c++ -g3 -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
 SRC_DIR 	:= src/
 

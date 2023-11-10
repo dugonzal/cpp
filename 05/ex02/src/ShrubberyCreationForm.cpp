@@ -6,12 +6,12 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 10:59:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:26:34 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ShrubberyCreationForm.hpp"
-
+# include "../inc/Bureaucrat.hpp"
 ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("ShrubberyCreationForm", 145, 37), target("<target>") <% %>
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) <% %>
@@ -31,8 +31,8 @@ const ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCre
 	AForm::operator=(other); // no hace falta pero por practicar xd
 	return(*this);
 %>
-/*
+
 void ShrubberyCreationForm::e(const Bureaucrat &executor) const<%
 
 	std::cout << executor << std::endl;
-%>*/
+%>
