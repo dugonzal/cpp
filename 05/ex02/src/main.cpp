@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 11:22:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:41:11 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main() <%
 		Bureaucrat p("bnob", 3);	
 		for (int i = 0; i < 10; i++) <%
 			std::cout << a[i] << std::endl;
-			a[i].e(p);
+			a[i].execute(p);
 		%>
 	//if (a != NULL)
 	 // delete [] a;

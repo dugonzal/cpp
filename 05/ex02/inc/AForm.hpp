@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 11:19:00 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:40:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class AForm <%
 		AForm &operator=(const AForm &other);
 		void beSigned(const Bureaucrat &other);
 		void setIsSigned(bool v);
-		virtual void e(const Bureaucrat &executor) const = 0;
+		virtual void execute(const Bureaucrat &executor) const = 0;
 	
 	public:
 		class GradeTooHighException: public std::exception <%
