@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 10:19:34 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:54:38 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
-
+#include "../inc/AForm.hpp"
 Bureaucrat *burocratas(void) <%
 	Bureaucrat *Animal = new Bureaucrat[10];
 
@@ -30,8 +30,11 @@ Bureaucrat *burocratas(void) <%
 
 int main() <%
 	Bureaucrat *Animal = NULL;
-	ShrubberyCreationForm *formularios = new ShrubberyCreationForm[10];
+	ShrubberyCreationForm *formularios = NULL;
 
+	//for (int i = 0; i < 10; i++)
+	 // formularios[i] = new ShrubberyCreationForm("hola", i, i +   2);
+	(void)formularios;
 	try <%
 	  Animal = burocratas();
 

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 10:23:03 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:58:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm <%
 
 	public:
 		AForm(void);
-		virtual ~AForm(void) = 0; // con esto creo una clase abstracta pero hay mas formas
+		~AForm(void); // con esto creo una clase abstracta pero hay mas formas
 		AForm(const AForm &other);
 		const std::string getName(void) const;
 		AForm(const std::string _name, const int g, const int s);
@@ -40,6 +40,7 @@ class AForm <%
 		AForm &operator=(const AForm &other);
 		void beSigned(const Bureaucrat &other);
 		void setIsSigned(bool v);
+		virtual void e(const Bureaucrat &executor) const = 0;
 	
 	public:
 		class GradeTooHighException: public std::exception <%

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 12:52:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:59:35 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,8 @@ const ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCre
 	AForm::operator=(other); // no hace falta pero por practicar xd
 	return(*this);
 %>
+/*
+void ShrubberyCreationForm::e(const Bureaucrat &executor) const<%
+
+	std::cout << executor << std::endl;
+%>*/
