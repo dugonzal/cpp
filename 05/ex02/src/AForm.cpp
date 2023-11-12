@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 10:21:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:26:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int AForm::getGrade(void) const <% return (grade); %>
 int AForm::getSgrade(void) const <% return (sGrade); %>
 
 const char *AForm::GradeTooHighException::what() const throw() <% return ("Grade too high"); %>
+
+const char *AForm::UnverifiedException::what() const throw() <% return ("The bureaucrat has not signed, signed required."); %>
 
 const char *AForm::GradeTooLowException::what() const throw() <% return ("Grade too low"); %>
 

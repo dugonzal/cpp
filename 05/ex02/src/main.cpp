@@ -6,13 +6,12 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:02:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:27:18 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
-#include "../inc/AForm.hpp"
 
 Bureaucrat *burocratas(void) <%
 	Bureaucrat *Animal = new Bureaucrat[10];
@@ -31,14 +30,14 @@ Bureaucrat *burocratas(void) <%
 
 int main() <%
 	//Bureaucrat *Animal = NULL;
-//	ShrubberyCreationForm  *a  = NULL;
+	//ShrubberyCreationForm  *a  = NULL;
 
 	try <%
-		Bureaucrat p("bnob", 3);
+		Bureaucrat p("bob", 240);
 
 		for (int i = 0; i < 10; i++) <%
 			ShrubberyCreationForm a; 
-			a.beSigned(p);
+			//a.beSigned(p);
 			a.execute(p);
 		%>
 	%>
@@ -52,6 +51,9 @@ int main() <%
 		std::cerr << e.what() << std::endl;
 	%>
 	catch (const ShrubberyCreationForm::GradeTooLowException &e) <%
+		std::cerr << e.what() << std::endl;
+	%>
+	catch (const ShrubberyCreationForm::UnverifiedException &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
 	return 0;

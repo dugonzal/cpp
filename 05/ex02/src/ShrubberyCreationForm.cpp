@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:00:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:29:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("ShrubberyCreationForm", 145, 37), target("<target>") <% %>
+ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("ShrubberyCreationForm", 145, 37), target("target") <% %>
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) <% %>
 
@@ -36,13 +36,15 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const<%
 	
-	if (!getIsSigned() || executor.getGrade() > 37)
-		throw (AForm::GradeTooHighException());// agregar la excepcion adecuada
+	if (executor.getGrade() > 37)
+		throw (GradeTooLowException());
+	else if (!getIsSigned())
+		throw UnverifiedException(); // creo una exception para cuando no esta firmado
+	else <%
+	  std::ofstream file(getTarget().append("_shrubbery").data());
+	  if (!file)
+		  std::cerr << "error en la apertura del archivo" << std::endl;
 
-	std::ofstream file(getTarget().append("_shrubbery").c_str());
-
-	if (!file)
-		std::cerr << "error en la apertura del archivo" << std::endl;
-
-	file.close();
+	  file.close();
+	%>
 %>

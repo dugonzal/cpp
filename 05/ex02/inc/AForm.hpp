@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 06:44:10 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:21:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ class AForm <%
 			
 			  public:
 				   virtual const char *what() const throw();
+		%>;
+		class UnverifiedException: public std::exception <%
+			
+			  public:
+				  virtual const char *what() const throw();
 		%>;
 %>;
 
