@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:45:59 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:04:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,4 @@ class AForm <%
 		%>;
 %>;
 
-std::ostream &operator<<(std::ostream &os, const AForm &other);
+std::ostream &operator<<(const std::ostream &os, const AForm &other);

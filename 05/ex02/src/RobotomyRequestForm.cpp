@@ -6,24 +6,23 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:49:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 15:54:03 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:04:22 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/RobotomyRequestForm.hpp"
 
 
-RobotomyRequestForm::RobotomyRequestForm(void): AForm("RobotomyRequestForm", 72, 45), target("<target>") <%%>
+RobotomyRequestForm::RobotomyRequestForm(void): AForm("RobotomyRequestForm", 72, 45), target("target") <% %>
 
-RobotomyRequestForm::~RobotomyRequestForm(void) <%%>
+RobotomyRequestForm::~RobotomyRequestForm(void) <% %>
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): \
-  AForm("RobotomyRequestForm", 72, 45), target(other.target)<%%>
+  AForm(other), target(other.target) <% %>
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) <%
 	if (this == &other)
 		return (*this);
-//	Aform::operator=(other);
 	target = other.target;
 	return (*this);
 %>
@@ -32,6 +31,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string _target): AForm("RobotomyRe
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const <%
 	checkForm(executor, 45);
-	// que quiere decir con el 50% de la veces, deberia usar algun tipo de random, no lo tengo claro
-
+	std::srand(std::time(0));
+	if ((std::rand() % 2))
+        std::cout << "Drilling noises... Robotomy successful on target " << target << "!" << std::endl;
+	else 
+        std::cout << "Drilling noises... Robotomy failed on target " << target << "." << std::endl;
 %>

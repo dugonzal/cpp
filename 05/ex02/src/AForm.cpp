@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:39:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:04:50 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,3 @@ std::ostream &operator<<(std::ostream &os, const AForm &other) <%
 	" degree of execution " << other.getSgrade() << " ¿signed? " << other.getIsSigned() << " ." << std::endl);
 	//return (os);
 %>
-
