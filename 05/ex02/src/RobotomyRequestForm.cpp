@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:49:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 17:04:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:07:02 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 %>
 
-RobotomyRequestForm::RobotomyRequestForm(std::string _target): AForm("RobotomyRequestForm", 72, 45) ,target(_target) <% %>
+RobotomyRequestForm::RobotomyRequestForm(std::string _target): AForm("RobotomyRequestForm", 72, 45), target(_target) <% %>
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const <%
 	checkForm(executor, 45);
+	
 	std::srand(std::time(0));
 	if ((std::rand() % 2))
         std::cout << "Drilling noises... Robotomy successful on target " << target << "!" << std::endl;
