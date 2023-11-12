@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 19:07:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 20:33:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,16 @@
 # include "../inc/ShrubberyCreationForm.hpp"
 # include "../inc/RobotomyRequestForm.hpp"
 # include "../inc/PresidentialPardonForm.hpp"
-
-Bureaucrat *burocratas(void) <%
-	Bureaucrat *Animal = new Bureaucrat[10];
-
-	for (int i = 0; i < 10; i++) <%
-
-		Animal[i].increment();
-		Animal[i].decrement();
-		for (int t = 0; t < 10; t++)	
-			Animal[i].increment();
-		//std::cout << std::endl << std::endl;	
-		//std::cout << Animal[i] << std::endl;
-	%>
-	return (Animal);
-%>
+# include "../inc/Intern.hpp"
 
 int main() <%
 	try <%
-		Bureaucrat p("bob", 3);
-	
-		p.increment();
-		std::cout << p << std::endl;
-		for (int i = 0; i < 10; i++) <%
-				
-			ShrubberyCreationForm  a;	
-			RobotomyRequestForm    b;
-			PresidentialPardonForm c;
-			c.beSigned(p);
-			p.executeForm(c);
-			exit(2);
-		%>
+		 Intern someRandomIntern;
+		  AForm *rrf;
+	  
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << rrf[0].getName() << std::endl;
+		delete rrf;
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%
 		std::cerr << e.what() << std::endl;

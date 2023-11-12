@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intern.hpp                                         :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 18:59:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 19:01:17 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/12 19:00:08 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/12 20:30:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once
+#include "../inc/Intern.hpp"
 
-class intern <%
-	private:
+Intern::Intern(void) <%%>	
 
-	public:
-	  intern(void);	
-	  ~intern(void);	
-	  intern(const intern &other);	
-	  intern &operator=(const intern &other);
-%>;
+Intern::~Intern(void) <%%>
+	  
+Intern::Intern(const Intern &other) <% *this = other; %>
+
+Intern Intern::operator=(const Intern &other) <% return (other); %>
+
+
+AForm *Intern::makeForm(const std::string &s1, const std::string &s2) <%
+	
+	std::cout << s1 << "  " << s2 << std::endl;
+	return (new RobotomyRequestForm);
+%>

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intern.cpp                                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 19:00:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 19:06:42 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/12 18:59:28 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/12 20:23:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/intern.hpp"
+# pragma once
 
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-intern::intern(void) <%%>	
-
-intern::~intern(void) <%%>
-	  
-intern::intern(const intern &other) <%
-  	  
-	*this = other;
-%>
-
-intern &intern::operator=(const intern &other) <%
-	if (this == &other)
-		return (*this);
-	*this = other;
-	return (*this);
-%>
+class Intern <%
+	public:
+	  Intern(void);	
+	  ~Intern(void);	
+	  Intern(const Intern &other);	
+	  Intern operator=(const Intern &other);
+	  AForm *makeForm(const std::string &s1, const std::string &s2);
+%>;
