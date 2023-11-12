@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 13:16:20 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:39:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ AForm &AForm::operator=(const AForm &other) <%
 	// no puedo crear este operador porque los valores de la clase son constantes y isSigned no tendria sentido copiarlo
   	if (this == &other)
 		return (*this);
-	//(void)other;
 	return (*this);
 %>
 
@@ -36,10 +35,9 @@ AForm::AForm(const std::string _name, const int g, const int s): name(_name), is
 
 void AForm::beSigned(const Bureaucrat &other) <%
 	if (other.getGrade() <= grade)
-			isSigned = true;
-	else // lee mejor xd
+		isSigned = true;
+	else
 		throw (GradeTooLowException());
-		//throw (Form::GradeTooLowException());
 %>
 
 const std::string AForm::getName(void) const <% return (name); %>
@@ -56,11 +54,11 @@ const char *AForm::UnverifiedException::what() const throw() <% return ("The bur
 
 const char *AForm::GradeTooLowException::what() const throw() <% return ("Grade too low"); %>
 
-void AForm::checkForm(const Bureaucrat &other) const<%
-	if (other.getGrade() > 37)
+void AForm::checkForm(const Bureaucrat &other, int _grade) const<%
+	if (other.getGrade() > _grade)
 		throw (GradeTooLowException());
 	else if (!getIsSigned())
-		throw UnverifiedException(); // creo una exception para cuando no esta firmado
+		throw UnverifiedException();
 %>
 
 std::ostream &operator<<(std::ostream &os, const AForm &other) <%

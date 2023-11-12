@@ -6,12 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:33:30 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:41:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
+#include "../inc/RobotomyRequestForm.hpp"
 
 Bureaucrat *burocratas(void) <%
 	Bureaucrat *Animal = new Bureaucrat[10];
@@ -29,16 +30,16 @@ Bureaucrat *burocratas(void) <%
 %>
 
 int main() <%
-	//Bureaucrat *Animal = NULL;
-	//ShrubberyCreationForm  *a  = NULL;
-
 	try <%
 		Bureaucrat p("bob", 20);
 
 		for (int i = 0; i < 10; i++) <%
-			ShrubberyCreationForm a("para"); 
+			ShrubberyCreationForm a; 
+			RobotomyRequestForm   b;
 			a.beSigned(p);
 			a.execute(p);
+			b.beSigned(p);
+			b.execute(p);
 		%>
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%

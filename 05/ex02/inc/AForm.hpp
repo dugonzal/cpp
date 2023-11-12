@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:07:06 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:45:59 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # include <cstdlib>
 # include <cstring>
+# include <string>
 # include <iostream>
 # include <fstream>
 # include <exception>
@@ -41,7 +42,7 @@ class AForm <%
 		AForm &operator=(const AForm &other);
 		void beSigned(const Bureaucrat &other);
 		void setIsSigned(bool v);
-		void checkForm(const Bureaucrat &other) const;
+		void checkForm(const Bureaucrat &other, int _grade) const;
 		virtual void execute(const Bureaucrat &executor) const = 0;
 	
 	public:

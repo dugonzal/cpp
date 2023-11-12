@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:33:48 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:36:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void ShrubberyCreationForm::treePrint(std::ofstream &file) const <%
 %>
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const<%
-	checkForm(executor);
+	checkForm(executor, 37);
 	std::ofstream file((target + "_shrubbery").data());
 	if (!file.is_open()) <%
 	  std::cerr << "error open file" << std::endl;
