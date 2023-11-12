@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:45 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:17:34 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:32:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class ShrubberyCreationForm: public AForm <%
 	
 	public:
 	  ShrubberyCreationForm(void);
+	  //constructor con valor predeterminado
 	  ShrubberyCreationForm(const std::string _target);
+	  //ShrubberyCreationForm(const std::string _target = "target");
 	  ~ShrubberyCreationForm(void);
 	  ShrubberyCreationForm(const ShrubberyCreationForm &other);
 	  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
