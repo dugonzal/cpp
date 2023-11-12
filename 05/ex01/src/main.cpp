@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/09 11:40:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:53:24 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ int main() <%
 	try <%
 	  Animal = burocratas();
 	  formularios = _formularios();
-	  Bureaucrat test("bob", 3);
-	  Form a("test", 1, 3);
+	  
+	  Bureaucrat test("bob", 30);
+	  Form a("test", 30, 30);
 
 	  a.beSigned(test);
 	  std::cout << a << std::endl << test << std::endl;
