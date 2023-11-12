@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 18:09:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:25:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ int Bureaucrat::getGrade(void) const <% return (grade); %>
 const std::string Bureaucrat::getName(void) const<% return (name); %>
 
 void Bureaucrat::increment(void) <% 
-	if (grade > 149)
-	  throw GradeTooHighException();
-	grade++;
+	if (grade < 2)
+	  throw GradeTooLowException();
+	grade--;
 %>
 
 void Bureaucrat::decrement(void) <% 
-	if (grade < 1)
-	  throw GradeTooLowException();
-	grade--;
+	if (grade > 149)
+	  throw GradeTooHighException();
+	grade++;
 %>
 
 void Bureaucrat::signForm(const AForm &other) const<%
@@ -65,12 +65,10 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &other) <%
 %>
 
 void Bureaucrat::executeForm(const AForm &other) const <%
-
-// intentar ejecutar el formulario tengo dos throw posibles
-  try <% 
+  try <%
 	  other.execute(*this);
-	  std::cout << std::endl << name << " executed the form " << other.getName() << "." << std::endl;
-
+	  std::cout << std::endl << name << " executed the form " \
+		<< other.getName() << "." << std::endl;
   %>
   catch (const AForm::GradeTooLowException &e) <%
 	 std::cerr << "Error: " << e.what() << std::endl;

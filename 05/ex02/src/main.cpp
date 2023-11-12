@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 18:09:02 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:24:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ Bureaucrat *burocratas(void) <%
 
 int main() <%
 	try <%
-		Bureaucrat p("bob", 5);
+		Bureaucrat p("bob", 1);
 	
+		p.increment();
 		std::cout << p << std::endl;
 		for (int i = 0; i < 10; i++) <%
-			
+				
 			ShrubberyCreationForm  a;	
 			RobotomyRequestForm    b;
 			PresidentialPardonForm c;
