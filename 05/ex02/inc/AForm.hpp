@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 13:16:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:07:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ class AForm <%
 		AForm(const AForm &other);
 		const std::string getName(void) const;
 		AForm(const std::string _name, const int g, const int s);
-		// no puedo retornarlo constante excepcion de getName
-		/*const*/bool getIsSigned(void) const;
+		bool getIsSigned(void) const;
 		int getGrade(void) const;
 		int getSgrade(void) const;
 		AForm &operator=(const AForm &other);

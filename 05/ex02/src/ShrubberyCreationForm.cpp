@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 13:14:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:17:11 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string _target): \
 	AForm("ShrubberyCreationForm", 145, 37), target(_target) <% %>
 
-std::string ShrubberyCreationForm::getTarget(void) const <% return (target); %>
-
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) <%
 
 	if (this == &other)
@@ -34,8 +32,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return(*this);
 %>
 
-void treePrint(std::ofstream &file) <%
-
+void ShrubberyCreationForm::treePrint(std::ofstream &file) const <%
   file << "                                          " << std::endl \
   <<"                      O                         " << std::endl \
   <<"                     ***                        " << std::endl \
@@ -65,17 +62,16 @@ void treePrint(std::ofstream &file) <%
   <<"                   ###                          " << std::endl \
   <<"               ###########                      " << std::endl \
   <<"              ###########                       " << std::endl ;
-
   file.close();
 %>
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const<%
-
 	checkForm(executor);
-	std::ofstream file(getTarget().append("_shrubbery").data());
-	if (!file)
-		std::cerr << "error en la apertura del archivo" << std::endl;
-
+	std::ofstream file((target + "_shrubbery").data());
+	if (!file.is_open()) <%
+	  std::cerr << "error open file" << std::endl;
+	  return;
+	%>
 	treePrint(file);
-	file.close();
+	std::cout << "form signed and executed" << std::endl;
 %>
