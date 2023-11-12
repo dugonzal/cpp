@@ -6,14 +6,16 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 11:45:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 06:44:10 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 # include <cstdlib>
+# include <cstring>
 # include <iostream>
+# include <fstream>
 # include <exception>
 # include "Bureaucrat.hpp"
 

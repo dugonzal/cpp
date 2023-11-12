@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:45 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 11:45:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:36:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ class ShrubberyCreationForm: public AForm <%
 	
 	public:
 	  ShrubberyCreationForm(void);
+	  // puedo definir una cadena por defecto 
 	  ShrubberyCreationForm(const std::string _target);
 	  ~ShrubberyCreationForm(void);
 	  ShrubberyCreationForm(const ShrubberyCreationForm &other);
-	  const ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+	  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 	  void execute(const Bureaucrat &other) const; //cuando tenemos
+	  /*puede quedar mas claro asi*///virtual void execute(const Bureaucrat &other) const; //cuando tenemos
 	  //una derivada 100% virtual  hay que declarla tambien en la derivada
 %>;

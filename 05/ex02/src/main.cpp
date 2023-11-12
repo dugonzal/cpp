@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/10 11:41:11 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:35:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,15 @@ Bureaucrat *burocratas(void) <%
 
 int main() <%
 	//Bureaucrat *Animal = NULL;
-	ShrubberyCreationForm  *a  = NULL;
+//	ShrubberyCreationForm  *a  = NULL;
 
 	try <%
-		a = new ShrubberyCreationForm[10]; 
 		Bureaucrat p("bnob", 3);	
 		for (int i = 0; i < 10; i++) <%
-			std::cout << a[i] << std::endl;
-			a[i].execute(p);
+			 ShrubberyCreationForm a; 
+		//	std::cout << a[i] << std::endl;
+			a.execute(p);
 		%>
-	//if (a != NULL)
-	 // delete [] a;
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%
 		std::cerr << e.what() << std::endl;
@@ -55,7 +53,5 @@ int main() <%
 	catch (const ShrubberyCreationForm::GradeTooLowException &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
-	if (a != NULL)
-	  delete [] a;
 	return 0;
 %>
