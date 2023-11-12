@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 18:40:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 19:04:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Bureaucrat::decrement(void) <%
 	grade++;
 %>
 
-void Bureaucrat::signForm(const Form &other) const<%
+void Bureaucrat::signForm(const AForm &other) const<%
 	  if (other.getIsSigned())
 		std::cout << name << " signed " << other.getName() << std::endl;
 	  else 
