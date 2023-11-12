@@ -6,12 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:49:17 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 17:07:02 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:32:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/RobotomyRequestForm.hpp"
-
 
 RobotomyRequestForm::RobotomyRequestForm(void): AForm("RobotomyRequestForm", 72, 45), target("target") <% %>
 
@@ -37,4 +36,3 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const <%
         std::cout << "Drilling noises... Robotomy successful on target " << target << "!" << std::endl;
 	else 
         std::cout << "Drilling noises... Robotomy failed on target " << target << "." << std::endl;
-%>

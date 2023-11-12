@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 16:04:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:31:35 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ AForm &AForm::operator=(const AForm &other) <%
 // el grado de sign  y grado de ejecucion, cumplen las reglas de los burocratas 
 AForm::AForm(const std::string _name, const int g, const int s): name(_name), isSigned(false), grade(g), sGrade(s) <%
 	if (g < 1 || s < 1)
-		throw (GradeTooLowException());
-	else if (g > 150 || s > 150)
 		throw GradeTooHighException();
+	else if (g > 150 || s > 150)
+		throw (GradeTooLowException());
 %>
 
 void AForm::beSigned(const Bureaucrat &other) <%
