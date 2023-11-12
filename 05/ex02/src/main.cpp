@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:27:18 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:32:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int main() <%
 	//ShrubberyCreationForm  *a  = NULL;
 
 	try <%
-		Bureaucrat p("bob", 240);
+		Bureaucrat p("bob", 20);
 
 		for (int i = 0; i < 10; i++) <%
 			ShrubberyCreationForm a; 
-			//a.beSigned(p);
+			a.beSigned(p);
 			a.execute(p);
 		%>
 	%>
