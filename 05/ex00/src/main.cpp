@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/29 23:51:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:47:19 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main() <%
 	Bureaucrat *Animal = NULL;
 	try <%
 		std::cout << "free for random" << std::endl;
-		Bureaucrat tmp2("bob", 150);
+		Bureaucrat tmp2("bob", 100);
 		std::cout << "[>>inicio <<]\n" << tmp2 << std::endl;
 		tmp2.decrement();
 		std::cout << tmp2 << std::endl;

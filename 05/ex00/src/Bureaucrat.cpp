@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/31 16:29:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:49:16 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@ Bureaucrat::~Bureaucrat(void) <% %>
 
 Bureaucrat::Bureaucrat(void): name("free for random"), grade(42) <% %>
 
-Bureaucrat::Bureaucrat(const std::string &other, int g): name(other) <%
+Bureaucrat::Bureaucrat(const std::string &other, int g): name(other), grade(g) <%
 	if (g < 1)
-	  throw GradeTooLowException();
-	else if (g > 150)
 	  throw GradeTooHighException();
-	grade = g;
+	else if (g > 150)
+	  throw GradeTooLowException();
 %>
 
-Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other) <% 
-	if (this == &other)
-	  return (*this);
-	  // como el nombre es constante no puedo copiarlo
-	grade = other.grade;
-	return (*this);
+void Bureaucrat::increment(void) <% 
+	if (grade < 2)
+	  throw GradeTooLowException();
+	grade--;
+%>
+
+void Bureaucrat::decrement(void) <% 
+	if (grade > 149)
+	  throw GradeTooHighException();
+	grade++;
 %>
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() <% return ("highest possible grade"); %>
@@ -38,19 +41,7 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw() <% return
 
 int Bureaucrat::getGrade(void) <% return (grade); %>
 
-std::string Bureaucrat::getName(void) <% return (name); %>
-
-void Bureaucrat::increment(void) <% 
-	if (grade > 149)
-	  throw GradeTooHighException();
-	grade++;
-%>
-
-  void Bureaucrat::decrement(void) <% 
-	if (grade < 1)
-	  throw GradeTooLowException();
-	grade--;
-%>
+const std::string Bureaucrat::getName(void) const <% return (name); %>
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &other) <%
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;

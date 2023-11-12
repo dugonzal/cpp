@@ -6,13 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:40:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/07 10:34:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:49:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 #include <iostream>
+#include <cstdlib>
 #include <exception>
 
 class Bureaucrat <%
@@ -27,7 +28,7 @@ class Bureaucrat <%
 		Bureaucrat(const std::string &other, int g);
 		Bureaucrat &operator=(Bureaucrat const &other);
 		int getGrade(void) ;
-		std::string getName(void);
+		const std::string getName(void) const;
 		void decrement(void);
 		void increment(void);
 	
