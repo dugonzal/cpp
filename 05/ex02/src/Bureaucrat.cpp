@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:16:28 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 16:04:53 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:09:31 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,20 @@ void Bureaucrat::signForm(const AForm &other) const<%
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &other) <%
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;
 	return (os);
+%>
+
+void Bureaucrat::executeForm(const AForm &other) const <%
+
+// intentar ejecutar el formulario tengo dos throw posibles
+  try <% 
+	  other.execute(*this);
+	  std::cout << std::endl << name << " executed the form " << other.getName() << "." << std::endl;
+
+  %>
+  catch (const AForm::GradeTooLowException &e) <%
+	 std::cerr << "Error: " << e.what() << std::endl;
+  %>
+  catch (const AForm::UnverifiedException &e) <%
+	 std::cerr << "Error: " << e.what() << std::endl;
+  %>
 %>

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 17:26:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:09:02 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,17 @@ Bureaucrat *burocratas(void) <%
 
 int main() <%
 	try <%
-		Bureaucrat p("bob", 1);
-
+		Bureaucrat p("bob", 5);
+	
+		std::cout << p << std::endl;
 		for (int i = 0; i < 10; i++) <%
 			
 			ShrubberyCreationForm  a;	
 			RobotomyRequestForm    b;
 			PresidentialPardonForm c;
-			a.beSigned(p);
-			a.execute(p);
-			std::cout << std::endl << std::endl;
-			b.beSigned(p);
-			b.execute(p);
-			std::cout << std::endl << std::endl;
 			c.beSigned(p);
-			c.execute(p);
+			p.executeForm(c);
+			exit(2);
 		%>
 	%>
 	catch (const Bureaucrat::GradeTooLowException &e) <%
