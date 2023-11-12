@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:20:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:26:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 13:16:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,13 @@ const char *AForm::GradeTooHighException::what() const throw() <% return ("Grade
 const char *AForm::UnverifiedException::what() const throw() <% return ("The bureaucrat has not signed, signed required."); %>
 
 const char *AForm::GradeTooLowException::what() const throw() <% return ("Grade too low"); %>
+
+void AForm::checkForm(const Bureaucrat &other) const<%
+	if (other.getGrade() > 37)
+		throw (GradeTooLowException());
+	else if (!getIsSigned())
+		throw UnverifiedException(); // creo una exception para cuando no esta firmado
+%>
 
 std::ostream &operator<<(std::ostream &os, const AForm &other) <%
 	return (os << other.getName() << ", Form grade " << other.getGrade() << ", " << \

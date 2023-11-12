@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:21:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 13:16:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class AForm <%
 		AForm &operator=(const AForm &other);
 		void beSigned(const Bureaucrat &other);
 		void setIsSigned(bool v);
+		void checkForm(const Bureaucrat &other) const;
 		virtual void execute(const Bureaucrat &executor) const = 0;
 	
 	public:

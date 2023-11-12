@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:05:39 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 12:46:34 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 13:14:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,45 +35,43 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 %>
 
 void treePrint(std::ofstream &file) <%
-file << "                                          " << std::endl \
-<<"                      O                         " << std::endl \
-<<"                     ***                        " << std::endl \
-<<"                    **O**                       " << std::endl \
-<<"                   *******                      " << std::endl \
-<<"                  *********                     " << std::endl \
-<<"                 ***********                    " << std::endl \
-<<"                  ******o**                     " << std::endl \
-<<"                 ***********                    " << std::endl \
-<<"                ****o********                   " << std::endl \
-<<"               ***************                  " << std::endl \
-<<"              ****o***o********                 " << std::endl \
-<<"             *******************                " << std::endl \
-<<"           ***********************              " << std::endl \
-<<"            ****************o****               " << std::endl \
-<<"           **O********************              " << std::endl \
-<<"          ***********o********O****             " << std::endl \
-<<"        *****************************           " << std::endl \
-<<"         ***************************            " << std::endl \
-<<"        *************o***************           " << std::endl \
-<<"       ***********o*******************          " << std::endl \
-<<"      **************************O******         " << std::endl \
-<<"     ***o******************O************        " << std::endl \
-<<"   ***o***********o****************o******      " << std::endl \
-<<"                     ###                        " << std::endl \
-<<"                    ###                         " << std::endl \
-<<"                   ###                          " << std::endl \
-<<"               ###########                      " << std::endl \
-<<"              ###########                       " << std::endl ;
 
-file.close();
+  file << "                                          " << std::endl \
+  <<"                      O                         " << std::endl \
+  <<"                     ***                        " << std::endl \
+  <<"                    **O**                       " << std::endl \
+  <<"                   *******                      " << std::endl \
+  <<"                  *********                     " << std::endl \
+  <<"                 ***********                    " << std::endl \
+  <<"                  ******o**                     " << std::endl \
+  <<"                 ***********                    " << std::endl \
+  <<"                ****o********                   " << std::endl \
+  <<"               ***************                  " << std::endl \
+  <<"              ****o***o********                 " << std::endl \
+  <<"             *******************                " << std::endl \
+  <<"           ***********************              " << std::endl \
+  <<"            ****************o****               " << std::endl \
+  <<"           **O********************              " << std::endl \
+  <<"          ***********o********O****             " << std::endl \
+  <<"        *****************************           " << std::endl \
+  <<"         ***************************            " << std::endl \
+  <<"        *************o***************           " << std::endl \
+  <<"       ***********o*******************          " << std::endl \
+  <<"      **************************O******         " << std::endl \
+  <<"     ***o******************O************        " << std::endl \
+  <<"   ***o***********o****************o******      " << std::endl \
+  <<"                     ###                        " << std::endl \
+  <<"                    ###                         " << std::endl \
+  <<"                   ###                          " << std::endl \
+  <<"               ###########                      " << std::endl \
+  <<"              ###########                       " << std::endl ;
+
+  file.close();
 %>
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const<%
-	
-	if (executor.getGrade() > 37)
-		throw (GradeTooLowException());
-	else if (!getIsSigned())
-		throw UnverifiedException(); // creo una exception para cuando no esta firmado
+
+	checkForm(executor);
 	std::ofstream file(getTarget().append("_shrubbery").data());
 	if (!file)
 		std::cerr << "error en la apertura del archivo" << std::endl;
