@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 11:35:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:02:29 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ int main() <%
 //	ShrubberyCreationForm  *a  = NULL;
 
 	try <%
-		Bureaucrat p("bnob", 3);	
+		Bureaucrat p("bnob", 3);
+
 		for (int i = 0; i < 10; i++) <%
-			 ShrubberyCreationForm a; 
-		//	std::cout << a[i] << std::endl;
+			ShrubberyCreationForm a; 
+			a.beSigned(p);
 			a.execute(p);
 		%>
 	%>
