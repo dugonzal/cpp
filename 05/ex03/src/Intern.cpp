@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:00:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/13 12:11:52 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:42:41 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,32 @@ Intern::Intern(const Intern &other) <% *this = other; %>
 
 Intern Intern::operator=(const Intern &other) <% return (other); %>
 
-const char *Intern::ErrorExecption::what(void) const throw() <% return ("error inexperado");  %>
+AForm *Intern::cloneAForm(const std::string &name, int i)<%
+	switch (i) <%
+		case (0):
+			return (new ShrubberyCreationForm(name));
+			break;
+		case (1):
+			return (new RobotomyRequestForm(name));
+		case (2):
+			return (new PresidentialPardonForm(name));
+		default:
+		  return (NULL);
+	%>
+%>
 
 AForm *Intern::makeForm(const std::string &s1, const std::string &s2) <%
 	
-	std::cout << s1 << "  " << s2 << std::endl;
 	if (s2.empty() || s1.empty())
-		throw (ErrorExecption());
-	std::string list[] = <% "ShrubberyCreationForm", 
-	"RobotomyRequestForm", "PresidentialPardonForm" %>;
+	  	throw (std::runtime_error("s1 or s2 empty"));
 
-	for (int i = 0; i < 2; i++) <%
-		std::cout << list[i] << std::endl;
-	%>
-	return (new RobotomyRequestForm(s2));
+	std::string list[] = <% "ShrubberyCreationForm" 
+	,"RobotomyRequestForm", "PresidentialPardonForm" %>;
+	
+	for (int i = 0; i < 2; i++)
+		 if (s1.compare(list[i]) == true)
+			return(cloneAForm(list[i], i));
+	
+	throw (std::runtime_error("compare is false"));
+	return (NULL);
 %>

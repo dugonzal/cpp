@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 20:31:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:37:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <cstring>
 # include <string>
 # include <iostream>
+# include <stdexcept>
 # include <fstream>
-# include <exception>
+#  include <exception>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
