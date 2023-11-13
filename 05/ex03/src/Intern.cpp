@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:00:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/13 14:55:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:43:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ AForm *Intern::cloneAForm(const std::string &name, int i)<%
 	%>
 %>
 
-AForm *Intern::makeForm(const std::string &s1, const std::string &s2) <%
+AForm *Intern::makeForm(const std::string &s1, const std::string &s2)  <%
 	if (s2.empty() || s1.empty())
 	  	throw (std::runtime_error("s1 or s2 empty"));
 
@@ -44,8 +44,13 @@ AForm *Intern::makeForm(const std::string &s1, const std::string &s2) <%
 	,"RobotomyRequestForm", "PresidentialPardonForm" %>;
 
 	for (int i = 0; i < 2; i++)
-		if (!s1.compare(list[i]))
-			 return (cloneAForm(list[i], i));
+		if (!s1.compare(list[i])) <%
+			AForm *tmp;
+			
+			tmp = cloneAForm(list[i], i);
+			std::cout << "Intern creates " << tmp->getName() << std::endl;
+			return (tmp);
+		%>
 	throw (std::runtime_error("compare is false"));
 	return (NULL);
 %>
