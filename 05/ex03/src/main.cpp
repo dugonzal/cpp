@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:30:59 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/12 20:33:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:46:47 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 # include "../inc/Intern.hpp"
 
 int main() <%
+		  AForm *rrf;
 	try <%
 		 Intern someRandomIntern;
-		  AForm *rrf;
 	  
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf = someRandomIntern.makeForm("robotomy request", "perro");
+		if (rrf == NULL)
+			return (0);
 		std::cout << rrf[0].getName() << std::endl;
 		delete rrf;
 	%>
@@ -40,5 +42,10 @@ int main() <%
 	catch (const ShrubberyCreationForm::UnverifiedException &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
+	catch (const Intern::ErrorExecption &e) <%
+		std::cerr << "error empty string  " << e.what() << std::endl;
+	%>
+		delete rrf;
 	return 0;
 %>
+
