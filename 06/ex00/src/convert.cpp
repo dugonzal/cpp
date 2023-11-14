@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 14:07:35 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/14 20:32:01 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/14 20:32:34 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/convert.hpp"
 
-/*Este literal será uno de los siguientes tipos escalares: char, int, float o double. Solo se utilizará la notación
-decimal.*/
-int	main(int ac, const char **av) <%
+convert::convert(void): input("") <% %>
 
-	if (ac != 2)
-	  return (std::cout << "Error: argument != 2" << std::endl, 1);
-	
-	try <%
-	  convert tmp(av[1]);
-	  tmp.~convert();
-	%>
-	catch (std::exception &e) <%
-	  std::cerr << e.what() << std::endl;
-	%>
-	return (0);
+convert::~convert(void) <% std::cout << "dsd";%>
+		
+convert::convert(const convert &other) <%
+	if (&other == this)
+		return ;
+	*this = other;
+%>
+convert::convert(const std::string &_input): input(_input) <%
+
+  std::cout << input << std::endl;
+%>
+		
+convert &convert::operator=(const convert &other) <%
+
+	if (&other == this)
+	  return (*this);
+	input = other.input;
+	return (*this);
 %>

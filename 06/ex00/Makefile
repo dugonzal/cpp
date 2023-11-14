@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:03:27 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/14 14:34:19 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/14 20:15:50 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR 	:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES 	:= main
+SRC_FILES 	:= main convert
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 
