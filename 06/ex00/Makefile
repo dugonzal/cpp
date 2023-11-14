@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:03:27 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/14 14:30:43 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/14 14:34:19 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= a 
+NAME		:= convert 
 
 C			:= clang++ -g3 -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
@@ -38,5 +38,6 @@ clean:
 
 fclean: clean 
 	rm -rf ${OBJ_DIR}
+
 re: clean all 
 
