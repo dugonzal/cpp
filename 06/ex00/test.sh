@@ -22,3 +22,6 @@ echo -e "\n"
 
 ./ScalarConvert "1e308"
 echo -e "\n"
+
+./ScalarConvert $@
+echo -e "\n"
