@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 19:18:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:45:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <string>
 # include <iomanip>
-
+# include <cmath>
 class ScalarConvert <%
 
 	private:
@@ -31,7 +31,7 @@ class ScalarConvert <%
 	private: // separo los metodos
 		ScalarConvert(void);
 		void convertNumber(const std::string &_input);
-		//void print(void) ;
+		void print(void) ;
 	
 	public:
 		~ScalarConvert(void);
