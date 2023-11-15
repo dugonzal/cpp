@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 18:31:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:18:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,18 @@ void ScalarConvert::convertAndPrint(void) <%
 	%>
 	else if (input.length() > 1)
 	    convertNumber(input);
-	print();
 %>
 
-void ScalarConvert::print(void) const <%
-  std::cout << std::fixed << std::setprecision(1);
-  std::cout << "char    " << c << std::endl;
-  std::cout << "integer " << d << std::endl;
-  std::cout << "float   " << f << "f" << std::endl;
-  std::cout << "double  " << dd << std::endl;
+/*void ScalarConvert::print(void) <%
+  
+//  std::cout << std::fixed << std::setprecision(1);
+ // std::cout << c << " <->  " << std::isprint(c) << std::endl; 
+  //std::cout << "char    " << c << std::endl;
+//  std::cout << "integer " << d << std::endl;
+ // std::cout << "float   " << f << "f" << std::endl;
+ // std::cout << "double  " << dd << std::endl;
 	
-
-%>
+%>*/
 
 ScalarConvert &ScalarConvert::operator=(const ScalarConvert &other) <%
 	if (&other == this)
