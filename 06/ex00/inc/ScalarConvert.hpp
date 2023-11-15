@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.hpp                                        :+:      :+:    :+:   */
+/*   ScalarConvert.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 15:49:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:33:03 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string>
 # include <iomanip>
 
-class convert <%
+class ScalarConvert <%
 
 	private:
 		std::string input;
@@ -27,12 +27,16 @@ class convert <%
 		int  		d;
 		float 		f;
 		double		dd;
-		convert(void);
+	
+	private: // separo los metodos
+		ScalarConvert(void);
 		void convertNumber(const std::string &_input);
-
+		void print(void) const;
+	
 	public:
-		~convert(void);
-		convert(const convert &other);
-		convert(const std::string &_input);
-		convert &operator=(const convert &other);
-  %>;
+		~ScalarConvert(void);
+		ScalarConvert(const ScalarConvert &other);
+		ScalarConvert(const std::string &_input);
+		ScalarConvert &operator=(const ScalarConvert &other);
+		void convertAndPrint(void); 
+%>;

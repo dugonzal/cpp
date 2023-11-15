@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:03:27 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/14 20:15:50 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/15 18:33:59 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= convert 
+NAME		:= ScalarConvert 
 
 C			:= clang++ -g3 -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
@@ -18,7 +18,7 @@ SRC_DIR 	:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES 	:= main convert
+SRC_FILES 	:= main ScalarConvert 
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 
