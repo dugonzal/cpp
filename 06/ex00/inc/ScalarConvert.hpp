@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 20:46:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 21:06:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 # include <iostream>
 # include <stdexcept>
 # include <exception>
-# include <stdlib.h>
 # include <string>
 # include <iomanip>
 # include <cmath>
+# include <limits>
+# include <stdlib.h>
+
 class ScalarConvert <%
 
 	private:
