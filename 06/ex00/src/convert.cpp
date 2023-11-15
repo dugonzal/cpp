@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 13:30:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:18:38 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,36 @@ convert::convert(const convert &other) <%
 	*this = other;
 %>
 convert::convert(const std::string &_input): input(_input) <%
-// si la cadena es mayor a 1, no puede ser un caracter
-
-  if (input.length() == 1) <%
-	  c = input[0] ;
-	  d = static_cast<int>(c);
-	  f = static_cast<float>(c);
-	  dd = static_cast<double>(c);
-  %>
-  else if (input.length() > 1)
-	  convertNumber(input);
-  else
-	throw (std::runtime_error("error inesperado no hay cadena"));
+	if (input.length() == 1) <%
+	    c =  input[0];
+		d =  static_cast<int>(c);
+		f =  static_cast<float>(c);
+		dd = static_cast<double>(c);
+	%>
+	else if (input.length() > 1)
+	    convertNumber(input);
+	else if (input.length() < 1)
+		throw (std::runtime_error("error inesperado no hay cadena"));
+	std::cout << input << c << "  "  <<f << std::endl;
+	
 %>
 
-void convert::convertNumber(std::string input) <%
-  std::cout << input << std::endl;
+void convert::convertNumber(const std::string &_input) <%
+  char *ptr;
+  dd = std::strtod(_input.data(), &ptr);
 
+  if (ptr == _input.data() && !dd)
+	 throw std::runtime_error("error el input es una cadena no es invalida");
+	
+  c = static_cast<char>(dd);
+  d = static_cast<int>(dd);
+  f = static_cast<float>(dd);
 %>
 		
 convert &convert::operator=(const convert &other) <%
-
 	if (&other == this)
-	  return (*this);
+		return (*this);
+	
 	input = other.input;
 	d = other.d;
 	c = other.c;
