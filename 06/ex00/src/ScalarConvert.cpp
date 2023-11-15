@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 20:09:58 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:22:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,31 @@ void ScalarConvert::convertNumber(const std::string &_input) <%
   f = static_cast<float>(dd);
 %>
 
+void ScalarConvert::number(void) <%
+	const char *tmp;
+		
+	tmp = &input[0];
+	c =  static_cast<int>(input[0]);
+	d =  static_cast<int>(std::atoi(tmp));
+	f =  static_cast<float>(std::atoi(tmp));
+	dd = static_cast<double>(std::atoi(tmp));
+%>
+
+void ScalarConvert::ascii(void) <%
+	 c =  static_cast<int>(input[0]);
+	 d =  static_cast<int>(c);
+	 f =  static_cast<float>(c);
+	 dd = static_cast<double>(c);
+%>
+
 void ScalarConvert::convertAndPrint(void) <%
 	if (input.length() < 1)
 		throw (std::runtime_error("error inesperado no hay cadena"));
 	else if (input.length() == 1)  <%
-		const char *tmp;
-		
-		tmp = &input[0];
-	    c =  static_cast<int>(input[0]);
-		d =  static_cast<int>(std::atoi(tmp));
-		f =  static_cast<float>(std::atoi(tmp));
-		dd = static_cast<double>(std::atoi(tmp));
+		if (std::isdigit(input[0]))
+			number();
+		else
+			ascii();
 	%>
 	else if (input.length() > 1)
 	    convertNumber(input);
@@ -63,13 +77,12 @@ void ScalarConvert::print(void) <%
   else  
 	  std::cout << c << std::endl;
   std::cout << "integer   ";
-  if (std::isnan(d) == false)
+  if (!std::isnan(d))
 	  std::cout << d << std::endl;
   else if (std::isnan(d) && d != 0) 
 	  std::cout << "impossible" << std::endl;
   std::cout << "float     " << f << "f" << std::endl;
   std::cout << "double    " << dd << std::endl;
-	
 %>
 
 ScalarConvert &ScalarConvert::operator=(const ScalarConvert &other) <%
