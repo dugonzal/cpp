@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 15:17:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:49:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdexcept>
 # include <exception>
 # include <stdlib.h>
-# include <sstream>
 # include <string>
+# include <iomanip>
 
 class convert <%
 
