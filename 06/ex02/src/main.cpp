@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 18:21:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:34:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,55 @@ Base	*generate(void) <%
 	  	return (new C);
 %>
 
-void identify(Base* p)<%
-	
-	if (dynamic_cast<A *>(p)) <%
-		std::cout << "identify A" << std::endl;
-		return ;
+void identify(Base *p) <%
+
+	try <%
+		if (dynamic_cast<A *>(p)) <%
+			std::cout << "identify A" << std::endl;
+			return ;
+		%>
 	%>
-	else if (dynamic_cast<B *>(p)) <%
-		std::cout << "identify B" << std::endl;
-		return ;
+	catch (...) <% %>
+	try <%
+		if (dynamic_cast<B *>(p)) <%
+			std::cout << "identify B" << std::endl;
+			return ;
+		%>
 	%>
-	else if (dynamic_cast<C *>(p)) <%
-		 std::cout << "identify C" << std::endl;
-		  return ;
+	catch (...) <% %>
+	try <%
+		if (dynamic_cast<C *>(p)) <%
+			std::cout << "identify C" << std::endl;
+			return ;
+		%>
 	%>
+	catch (...) <% %>
+
 %>
 
 void identify(Base &p)<%
 
-  (void)p;
+	try <%
+		if (dynamic_cast<A &>(p)) <%
+			std::cout << "identify A" << std::endl;
+			return ;
+		%>
+	%>
+	catch (...) <% %>
+	try <%
+		if (dynamic_cast<B >(p)) <%
+			std::cout << "identify B" << std::endl;
+			return ;
+		%>
+	%>
+	catch (...) <% %>
+	try <%
+		if (dynamic_cast<C >(p)) <%
+			std::cout << "identify C" << std::endl;
+			return ;
+		%>
+	%>
+	catch (...) <% %>
 %>
 int	main(void) <%
 
