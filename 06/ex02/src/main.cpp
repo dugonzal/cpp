@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 17:43:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:21:49 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,43 @@ Base	*generate(void) <%
 	
 	std::srand(std::time(0));
 	int r = std::rand() % 3;
-	std::cout << r << std::endl;
+
 	if (!r)
 		return (new A);
 	else if (r == 1)
 		return (new B);
-	else 
-		return (new C);
-	return (NULL);
+	else
+	  	return (new C);
 %>
 
 void identify(Base* p)<%
 	
-	try <%
-		A *tmp = dynamic_cast<A *>(p);
-		if (tmp)	
-		  std::cout << "se identifico que es A" << std::endl;
-	//	std::cout << tmp << std::endl;
+	if (dynamic_cast<A *>(p)) <%
+		std::cout << "identify A" << std::endl;
+		return ;
 	%>
-	catch(...) <% %>
+	else if (dynamic_cast<B *>(p)) <%
+		std::cout << "identify B" << std::endl;
+		return ;
+	%>
+	else if (dynamic_cast<C *>(p)) <%
+		 std::cout << "identify C" << std::endl;
+		  return ;
+	%>
 %>
 
+void identify(Base &p)<%
+
+  (void)p;
+%>
 int	main(void) <%
 
-  A *tmp  = new A;
-  B *tmp1 = new B;
-  C *tmp2 = new C;
-
-  (void)tmp;
-  (void)tmp1;
-  (void)tmp2;
-  
   Base *aa = NULL;
 
-  aa =generate();
+  aa = generate();
+
   identify(aa);
 
   delete aa;
-  (void)aa;
-  delete tmp;
-  delete tmp1;
-  delete tmp2;
-  std::cout << "hola mundo" << std::endl;
   return (0);
 %>
