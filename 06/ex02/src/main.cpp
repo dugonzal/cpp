@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 18:41:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:49:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # include "../inc/B.hpp"
 # include "../inc/C.hpp"
 
-// si no lo hago con new no puedo indentificarlo en la siguiente funcion
 Base	*generate(void) <%
 	
 	std::srand(std::time(0));
-	int r = 0;//std::rand() % 3;
+	int r = std::rand() % 3;
 
 	if (!r)
 		return (new A);
@@ -51,7 +50,7 @@ void identify(Base *p) <%
 		%>
 	%>
 	catch (...) <% %>
-
+	std::cerr << "type undefined" << std::endl; 
 %>
 
 void identify(Base &p)<%
@@ -74,6 +73,7 @@ void identify(Base &p)<%
 		return ;
 	%>
 	catch (...) <% %>
+	std::cerr << "type undefined" << std::endl; 
 %>
 int	main(void) <%
 
@@ -82,7 +82,7 @@ int	main(void) <%
   aa = generate();
 
   identify(aa);
-  identify(NULL);
+  identify(*aa);
 
   delete aa;
   return (0);
