@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 08:24:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 08:35:39 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/16 08:29:54 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/16 08:36:51 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Data.hpp"
+# pragma once
 
-int	main(void) <%
+#include <iostream>
 
-	Data *a = new Data();
+typedef struct s_Data <%
 
-	a->name = "hola";
-	std::cout << a->name << "  hola mundo" << std::endl;
-	delete a;
-	return (0);
-%>
+	const char 	*name;
+	std::string lastName;
+	int			age;
+
+%>Data;
