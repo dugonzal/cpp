@@ -6,14 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:29:54 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 11:23:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:54:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 # include <iostream>
-#include <stdint.h>
+# include <stdint.h>
+# include <cstring>
 
 typedef struct s_Data <%
 
