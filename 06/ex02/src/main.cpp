@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 18:34:00 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:41:39 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Base	*generate(void) <%
 	
 	std::srand(std::time(0));
-	int r = std::rand() % 3;
+	int r = 0;//std::rand() % 3;
 
 	if (!r)
 		return (new A);
@@ -57,24 +57,21 @@ void identify(Base *p) <%
 void identify(Base &p)<%
 
 	try <%
-		if (dynamic_cast<A &>(p)) <%
-			std::cout << "identify A" << std::endl;
-			return ;
-		%>
+		A tmp = dynamic_cast<A &>(p);
+		std::cout << "identify A" << std::endl;
+		return ;
 	%>
 	catch (...) <% %>
 	try <%
-		if (dynamic_cast<B >(p)) <%
-			std::cout << "identify B" << std::endl;
-			return ;
-		%>
+		B tmp = dynamic_cast<B &>(p);
+		std::cout << "identify B" << std::endl;
+		return ;
 	%>
 	catch (...) <% %>
 	try <%
-		if (dynamic_cast<C >(p)) <%
-			std::cout << "identify C" << std::endl;
-			return ;
-		%>
+		C tmp = dynamic_cast<C &>(p);
+		std::cout << "identify C" << std::endl;
+		return ;
 	%>
 	catch (...) <% %>
 %>
@@ -85,6 +82,7 @@ int	main(void) <%
   aa = generate();
 
   identify(aa);
+  identify(NULL);
 
   delete aa;
   return (0);
