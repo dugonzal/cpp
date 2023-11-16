@@ -6,24 +6,22 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:33:03 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 11:58:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:33:24 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Data.hpp"
 
 uintptr_t	serialize(Data *ptr) <%
-	uintptr_t tmp;
+//	uintptr_t tmp;
 
-	return (std::memcpy(&tmp, &ptr, sizeof(ptr)), tmp);
-//	return (reinterpret_cast<uintptr_t>(ptr);
-//	return (tmp);
+//	return (std::memcpy(&tmp, &ptr, sizeof(ptr)), tmp);
+	return (reinterpret_cast<uintptr_t>(ptr));
 %>
 
 Data	*deserialize(uintptr_t raw) <%
-	Data *tmp;
+//	Data *tmp;
 
-	return (std::memcpy(&tmp, &raw, sizeof(raw)), tmp);
-//	return (reinterpret_cast<Data *>(raw));
-//	return (tmp);
+//	return (std::memcpy(&tmp, &raw, sizeof(raw)), tmp);
+	return (reinterpret_cast<Data *>(raw));
 %>
