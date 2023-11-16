@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 21:25:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:29:26 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void ScalarConvert::print(void) const <%
 	else  
 	    std::cout << c << std::endl;
 	std::cout << "integer   ";
-	if (std::isnan(dd) || std::isinf(dd) || d <= std::numeric_limits<int>::min() \
-	    || d >= std::numeric_limits<int>::max()) 
+	if (std::isnan(dd) || std::isinf(dd) || d < std::numeric_limits<int>::min() \
+	    || d > std::numeric_limits<int>::max()) 
 	   std::cout << "impossible" << std::endl;
 	else
 	    std::cout << d << std::endl;
