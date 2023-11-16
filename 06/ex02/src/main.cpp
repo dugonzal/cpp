@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 18:49:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:51:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void identify(Base *p) <%
 			return ;
 		%>
 	%>
-	catch (...) <% %>
+	catch (std::exception &) <% %>
 	try <%
 		if (dynamic_cast<C *>(p)) <%
 			std::cout << "identify C" << std::endl;
@@ -75,6 +75,7 @@ void identify(Base &p)<%
 	catch (...) <% %>
 	std::cerr << "type undefined" << std::endl; 
 %>
+
 int	main(void) <%
 
   Base *aa = NULL;

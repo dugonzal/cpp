@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 12:05:03 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/16 14:55:59 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/16 21:33:16 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
 	${C} -c $< -o $@
 
 clean:
-	rm -rf $@
+	rm -rf ${NAME}
 
 fclean: clean 
 	rm -rf ${OBJ_DIR}
