@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:29:48 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 13:52:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:55:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,4 @@
 
 # include "Base.hpp"
 
-class C: public Base <%
-	public:
-		C(void);
-		~C(void);
-		C(const C &other);
-		C &operator=(const C &other);
-
-
-%>;
+class C: public Base <% %>;
