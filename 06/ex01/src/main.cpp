@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:24:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 08:35:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:38:10 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,22 @@
 
 int	main(void) <%
 
-	Data *a = new Data();
+	Data a;
 
-	a->name = "hola";
-	std::cout << a->name << "  hola mundo" << std::endl;
-	delete a;
+	a.name = "hola";
+	a.lastName = "per";
+	a.age = 23;
+	
+	uintptr_t  tmp = serialize(&a);
+	
+	std::cout << "datos serializados  " << tmp <<  std::endl;
+	
+	Data *b ;
+
+	b = deserialize(tmp);
+
+	std::cout << b->name << std::endl;
+//	delete b;
+//	delete a;
 	return (0);
 %>
