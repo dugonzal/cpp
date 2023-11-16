@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 12:10:44 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 13:31:15 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/16 12:34:42 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/16 13:26:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/A.hpp"
-# include "../inc/B.hpp"
-# include "../inc/C.hpp"
+# pragma once
 
-int	main(void) <%
+# include <iostream>
 
-  std::cout << "hola mundo" << std::endl;
-  return (0);
-%>
+class Base <%
+	public:
+	  virtual ~Base(void) = 0;
+
+%>;
