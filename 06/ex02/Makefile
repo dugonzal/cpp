@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 12:05:03 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/16 13:28:24 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/16 13:40:54 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES	:= main A B C 
+SRC_FILES	:= main A B C Base 
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 

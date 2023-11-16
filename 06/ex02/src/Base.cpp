@@ -1,24 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 13:29:18 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 13:46:07 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/16 13:40:57 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/16 13:41:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# pragma once 
+#include "../inc/Base.hpp"
 
-# include "Base.hpp"
-
-class B: public Base <%
-	
-	public:
-		B(void);
-		~B(void);
-		B(const B &other);
-		B &operator=(const B &other);
-%>;
+Base::~Base(void) <% %>
