@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 16:13:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:21:12 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ ScalarConvert::ScalarConvert(const ScalarConvert &other) <%
 
 ScalarConvert::ScalarConvert(const std::string &_input): input(_input) <% %>
 
-void ScalarConvert::convertNumber(void) <%
+void ScalarConvert::convertNumber(const std::string &s) <%
 	char *ptr;
-	dd = std::strtod(input.data(), &ptr);
+	dd = std::strtod(s.data(), &ptr);
 
-	if (ptr == input.data() && !dd)
+	if (ptr == s.data() && !dd)
 	   throw std::runtime_error("invalid string");
 	c = static_cast<char>(dd);
 	d = static_cast<int>(dd);
@@ -47,45 +47,36 @@ void ScalarConvert::ascii(char c) <%
 	 dd = static_cast<double>(c);
 %>
 
-void ScalarConvert::setInput(const std::string &s) <% input = s; %>
-
-std::string &ScalarConvert::getInput() <% return(input); %>
-
 void ScalarConvert::convert(const std::string &s) <%
-	ScalarConvert tmp;
-
-	tmp.setInput(s);
-
-//	std::cout << tmp.getInput() << std::endl; 
 	char c;
-	if (tmp.getInput().length() < 1)
+	if (s.length() < 1)
 		throw (std::runtime_error("invalid string"));
 	
-	else if (tmp.getInput().length() == 1)  <%
+	else if (s.length() == 1)  <%
 		c =  s[0];
 		if (std::isdigit(c))
-			tmp.number(&c);
+			number(&c);
 		else
-			tmp.ascii(c);
+			ascii(c);
 	%>
 	else if (s.length() > 1)
-	    tmp.convertNumber();
-	tmp.print();
+	    convertNumber(s);
+	//print();
 %>
 
-void ScalarConvert::print(void) const <%
+void ScalarConvert::print(void) <%
 	std::cout << std::fixed << std::setprecision(1);
  
 	std::cout << "char      ";
-	if (c == '0' && input.length() == 1)
+	if (c == '0' && s.length() == 1)
 	    std::cout << "Non displayable" << std::endl;
-	else if (!std::isprint(c) && input.length() > 1)
+	else if (!std::isprint(c) && s.length() > 1)
 	    std::cout << "impossible" << std::endl;
 	else  
 	    std::cout << c << std::endl;
 	std::cout << "integer   ";
-	if (std::isnan(dd) || std::isinf(dd) || d < std::numeric_limits<int>::min() \
-	    || d > std::numeric_limits<int>::max()) 
+	if (std::isnan(dd) || std::isinf(dd) || d <= std::numeric_limits<int>::min() \
+	    || d > std::numeric_limits<int>::max())
 	   std::cout << "impossible" << std::endl;
 	else
 	    std::cout << d << std::endl;
