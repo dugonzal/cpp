@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 07:48:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 12:37:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:01:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 
 int	main(void) <%
 
-	int  a = 90;
-	int  n = 65;
-	
-	std::cout << ::min(a, n) << std::endl;
-	std::cout << ::min(n, a) << std::endl;
-	std::cout << std::min(n, a) << std::endl;
-	std::cout << std::max(n, a) << std::endl;
-	
+	int  n = 24;
+	int  a = 2;
+//	std::cout << ::min(a, n) << std::endl;
+//	std::cout << ::min(n, a) << std::endl;
+//	std::cout << std::min(n, a) << std::endl;
+//	std::cout << std::max(n, a) << std::endl;
+//	
 	std::cout << n <<  std::endl;
-	std::cout <<  a << std::endl <<  std::endl;
-	 
+	std::cout <<  a << std::endl <<  std::endl;	
+	std::swap<int>(n, a);
+
+	cout << endl << "  primer swap   "  << endl;
+
+	std::cout << n <<  std::endl;
+	std::cout <<  a << std::endl << endl;
+	cout << " expect    "  << endl;
+	::swap(n, a);
 	
-	std::swap(n, a);
+	cout << "  segundo swap   "  << endl;
 
 	std::cout << n <<  std::endl;
 	std::cout <<  a << std::endl;
