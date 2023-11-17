@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:07:35 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 21:29:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:09:34 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,10 @@ int	main(int ac, const char **av) <%
 
 	if (ac != 2 )
 		return (std::cerr << "Error: argument != 2" << std::endl, 1);
-	
-	try <%
-	  ScalarConvert tmp(av[1]);
-	  ScalarConvert tmp2(tmp);
 
-	  tmp = tmp2;
-	  
-	  tmp.convertAndPrint();
+	(void)av;
+	try <%
+	  ScalarConvert::convert(av[1]);
 	%>
 	catch (std::exception &e) <%
 	  std::cerr << e.what() << std::endl;

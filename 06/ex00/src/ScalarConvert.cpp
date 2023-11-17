@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 21:29:26 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:13:12 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ ScalarConvert::ScalarConvert(const ScalarConvert &other) <%
 
 ScalarConvert::ScalarConvert(const std::string &_input): input(_input) <% %>
 
-void ScalarConvert::convertNumber(const std::string &_input) <%
+void ScalarConvert::convertNumber(void) <%
 	char *ptr;
-	dd = std::strtod(_input.data(), &ptr);
+	dd = std::strtod(input.data(), &ptr);
 
-	if (ptr == _input.data() && !dd)
-	   throw std::runtime_error("error el input es una cadena no valida");
+	if (ptr == input.data() && !dd)
+	   throw std::runtime_error("invalid string");
 	c = static_cast<char>(dd);
 	d = static_cast<int>(dd);
 	f = static_cast<float>(dd);
@@ -41,25 +41,36 @@ void ScalarConvert::number(const char *tmp) <%
 	dd = static_cast<double>(std::atoi(tmp));
 %>
 
-void ScalarConvert::ascii(void) <%
+void ScalarConvert::ascii(char c) <%
 	 d =  static_cast<int>(c);
 	 f =  static_cast<float>(c);
 	 dd = static_cast<double>(c);
 %>
 
-void ScalarConvert::convertAndPrint(void) <%
-	if (input.length() < 1)
-		throw (std::runtime_error("error inesperado no hay cadena"));
-	else if (input.length() == 1)  <%
-		c =  input[0];
+void ScalarConvert::setInput(const std::string &s) <% input = s; %>
+
+std::string &ScalarConvert::getInput() <% return(input); %>
+
+void ScalarConvert::convert(const std::string &s) <%
+	ScalarConvert tmp;
+
+	tmp.setInput(s);
+
+//	std::cout << tmp.getInput() << std::endl; 
+	char c;
+	if (tmp.getInput().length() < 1)
+		throw (std::runtime_error("invalid string"));
+	
+	else if (tmp.getInput().length() == 1)  <%
+		c =  s[0];
 		if (std::isdigit(c))
-			number(&c);
+			tmp.number(&c);
 		else
-			ascii();
+			tmp.ascii(c);
 	%>
-	else if (input.length() > 1)
-	    convertNumber(input);
-	print();
+	else if (s.length() > 1)
+	    tmp.convertNumber();
+	tmp.print();
 %>
 
 void ScalarConvert::print(void) const <%

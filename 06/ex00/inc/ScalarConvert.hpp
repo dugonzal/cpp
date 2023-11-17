@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/15 21:23:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:09:55 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ class ScalarConvert <%
 	
 	private:
 		ScalarConvert(void);
-		void convertNumber(const std::string &_input);
+		ScalarConvert(const std::string &s);
 		void print(void) const;
 		void number(const char *tmp);
-		void ascii(void);
+		void ascii(char c);
+		void convertNumber(void);
 	public:
+		static void convert(const std::string &_input);
+		void setInput(const std::string &s);
+		std::string &getInput();
 		~ScalarConvert(void);
 		ScalarConvert(const ScalarConvert &other);
-		ScalarConvert(const std::string &_input);
 		ScalarConvert &operator=(const ScalarConvert &other);
-		void convertAndPrint(void) ; 
 %>;
