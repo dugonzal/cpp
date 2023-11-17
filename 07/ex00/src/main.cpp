@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 07:48:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 08:10:56 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 08:14:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void) <%
 
-	char a = 'd';
+	int a = 90;
 	int  n = 65;
-	std::cout << ::min<int>(a) << std::endl;
-	std::cout << ::min<char>(n) << std::endl;
+	std::cout << ::min(a, n) << std::endl;
+	std::cout << ::min(n, a) << std::endl;
 	return (0);
 %>
