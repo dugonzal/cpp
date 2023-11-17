@@ -1,19 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 07:48:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 07:52:35 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/17 07:52:00 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/17 07:55:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/whatever.hpp"
+# pragma once
 
-int	main(void) <%
-
-	std::cout << "hola" << std::endl;
-	return (0);
-%>
+# include <iostream>
