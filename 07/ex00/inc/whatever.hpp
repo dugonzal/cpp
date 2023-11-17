@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 07:52:00 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 08:14:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:38:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 # include <iostream>
 
-template <typename Ta>
-Ta min(Ta x, Ta y) <%
-
+template <typename Tn>
+Tn &min(Tn &x, Tn &y) <%
   return (x < y ? x: y);
+%>
+
+
+template <typename Tu>
+Tu &max(Tu &x, Tu &y) <%
+  return (x > y ? x: y);
 %>
 
 
