@@ -6,19 +6,19 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 08:18:33 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/16 08:33:25 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/19 14:43:48 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		:= Serializacion 
 
-C			:= clang++ -Wall -Werror -Wextra -pedantic -fsanitize=address -g3 -std=c++98
+C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -g3 -std=c++98
 
 SRC_DIR 	:= src/
 
 OBJ_DIR 	:= obj/
 
-SRC_FILES	:= main Data
+SRC_FILES	:= main Serializer Data 
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 

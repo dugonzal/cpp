@@ -6,22 +6,37 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:33:03 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/16 12:33:24 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 14:54:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Data.hpp"
 
-uintptr_t	serialize(Data *ptr) <%
-//	uintptr_t tmp;
+Data::Data(void): name("camilo"), lastName("sifuentes"),  age(24) <% %>
 
-//	return (std::memcpy(&tmp, &ptr, sizeof(ptr)), tmp);
-	return (reinterpret_cast<uintptr_t>(ptr));
+Data::Data(std::string _name, std::string _lastName, int _age): name(_name), lastName(_lastName), age(_age) <% %>
+		
+Data::~Data(void) <% %>
+
+Data::Data(const Data &other) <% *this = other; %>
+		
+Data &Data::operator=(const Data &other) <%
+	if (&other == this)
+	  return (*this);
+  name = other.name;
+  lastName = other.lastName;
+  age = other.age;
+  return (*this);
 %>
 
-Data	*deserialize(uintptr_t raw) <%
-//	Data *tmp;
+std::string &Data::getName(void) <% return(name); %>
 
-//	return (std::memcpy(&tmp, &raw, sizeof(raw)), tmp);
-	return (reinterpret_cast<Data *>(raw));
+std::string &Data::getLastName(void) <% return(lastName); %>
+		
+int	Data::getAge(void) <% return(age); %>
+
+std::ostream &operator<<(std::ostream &os, Data &other)<%
+
+  os << other.getName() << " " << other.getLastName() << " " << other.getAge();
+  return (os);
 %>

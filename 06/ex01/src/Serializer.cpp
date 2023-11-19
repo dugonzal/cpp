@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 08:24:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 15:09:19 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/19 14:33:43 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/19 15:01:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Data.hpp"
 # include "../inc/Serializer.hpp"
 
-int	main(void) <%
-	Data tmp ("bob", "sancho", 45);
+Serializer::Serializer(void) <% %>
 
-	uintptr_t n = Serializer::serialize(&tmp);
-	
-	std::cout << "datos serializados: " << std::hex << n << std::dec << std::endl;
-	
-	Data *tmp1 = Serializer::deserialize(n);
+Serializer::~Serializer(void) <% %>
 
-	std::cout << std::endl << "datos despues de deserializar: " << *tmp1 << std::endl;
-	return (0);
+Serializer::Serializer(const Serializer &other) <% *this = other; %>
+
+Serializer Serializer::operator=(const Serializer &other) <% return (other); %>
+
+Data *Serializer::deserialize(uintptr_t raw) <%
+	return (reinterpret_cast<Data *>(raw));
+%>
+
+uintptr_t Serializer::serialize(Data *ptr) <%
+	return (reinterpret_cast<uintptr_t>(ptr));
 %>

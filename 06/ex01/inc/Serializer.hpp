@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 08:24:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 15:09:19 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/16 08:29:54 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/19 15:01:42 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Data.hpp"
-# include "../inc/Serializer.hpp"
+# pragma once
 
-int	main(void) <%
-	Data tmp ("bob", "sancho", 45);
+# include <iostream>
+# include <stdint.h>
+# include <cstring>
+# include "Data.hpp"
 
-	uintptr_t n = Serializer::serialize(&tmp);
+class Serializer <%
+
+	private:
+	  Serializer(void);
 	
-	std::cout << "datos serializados: " << std::hex << n << std::dec << std::endl;
-	
-	Data *tmp1 = Serializer::deserialize(n);
-
-	std::cout << std::endl << "datos despues de deserializar: " << *tmp1 << std::endl;
-	return (0);
-%>
+	public:
+	  ~Serializer(void);
+	  Serializer(const Serializer &other);
+	  Serializer operator=(const Serializer &other);
+	  static uintptr_t	serialize(Data *ptr);
+	  static Data 		*deserialize(uintptr_t raw);
+%>;
