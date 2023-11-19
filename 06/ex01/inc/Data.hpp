@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:29:54 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 14:54:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 15:37:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,4 @@ class Data <%
 %>;
 
 
-std::ostream &operator<<(std::ostream &os,Data &other);
+std::ostream &operator<<(std::ostream &os, Data &other);
