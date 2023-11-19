@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/17 17:21:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 12:56:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void ScalarConvert::ascii(char c) <%
 %>
 
 void ScalarConvert::convert(const std::string &s) <%
+	
+	ScalarConvert	tmp(s);
+
 	char c;
 	if (s.length() < 1)
 		throw (std::runtime_error("invalid string"));
@@ -55,22 +58,23 @@ void ScalarConvert::convert(const std::string &s) <%
 	else if (s.length() == 1)  <%
 		c =  s[0];
 		if (std::isdigit(c))
-			number(&c);
+			tmp.number(&c);
 		else
-			ascii(c);
+			tmp.ascii(c);
 	%>
 	else if (s.length() > 1)
-	    convertNumber(s);
-	//print();
+	    tmp.convertNumber(s);
+	tmp.print();
 %>
 
 void ScalarConvert::print(void) <%
 	std::cout << std::fixed << std::setprecision(1);
  
+	c = input[0];
 	std::cout << "char      ";
-	if (c == '0' && s.length() == 1)
+	if (c == '0' && input.length() == 1)
 	    std::cout << "Non displayable" << std::endl;
-	else if (!std::isprint(c) && s.length() > 1)
+	else if (!std::isprint(c) && input.length() > 1)
 	    std::cout << "impossible" << std::endl;
 	else  
 	    std::cout << c << std::endl;
