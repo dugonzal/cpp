@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 12:56:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 13:26:59 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ void ScalarConvert::convert(const std::string &s) <%
 
 void ScalarConvert::print(void) <%
 	std::cout << std::fixed << std::setprecision(1);
- 
-	c = input[0];
+
+	if (input.length() == 1)
+	  c = input[0];
 	std::cout << "char      ";
 	if (c == '0' && input.length() == 1)
 	    std::cout << "Non displayable" << std::endl;

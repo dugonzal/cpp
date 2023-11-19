@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:11:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 12:52:24 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 13:22:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class ScalarConvert <%
 		void number(const char *tmp);
 		void ascii(char c);
 		void convertNumber(const std::string &s);
+	
 	public:
 		static void convert(const std::string &_input);
 		~ScalarConvert(void);
