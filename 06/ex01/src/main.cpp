@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:24:38 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 15:09:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 15:32:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int	main(void) <%
 	
 	Data *tmp1 = Serializer::deserialize(n);
 
+	if (&tmp == tmp1)
+	  std::cout << std::endl << "equal Data" << std::endl;
+	else 
+		std::cout << "diferent data" << std::endl;
 	std::cout << std::endl << "datos despues de deserializar: " << *tmp1 << std::endl;
 	return (0);
 %>
