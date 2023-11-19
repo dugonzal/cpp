@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 16:43:50 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/19 16:49:52 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/19 16:54:47 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
+I			:= inc/iter.hpp
+
 SRC_FILES	:= main
 
 SRC			:= ${addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES})}
@@ -26,7 +28,7 @@ OBJ			:= ${addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES})}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJ} ${I}
 	${C} $< -o $@
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp 

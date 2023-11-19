@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 16:50:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 18:03:50 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/19 16:51:34 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/19 18:04:26 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/iter.hpp" 
+# pragma once
 
-void print(char x) <%
+# include <iostream>
 
-	std::cout << x << std::endl;
-%>
+template <typename Tn, class Fun>
+void iter(Tn x, Fun f) <%
 
-int	main(void) <%
-
-	char a = 'a';
-
-	::iter<char>(a, print);
-	return (0);
+	f(x);
 %>
