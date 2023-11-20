@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 20:16:45 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/19 20:23:44 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/20 12:00:07 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	ietrClass
+NAME		:=	iterClass
 
 C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
@@ -30,6 +30,7 @@ ${NAME}: ${OBJ}
 	${C} $< -o $@
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp 
+	mkdir -p ${OBJ_DIR}
 	${C} -c $< -o $@
 
 clean:

@@ -6,13 +6,21 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:25:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 20:27:56 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:01:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Array.hpp" 
 # define MAX_VAL 750
 
+int	main(void) <%
+	Array<int> a;
+	Array<int> b(MAX_VAL);
+
+  (void)a;
+
+%>
+/*
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -61,4 +69,4 @@ int main(int, char**)
     }
     delete [] mirror;//
     return 0;
-}
+}*/
