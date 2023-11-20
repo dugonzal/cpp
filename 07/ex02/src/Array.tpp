@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.cpp                                          :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:13:49 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/20 11:15:10 by Dugonzal         ###   ########.fr       */
+/*   Created: 2023/11/20 13:23:53 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/11/20 13:33:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/Array.hpp"
+#include "../inc/Array.hpp"
 
+//template<class T>
+Array<T>::Array(void): elemento(0), size(0)<%
 
-Array::Array(void) <% %>
-	  
-Array::~Array(void) <% %>
+%>
+
