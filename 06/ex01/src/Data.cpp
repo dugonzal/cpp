@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 08:33:03 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 15:37:48 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:09:37 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ std::string &Data::getLastName(void) <% return(lastName); %>
 int	Data::getAge(void) <% return(age); %>
 
 std::ostream &operator<<(std::ostream &os, Data &other)<%
-
   os << other.getName() << " " << other.getLastName() << " " << other.getAge();
   return (os);
 %>

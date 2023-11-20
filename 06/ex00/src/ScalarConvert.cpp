@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:13:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 15:43:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:05:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,13 @@ void ScalarConvert::ascii(char c) <%
 %>
 
 void ScalarConvert::convert(const std::string &s) <%
-	
 	ScalarConvert	tmp(s);
 
 	char c;
 	if (s.length() < 1)
 		throw (std::runtime_error("invalid string"));
-	
 	else if (s.length() == 1)  <%
-		c =  s[0];
+		c = s[0];
 		if (std::isdigit(c))
 			tmp.number(&c);
 		else
@@ -77,7 +75,7 @@ void ScalarConvert::print(void) <%
 	    std::cout << "Non displayable" << std::endl;
 	else if (!std::isprint(c) && input.length() > 1)
 	    std::cout << "impossible" << std::endl;
-	else  
+	else
 	    std::cout << c << std::endl;
 	std::cout << "integer   ";
 	if (std::isnan(dd) || std::isinf(dd) || d <= std::numeric_limits<int>::min() \
