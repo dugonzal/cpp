@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:24:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/20 14:01:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:26:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 # include <stdexcept>
 
 template <class T>
+
 class Array <%
 	private:
 		T 			*elemento;
 		std::size_t	size;
   
 	public:
-	  Array<T>(void);
+	  Array(void);
 	  
 /*	  ~Array<T>(void)<%
 		  if (elemento != NULL)

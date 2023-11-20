@@ -6,13 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:23:53 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/20 13:33:06 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:23:19 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Array.hpp"
 
-//template<class T>
+template<class T>
 Array<T>::Array(void): elemento(0), size(0)<%
 
 %>

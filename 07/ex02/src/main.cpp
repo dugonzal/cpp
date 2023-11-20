@@ -6,16 +6,18 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:25:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/20 13:32:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:27:15 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Array.hpp" 
-# include "Array.tpp" 
+# include "../inc/Array.hpp" 
+
 # define MAX_VAL 750
 
 int	main(void) <%
-	Array<int> a;
+	Array a;
+
 //	Array<int> b(MAX_VAL);
 
   (void)a;

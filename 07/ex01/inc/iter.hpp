@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:51:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 18:44:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:07:40 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 # include <iostream>
 
-template <typename Tn, class Fun>
-void iter(Tn *array, size_t size, Fun f) <%
+template <typename T, typename F>
+void iter(T *array, size_t size, F function) <%
   for (size_t i = 0; i < size; i++)
-	  f(array[i]);
+	  function(array[i]);
 %>

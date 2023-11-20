@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 20:16:45 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/20 13:31:21 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/20 19:25:28 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,11 @@ NAME		:=	iterClass
 
 C			:= c++ -Wall -Werror -Wextra -pedantic -fsanitize=address -std=c++98
 
-C			+= -include src/Array.tpp
-
 SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES	:= main
+SRC_FILES	:= main Array
 
 I			:= inc/Array.hpp
 
