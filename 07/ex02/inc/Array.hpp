@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:24:11 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/22 18:01:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:13:56 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,33 +25,37 @@ class Array <%
 		unsigned int	size;
   
 	public:
-	  Array(void): element(NULL), size(0) <% %>
+		Array(void): element(new T[0]), size(0) <% %>
+		Array(unsigned int s): element(new T[s]), size(s) <% %>
 	  
-	  ~Array(void) <%
-		  if (element != NULL)
-			  delete [] element;
-	  %>
-	  Array(const Array &other): element(new T[other.size]), size(other.size) <%
-		  if (&other == this)
-			  return;
-		  *this = other;
-	  %>
-	  Array &operator=(const Array& other) {
-        if (&other == this)
-            return *this;
+		~Array(void) <%
+			if (element != NULL)
+				delete [] element;
+		%>	
 
-        delete [] element;
-		element = NULL;
-        size = other.size;
-        element = new T[size];
-        for (unsigned int i = 0; i < size; i++)
-            element[i] = other.element[i];
-        return (*this);
-    }
+		Array(const Array &other): element(new T[other.size]), size(other.size) <%
+			if (&other == this)
+			    return;
+			for (unsigned int i = 0; i < size; i++)
+				element[i] = other.element[i];
+		%>
+
+		Array &operator=(const Array& other) <%
+			if (&other != this) <%
+				delete [] element;
+				element = NULL;
+				size = other.size;
+				element = new T[size];
+			//for (unsigned int i = 0; i < size; i++)
+			//	element[i] = other.element[i];
+			*this = other;
+		%>
+			return (*this);
+	  %>
 	  T &operator[](size_t p) <% 
-		  if (p > size || !element[p])
-			  throw std::runtime_error("out of range");
+		  if (p >= size )
+			  throw std::exception();
 		  return (element[p]);
 	  %>
-	  Array(unsigned int s): element(new T[s]), size(s) <% %>
+	  unsigned int getSize(void) <% return (size); %>
 %>;

@@ -6,28 +6,13 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:25:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/22 18:01:45 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:09:47 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Array.hpp" 
 # define MAX_VAL 750
 
-int	main(void) <%
-
-  try {
-	Array<int> b(MAX_VAL);
-	b[0] = 111;
-	Array<int> tmp(b); 
- 
-	std::cout << tmp[0] <<  std::endl;
-  }
-  catch (const std::exception &e) {
-  	std::cerr << e.what() << std::endl;
-  }	
-%>
-
-/*
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -76,4 +61,4 @@ int main(int, char**)
     }
     delete [] mirror;//
     return 0;
-}*/
+}
