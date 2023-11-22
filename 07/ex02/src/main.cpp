@@ -6,29 +6,27 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:25:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/20 19:27:15 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:28:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Array.hpp" 
-# include "../inc/Array.hpp" 
-
 # define MAX_VAL 750
 
 int	main(void) <%
-	Array a;
 
-//	Array<int> b(MAX_VAL);
-
-  (void)a;
   try {
-  	
-
+	Array<int> b(MAX_VAL);
+	Array<int> tmp(b); 
+ 
+	tmp[0] = 333;
+	std::cout << b[0] << std::endl;
   }
   catch (const std::exception &e) {
   	std::cerr << e.what() << std::endl;
   }	
 %>
+
 /*
 int main(int, char**)
 {

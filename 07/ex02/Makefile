@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 20:16:45 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/20 19:25:28 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/22 16:21:37 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR		:= src/
 
 OBJ_DIR		:= obj/
 
-SRC_FILES	:= main Array
+SRC_FILES	:= main
 
 I			:= inc/Array.hpp
 
