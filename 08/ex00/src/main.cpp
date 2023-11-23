@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:49:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/23 15:06:40 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:28:35 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,36 @@ void printVector(std::vector<int> tmp) <%
 %>
 
 
-int	main(void) <%
+int	main(int ac, char **av) <%
 	int array[] = {2, 3, 4, 5, 1, 23, 32};
 	
-//	std::string str[] = {"hola", "mundo", "vectorial", "compon", "clases"};	
-
-  //  std::vector<std::string> tmp(str, str + sizeof(str) / sizeof(str[0]));
+	if (ac != 2)
+	  return (1);
     std::vector<int> arrayInt(array, array + sizeof(array) / sizeof(array[0]));
-
+	
+	std::list<int> arrayList(array, array + sizeof(array) / sizeof(array[0]));
+	
+	std::deque<int> arrayDuque(array, array + sizeof(array) / sizeof(array[0]));
+	
+	(void)av;
+	
 	printVector((arrayInt));
 	try <%
 		// literalmente dice que tiene que ser el segundo parametro un enetero asi que f, pero mas facil	
-		::easyfind<std::vector<int> >(arrayInt, 32);
-		easyfind(arrayInt, 31);
+		// vector
+		::easyfind< std::vector<int> >(arrayInt, std::atoi(av[1]));
+		easyfind(arrayInt, std::atoi(av[1]));
+		
+		// list 
+		::easyfind< std::list<int> >(arrayList, std::atoi(av[1]));
+		easyfind(arrayList, std::atoi(av[1]));
 
+		// deque 
+		::easyfind< std::deque<int>  >(arrayDuque, std::atoi(av[1]));
+		easyfind(arrayDuque, std::atoi(av[1]));
+		
 	%>
-	catch(std::exception &e) <%  
+	catch(std::exception &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
 

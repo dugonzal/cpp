@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 11:26:14 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/23 12:27:31 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/23 15:17:22 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,11 @@ OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${C} ${OBJ} -o $@
+	${C} $< -o $@
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
 	mkdir -p ${OBJ_DIR}
-	${C} -c $< -o $@
+	${C} -c $^ -o $@
 
 clean:
 	rm -rf ${NAME}
