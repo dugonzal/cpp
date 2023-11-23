@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:28:02 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/23 12:49:15 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:42:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 # include <iostream>
 # include <vector>
 
-template<typename T, typename F>
-void	easyfind(const  T& container, const F& f) <%
+#include <algorithm>
 
-	(void)container;
-	(void)f;
+template <typename T, typename f>
+void easyfind(const T& container, const f& value) <%
+	for (typename T::const_iterator it = container.begin(); it != container.end(); it++)
+		if (*it == value) <%
+			std::cout << "ok" << std::endl;
+			return;
+		%>
+	std::cout << "ko" << std::endl;
 %>
+
