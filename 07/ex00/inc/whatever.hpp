@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 07:52:00 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/19 19:49:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:07:18 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 using std::cout;
 using std::endl;
 
-template <typename Tn>
-Tn &min(Tn &x, Tn &y) <%
+template <typename MIN>
+MIN &min(MIN &x, MIN &y) <%
   return (x < y ? x: y);
 %>
 
-template <typename  Swp>
-void swap(Swp &y, Swp &x) <%
-	Swp tmp;
+template <typename  SWAP>
+void swap(SWAP &y, SWAP &x) <%
+	SWAP tmp;
 
 	tmp = x;
 	x = y;
 	y = tmp;
 %>
 
-template <typename Tu>
-Tu &max(Tu &x, Tu &y) <%
+template <typename MAX>
+MAX &max(MAX &x, MAX &y) <%
   return (x > y ? x: y);
 %>
