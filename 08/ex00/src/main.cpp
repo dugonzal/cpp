@@ -6,11 +6,11 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:49:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/23 17:36:06 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:37:48 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/easy.hpp"
+# include "../inc/easyfind.hpp"
 
 void printVector(std::vector<int> tmp) <%
 	
