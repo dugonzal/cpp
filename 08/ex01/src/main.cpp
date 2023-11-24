@@ -6,12 +6,14 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/24 12:09:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:25:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Span.hpp"
 
 int	main(int, char const **) <%
-	std::cout << "hey span" << std::endl; 
+
+ Span<int> tmp(4);
+
 %>
