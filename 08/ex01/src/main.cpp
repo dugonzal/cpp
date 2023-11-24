@@ -6,14 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/24 15:25:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:47:35 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/Span.hpp"
+# include "../src/Span.cpp"
 
 int	main(int, char const **) <%
 
- Span<int> tmp(4);
+ Span<int> tmp;
 
 %>
