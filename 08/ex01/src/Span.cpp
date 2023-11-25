@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:52:49 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/25 14:37:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:40:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,13 @@ template <typename T>
 Span<T>::Span(const Span<T> &other): n(other.n) <% %>
 	 
 template <typename T>
-Span<T> &Span<T>::operator=(const Span<T> &other) <% *this = other; %>
+Span<T> &Span<T>::operator=(const Span<T> &other) <% 
+	
+	if (*this == &other)
+		return (*this);
+
+	array = other.array;
+	n = other.n;
+	
+	return (*this); 
+%>

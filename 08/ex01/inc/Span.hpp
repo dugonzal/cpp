@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/25 14:37:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:46:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include <vector>
 
-template <class T>
+template < class T = class TT >
 
 class Span <%
 	
