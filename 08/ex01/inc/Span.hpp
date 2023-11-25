@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/24 16:16:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:37:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 # include <vector>
 
 template <class T>
+
 class Span <%
 	
 	private:
-	  /*mutable*/ std::vector<T>	array;
-	  /*mutable*/ unsigned int		n;
+		mutable std::vector<T>	array;
+		mutable unsigned int		n;
+	
 	public:
-	  Span<T>(void);
-	  //Span(unsigned int _n);
-	  //~Span(void);
-	  //Span(const Span &other);
-	  //Span &operator=(const Span &other);
+		Span<T>(void);
+		Span<T>(unsigned int _n);
+		~Span<T>(void);
+		Span<T>(const Span<T> &other);
+		Span<T> &operator=(const Span<T> &other);
+
 %>;

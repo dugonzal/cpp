@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 17:38:49 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/23 17:52:04 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/11/25 14:28:52 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ OBJ			:= $(addprefix ${OBJ_DIR}, $(addsuffix .o, ${SRC_FILES}))
 
 all: ${NAME}
 
-
 ${NAME}: ${OBJ}
 	${C} $^ -o $@
 
@@ -38,5 +37,5 @@ clean:
 	rm -rf ${NAME}
 
 fclean: clean 
-	rm -rf ${OBJ_DIR}	
+	rm -rf ${OBJ_DIR}
 re: fclean all 
