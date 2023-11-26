@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/25 14:46:46 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/26 07:24:59 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 # include <iostream>
 # include <vector>
-
+# include <cstdlib>
+# include <ctime>
+# include <list>
 template < class T = class TT >
+//template < class T /*= class TT*/ >
 
 class Span <%
 	
 	private:
-		mutable std::vector<T>	array;
+		mutable T					array;
 		mutable unsigned int		n;
 	
 	public:
