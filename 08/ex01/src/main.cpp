@@ -6,22 +6,22 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/26 20:01:23 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:48:42 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//# include "../inc/Span.hpp"
+# include "../inc/Span.hpp"
 # include "../src/Span.cpp"
 
 int	main(int, char const **) <%
 
   try <%
 	std::vector<int> array;
-	
-	Span< std::vector<int> > tmp2(10000);
-	Span< std::deque<float> > tmp32(10000);
-	Span< std::list<double> > tmp(10000);
+	Span< std::list<int> > tmp(10000);
+	Span< std::list<int> > tmp1(tmp);
+	Span< std::list<int> > tmp2(tmp1);
 
+	tmp1 = tmp;
 	std::srand(std::time(0));
 
 	for (size_t i = 0; i < 10001; i++) {
@@ -30,15 +30,9 @@ int	main(int, char const **) <%
 	  rn = rand();
 	  array.push_back(rn);
 	  tmp.addNumber(rn);
-	  tmp32.addNumber(rn);
+	  tmp1.addNumber(rn);
 	  tmp2.addNumber(rn);
 	}
-	for (size_t j = 0; j < 10000; j++){
-		std::cout << array[j] << std::endl; 
-		std::cout << array[j] << std::endl; 
-		
-	}
-	(void)tmp2;
   %>
 
   catch(std::exception &e) <% std::cerr << e.what() << "" << std::endl;  %>
