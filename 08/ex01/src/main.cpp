@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/26 07:25:16 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:01:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,26 @@ int	main(int, char const **) <%
   try <%
 	std::vector<int> array;
 	
-	Span< std::vector<int> > tmp2(5);
-	Span< std::list<int> > tmp(5);
+	Span< std::vector<int> > tmp2(10000);
+	Span< std::deque<float> > tmp32(10000);
+	Span< std::list<double> > tmp(10000);
 
 	std::srand(std::time(0));
 
-	for (size_t i = 0; i < 20; i++)
-	  array.push_back(rand());
-	for (size_t j = 0; j < 20; j++)
+	for (size_t i = 0; i < 10001; i++) {
+	  unsigned int rn;
+
+	  rn = rand();
+	  array.push_back(rn);
+	  tmp.addNumber(rn);
+	  tmp32.addNumber(rn);
+	  tmp2.addNumber(rn);
+	}
+	for (size_t j = 0; j < 10000; j++){
 		std::cout << array[j] << std::endl; 
+		std::cout << array[j] << std::endl; 
+		
+	}
 	(void)tmp2;
   %>
 
