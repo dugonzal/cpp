@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/27 18:32:29 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:53:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 int	main(int, char const **) <%
 
 	try <%
-		std::vector<int> 	array;
-		Span<int> 			tmp(10000);
-		Span<int> 			tmp1(tmp);
-		Span<int> 			tmp2((tmp1));
+		std::vector<int> 			array;
+		Span< std::vector<int> > 	tmp(10000);
+		Span< std::vector<int> > 	tmp1(tmp);
+		Span< std::vector<int> > 	tmp2((tmp1));
 
 		std::srand(std::time(0));
 
@@ -32,9 +32,10 @@ int	main(int, char const **) <%
 			tmp1.addNumber(rn);
 			tmp2.addNumber(rn);
 		}
+		Span< std::vector<int> > tp(100);
 
-		  tmp = tmp2;
-		  tmp2.show();
+		tp.addNumber(array);
+		tp.show();
 	%>
 
 	catch(std::exception &e) <%

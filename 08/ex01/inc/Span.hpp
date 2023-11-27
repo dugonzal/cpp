@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/27 18:30:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:54:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <vector>
 # include <list>
 # include <deque>
+# include <typeinfo>
 # include <stdexcept>
 # include <algorithm>
 //template < class T >
@@ -26,7 +27,7 @@ template < class T = class TT >
 class Span <%
 	
 	private:
-		mutable std::vector<T>			array;
+		mutable T					array;
 		mutable unsigned int			n;
 	
 	public:
@@ -36,6 +37,7 @@ class Span <%
 		Span<T>(const Span<T> &other);
 		Span<T> &operator=(const Span<T> &other);
 		void	addNumber(unsigned int o) const ;
-		//void	addNumber(const T &other) ;
+		void	addNumber(const T &other) const ;
 		void	show(void);
+
 %>;
