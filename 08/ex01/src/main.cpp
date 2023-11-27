@@ -6,20 +6,19 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/27 23:09:57 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 23:18:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//# include "../inc/Span.hpp"
-# include "../src/Span.cpp"
+# include "../inc/Span.hpp"
 
 int	main(int, char const **) <%
 
 	try <%
 		std::vector<int> 			array;
-		Span< std::vector<int> > 	tmp(10000);
-		Span< std::deque<int> > 	tmp1(10000);
-		Span< std::deque<int> > 	sp(10000);
+		Span 	tmp(10000);
+		Span 	tmp1(10000);
+		Span 	sp(10000);
 	
 		std::srand(std::time(0));
 		unsigned int rn;
