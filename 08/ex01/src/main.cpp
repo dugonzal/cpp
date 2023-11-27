@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/27 18:53:21 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 22:45:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,30 @@ int	main(int, char const **) <%
 		Span< std::vector<int> > 	tmp2((tmp1));
 
 		std::srand(std::time(0));
-
-		for (size_t i = 0; i < 1000; i++) {
+/*
+		for (size_t i = 0; i < 10000; i++) {
 			unsigned int rn;
 
-			rn = rand();
+			rn = rand() % 1000;
+			std::cout << rn << std::endl;
 			array.push_back(rn);
 			tmp.addNumber(rn);
 			tmp1.addNumber(rn);
 			tmp2.addNumber(rn);
 		}
-		Span< std::vector<int> > tp(100);
 
 		tp.addNumber(array);
-		tp.show();
+		//tp.show();*/ 
+		Span< std::vector<int> > sp(10000);
+
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
 	%>
 
 	catch(std::exception &e) <%
