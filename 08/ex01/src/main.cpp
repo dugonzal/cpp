@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:29 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/26 20:48:42 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:11:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,31 @@
 
 int	main(int, char const **) <%
 
-  try <%
-	std::vector<int> array;
-	Span< std::list<int> > tmp(10000);
-	Span< std::list<int> > tmp1(tmp);
-	Span< std::list<int> > tmp2(tmp1);
+	try <%
+		std::vector<int> 			array;
+		Span< std::vector<int> > 	tmp(10000);
+		Span< std::vector<int> > 	tmp1(tmp);
+		Span< std::vector<int> > 	tmp2((tmp1));
 
-	tmp1 = tmp;
-	std::srand(std::time(0));
+		std::srand(std::time(0));
 
-	for (size_t i = 0; i < 10001; i++) {
-	  unsigned int rn;
+		for (size_t i = 0; i < 1000; i++) {
+			unsigned int rn;
 
-	  rn = rand();
-	  array.push_back(rn);
-	  tmp.addNumber(rn);
-	  tmp1.addNumber(rn);
-	  tmp2.addNumber(rn);
-	}
-  %>
+			rn = rand();
+			array.push_back(rn);
+			tmp.addNumber(rn);
+			tmp1.addNumber(rn);
+			tmp2.addNumber(rn);
+		}
+		Span< std::vector<int> > tp(10000);
 
-  catch(std::exception &e) <% std::cerr << e.what() << "" << std::endl;  %>
+		tp.addNumber(array);
+		tp.show();
+	%>
+
+	catch(std::exception &e) <%
+		std::cerr << e.what() << "" << std::endl;
+	%>
+	return (0);
 %>

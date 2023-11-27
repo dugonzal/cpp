@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:50:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/26 20:47:08 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:08:31 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <ctime>
 # include <list>
 # include <deque>
-# include  <stdexcept>
+# include <stdexcept>
 
 //template < class T >
 template < class T = class TT >
@@ -36,7 +36,6 @@ class Span <%
 		Span<T>(const Span<T> &other);
 		Span<T> &operator=(const Span<T> &other);
 		void	addNumber(unsigned int o) const ;
+		void	addNumber(const T &other);
+		void	show(void);
 %>;
-
-
-# include "../inc/Span.hpp"
