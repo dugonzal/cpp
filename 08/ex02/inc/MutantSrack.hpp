@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/29 16:47:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/29 20:25:41 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 # include <iostream>
 # include <stack>
+# include <list>
+# include <vector>
 
 // tambien podria acceder por aqui 
 //using container_type  = Container;
@@ -24,28 +26,30 @@
 //template<class T, class Container = deque<T> >
 template <class T >
 class	MutantStack: public std::stack<T> <%
-	  private:
+	  
 	  public:
-		 typedef class MutantStack<T>::container_type::iterator iterator;
+		  typedef class MutantStack<T>::container_type::iterator 		iterator;
+		  
+		  typedef class std::stack<T>::container_type::const_iterator	const_iterator;
+		  
 		  MutantStack<T>(void) <% %>
 
 		  ~MutantStack<T>(void) <% %>
-		  
+		
 		  MutantStack<T>(const MutantStack<T> &other) <% *this = other; %>
-		/* 
-		  class MutantStack<T>::container_type::iterator begin(void) <%
-			  return MutantStack<T>::c::begin();
+		 
+		  iterator begin(void) <%	
+			  return (this->c.begin());
 		  %>
-		  
-		  class MutantStack<T>::container_type::iterator end(void) <%
-			  return MutantStack<T>::c::end();
+		
+		 iterator end(void) <%
+			  return (this->c.end());
 		  %>
-		  */
-		  
-		  iterator begin(void) <%
-			  return std::stack<T>::c.begin();
+		
+		  iterator rbegin(void) <%
+			  return (std::stack<T>::c.rbegin());
 		  %>
-		  iterator end(void) <%
-			  return std::stack<T>::c.end();
+		  iterator rend(void) <%
+			  return (std::stack<T>::c.end());
 		  %>
 %>;

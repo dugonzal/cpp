@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:44:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/29 16:44:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/29 20:26:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ int main(void) {
 		++it;
 	}
 	std::stack<int> s(mstack);
+	std::stack<std::list<int> > ss;
+	std::stack<std::vector<int> > sss;
+	std::stack<std::deque<int> > ssss;
 	return 0;
 }
