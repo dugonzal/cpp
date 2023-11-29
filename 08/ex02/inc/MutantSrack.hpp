@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/29 15:53:32 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:37:48 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 template <class T >
 class	MutantStack: public std::stack<T> <%
 	  private:
-
+		class MutantStack<T>::container_type::iterator iterator;
 	  public:
 		  MutantStack<T>(void) <% %>
 
@@ -33,8 +33,19 @@ class	MutantStack: public std::stack<T> <%
 		  
 		  MutantStack<T>(const MutantStack<T> &other) <% *this = other; %>
 		 
-		  class MutantStack<T>::container_type::iterator begin(void) <%
-
+		   begin(void) <%
 			  return MutantStack<T>::c::begin();
+		  %>
+		  
+		  class MutantStack<T>::container_type::iterator end(void) <%
+			  return MutantStack<T>::c::end();
+		  %>
+		  
+		  class MutantStack<T>::container_type::iterator rbegin(void) <%
+			  return MutantStack<T>::c::rbegin();
+		  %>
+		  
+		  class MutantStack<T>::container_type::iterator rend(void) <%
+			  return MutantStack<T>::c::rend();
 		  %>
 %>;

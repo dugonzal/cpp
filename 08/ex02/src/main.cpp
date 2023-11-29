@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:44:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/29 15:02:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:36:37 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void) {
 	mstack.push(5);
 	mstack.push(737);
 	//[...]
-/*	mstack.push(0);
+	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	
@@ -40,5 +40,5 @@ int main(void) {
 		++it;
 	}
 	std::stack<int> s(mstack);
-*/	return 0;
+	return 0;
 }
