@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/29 20:25:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:12:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,32 @@
 //protected:
 //  Container c; el contenedor es  c
 // aqui esta el truco que stack, usa el contenedor deque, es por hay
-//template<class T, class Container = deque<T> >
-template <class T >
-class	MutantStack: public std::stack<T> <%
+template<class T, class Container = std::deque<T> >
+class	MutantStack: public std::stack<T, Container> <%
 	  
 	  public:
-		  typedef class MutantStack<T>::container_type::iterator 		iterator;
+		  typedef class MutantStack<T, Container>::container_type::iterator 		iterator;
 		  
-		  typedef class std::stack<T>::container_type::const_iterator	const_iterator;
+		  typedef class MutantStack<T, Container>::container_type::const_iterator	const_iterator;
 		  
-		  MutantStack<T>(void) <% %>
+		  MutantStack<T, Container>(void) <% %>
 
-		  ~MutantStack<T>(void) <% %>
+		  ~MutantStack<T, Container>(void) <% %>
 		
-		  MutantStack<T>(const MutantStack<T> &other) <% *this = other; %>
+		  MutantStack<T, Container>(const MutantStack<T, Container> &other) <% *this = other; %>
 		 
 		  iterator begin(void) <%	
-			  return (this->c.begin());
+			  return (MutantStack<T, Container>::c.begin());
 		  %>
 		
 		 iterator end(void) <%
-			  return (this->c.end());
+			  return (std::stack<T, Container>::c.end());
 		  %>
 		
 		  iterator rbegin(void) <%
-			  return (std::stack<T>::c.rbegin());
+			  return (this->c.rbegin());
 		  %>
 		  iterator rend(void) <%
-			  return (std::stack<T>::c.end());
+			  return (Container::c::end());
 		  %>
 %>;
