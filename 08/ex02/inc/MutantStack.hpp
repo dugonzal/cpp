@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/02 17:08:38 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:12:02 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <vector>
 # include <stdlib.h>
 
-template <class T, class Container = std::deque<T> >
+template <class T = int, class Container = std::deque<T> >
 
 class	MutantStack: public std::stack<T, Container> <%
 

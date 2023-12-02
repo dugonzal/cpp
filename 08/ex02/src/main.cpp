@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:44:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/02 17:10:21 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:12:53 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void) {
 
+	MutantStack<> ttmp;
 	MutantStack<int> tmp;
 
     tmp.push(1);
