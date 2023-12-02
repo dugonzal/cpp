@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/02 16:19:27 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:47:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,7 @@ class	MutantStack: public std::stack<T, Container> <%
 
 		  ~MutantStack<T, Container>(void) <% %>
 		
-		  MutantStack<T, Container>(const MutantStack<T, Container> &other): std::stack<T, Container>(other) <%
-			  
-//			  this->Container(other);
-		  
-		  %>
+		  MutantStack<T, Container>(const MutantStack<T, Container> &other): std::stack<T, Container>(other) <%	 %>
 
 		  MutantStack &operator=(const MutantStack<T, Container> &other) <%
 
