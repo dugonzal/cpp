@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantSrack.hpp                                    :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:45:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/11/30 15:31:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:19:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stack>
 # include <list>
 # include <vector>
+# include <stdlib.h>
 
 // tambien podria acceder por aqui 
 //using container_type  = Container;
@@ -28,18 +29,22 @@ template <class T, class Container = std::deque<T> >
 class	MutantStack: public std::stack<T, Container> <%
 	  
 	  public:
-		  typedef typename MutantStack<T, Container>::container_type::iterator 		iterator;
+		 
+		  typedef typename Container::iterator 					iterator;
 		  
-		  typedef typename MutantStack<T, Container>::container_type::const_iterator	const_iterator;
+		  typedef typename Container::reverse_iterator 			reverse_iterator;
+		  
+		  typedef typename Container::const_iterator			const_iterator;
+		  
+		  typedef typename Container::const_reverse_iterator 	const_reverse_iterator;
 		  
 		  MutantStack<T, Container>(void) <% %>
 
 		  ~MutantStack<T, Container>(void) <% %>
 		
-		  MutantStack<T, Container>(const MutantStack<T, Container> &other): std::deque<T, Container>(other) <%
+		  MutantStack<T, Container>(const MutantStack<T, Container> &other): std::stack<T, Container>(other) <%
 			  
-			  std::stack<T, Container>::operator=(other);
-			  this->Container(other);
+//			  this->Container(other);
 		  
 		  %>
 
@@ -59,28 +64,28 @@ class	MutantStack: public std::stack<T, Container> <%
 		  iterator end(void) <%
 			  return (this->c.end());
 		  %>
-		
-		  iterator rbegin(void) <%
+		  
+		  reverse_iterator rbegin(void) <%
 			  return (this->c.rbegin());
 		  %>
 		  
-		  iterator rend(void) <%
+		  reverse_iterator rend(void) <%
 			  return (this->c.rend());
 		  %>
-		  
+
 		  const_iterator begin(void) const <%	
 			  return (this->c.begin());
 		  %>
 		
-		 const_iterator end(void) const <%
+		  const_iterator end(void) const <%
 			  return (this->c.end());
 		  %>
 		
-		  const_iterator rbegin(void) const <%
+		 const_reverse_iterator rbegin(void) const <%
 			  return (this->c.rbegin());
 		  %>
 
-		  const_iterator rend(void) const <%
+		  const_reverse_iterator rend(void) const <%
 			  return (this->c.rend());
 		  %>
 %>;

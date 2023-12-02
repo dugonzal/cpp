@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:40:19 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/11/28 12:53:01 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/12/02 16:04:55 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME		:= MutantStack
 
 C			:= c++ -Wall -Werror -Wextra -g3 -pedantic -fsanitize=address -std=c++98
 
-I			:= ./inc/MutantSrack.hpp
+I			:= ./inc/MutantStack.hpp
 
 SRC_DIR		:= src/
 
