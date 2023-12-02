@@ -6,14 +6,15 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:44:52 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/02 16:50:18 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:10:21 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/MutantStack.hpp"
 
-int main() {
-    MutantStack<int> tmp;
+int main(void) {
+
+	MutantStack<int> tmp;
 
     tmp.push(1);
     tmp.push(2);
@@ -39,12 +40,11 @@ int main() {
     for (cit = constStack.begin(); cit != constStack.end(); ++cit) {
         std::cout << *cit << " ";
     }
-    const MutantStack<int> rconstStack(tmp);
-    
-	MutantStack<int>::const_reverse_iterator rcit;
-    
 	std::cout << std::endl;
 
+    const MutantStack<int> rconstStack(tmp);
+
+	MutantStack<int>::const_reverse_iterator rcit;
 	for (rcit = rconstStack.rbegin(); rcit != rconstStack.rend(); ++rcit)
 		  std::cout << *rcit << " ";
     return 0;
