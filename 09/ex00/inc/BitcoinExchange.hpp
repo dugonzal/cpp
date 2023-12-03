@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:06:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 13:43:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 14:52:29 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 # include <iostream>
 # include <fstream>
-
+# include <ctime>
+# include <cstdlib>
 # include <map>
 
 class BitcoinExchange <%
@@ -22,8 +23,8 @@ class BitcoinExchange <%
 		std::map<std::string, std::string> db;
 	
 	private:
-		void parserDb(std::ifstream &fileDb, std::string &line);
-		void checkData(std::string &date, std::string &mount);
+		void parserData(std::ifstream &fileDb, std::string &line);
+		bool checkData(std::string &date, std::string &mount);
 	public:
 		BitcoinExchange(void);
 		~BitcoinExchange(void);

@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 13:46:00 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 14:52:14 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ BitcoinExchange::BitcoinExchange(void) <%
 		  && line.compare("date,exchange_rate")))
 		throw std::runtime_error("error data base");
 
-	parserDb(fileDb, line);
+	parserData(fileDb, line);
 	fileDb.close();
 %>
 		
@@ -42,24 +42,28 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) <%
 	return (*this);
 %>
 
-void BitcoinExchange::parserDb(std::ifstream &fileDb, std::string &line) <%
-	
+void BitcoinExchange::parserData(std::ifstream &fileDb, std::string &line) <%
+
 	std::string date;
-	std::string mount;
-	
+  	std::string mount;
+	int 		i;
+
 	while (getline(fileDb, line)) <%
 	
-		int i = line.find_first_of(',');
+		i = line.find_first_of(',');
 		if (i < 0)
 			throw std::runtime_error("Error data db");
 		date = line.substr(0, i);
-		mount = line.substr(i + 1);
+		mount = line.substr(++i);
 		checkData(date, mount);
-		db.insert(std::pair<std::string, std::string>(date, mount));
+		db.insert( std::pair< std::string, std::string >(date, mount) );
 	%>
 %>
 
-void BitcoinExchange::checkData(std::string &date, std::string &mount) <%
+bool BitcoinExchange::checkData(std::string &date, std::string &mount) <%
 
-		std::cout << date  << "  "  << mount <<  std::endl;
+	if (std::atoi(mount.data()) < 0)
+		throw std::runtime_error("mount is < 0");
+	(void)date;
+	return (false);
 %>
