@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 18:48:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:55:50 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,16 @@ std::size_t BitcoinExchange::getDate(const std::string &line) <%
 %>
 
 void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
-	char *c;
-	int	i;
+	std::size_t	date;
+	float 		month;
+	char 		*c;
+	int			i;
 	
 	while (getline(fileDb, line)) <%
 		i = line.find_first_of(',');
-		db.insert( std::pair< std::size_t, float >( getDate(line.substr(0, i)), \
-			  std::strtof(line.substr(i + 1).data(), &c )) );
+		date = getDate(line.substr(0, i));
+		month = std::strtof(line.substr(++i).data(), &c );
+		db.insert( std::pair< std::size_t, float >( date, month));
 	%>
 %>
 
