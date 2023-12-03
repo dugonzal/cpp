@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 18:55:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 19:07:19 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) <%
 	return (*this);
 %>
 
-std::size_t BitcoinExchange::getDate(const std::string &line) <%
+std::size_t BitcoinExchange::getDate(const std::string &line) const <%
 	
 	std::istringstream	ss(line);
 	std::ostringstream	tmp;
@@ -51,11 +51,9 @@ std::size_t BitcoinExchange::getDate(const std::string &line) <%
 	char 				dash[2];
 	
 	ss >> year >> dash[0] >> month >> dash[1] >> day;
-	
 	tmp << year << month << day;
-	std::string concatenacion = tmp.str();
 	
-	return (static_cast<std::size_t>(atof(concatenacion.data())));
+	return (static_cast<std::size_t>(atof(tmp.str().data())));
 %>
 
 void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
@@ -75,7 +73,7 @@ void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
 void BitcoinExchange::open(const std::string &fileName)<%
 
 	std::ifstream 	file(fileName.data());
-	std::string 	line;
+	std::string 	line, date, month;
 	int 			i;
 
 	if (!file.is_open() || (std::getline(file, line) \
@@ -84,7 +82,9 @@ void BitcoinExchange::open(const std::string &fileName)<%
 	
 	while (getline(file, line)) <%
 		i = line.find_first_of("|");
-		if (checkData(i, line.substr(0, i), line.substr(i + 1)))
+		date = line.substr(0, i);
+		month = line.substr(i + 1);
+		if (checkData(i, date, month))
 		  continue;
 		std::cout << line << std::endl;
 	%>
@@ -107,20 +107,16 @@ bool BitcoinExchange::checkData(const int &i, const std::string &date, const std
 
 bool BitcoinExchange::checkDate(const std::string &date, const int &i) const <%
 
-	std::istringstream ss(date);
+	std::istringstream	ss(date);
+	float 				year, month, day;
+	char				dash[2];
 	
 	(void)i;
-	float year, month, day;
-	char dash[2];
 	ss >> year >> dash[0] >> month >> dash[1] >> day;
-	if (dash[0] != '-' || dash[1] != '-') <%
-		std::cerr << ("Error format db [-]") << std::endl;
-		return (true);
-	%>
-	else if (month < 0 || month > 12 || day < 0 || day > 31) <%
-		std::cerr << ("Error bad input >= ") << date << std::endl;
-		return (true);
-	%>
+	
+	if (dash[0] != '-' || dash[1] != '-')
+		return (std::cerr << ("Error bad input >= ") << date << std::endl, true);
+	else if (month < 0 || month > 12 || day < 0 || day > 31 || year < 0 || year > 2022)
+		return (std::cerr << ("Error bad input >= ") << date << std::endl, true);
 	return (false);
 %>
-
