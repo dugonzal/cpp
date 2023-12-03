@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 17:52:46 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:48:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,30 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) <%
 	return (*this);
 %>
 
+std::size_t BitcoinExchange::getDate(const std::string &line) <%
+	
+	std::istringstream	ss(line);
+	std::ostringstream	tmp;
+	std::string 		concat;
+	float 				year, month, day;
+	char 				dash[2];
+	
+	ss >> year >> dash[0] >> month >> dash[1] >> day;
+	
+	tmp << year << month << day;
+	std::string concatenacion = tmp.str();
+	
+	return (static_cast<std::size_t>(atof(concatenacion.data())));
+%>
+
 void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
-
+	char *c;
 	int	i;
-
+	
 	while (getline(fileDb, line)) <%
 		i = line.find_first_of(',');
-		db.insert( std::pair< std::string, std::string >(line.substr(0, i), line.substr(i + 1)) );
+		db.insert( std::pair< std::size_t, float >( getDate(line.substr(0, i)), \
+			  std::strtof(line.substr(i + 1).data(), &c )) );
 	%>
 %>
 
@@ -67,22 +84,21 @@ void BitcoinExchange::open(const std::string &fileName)<%
 		if (checkData(i, line.substr(0, i), line.substr(i + 1)))
 		  continue;
 		std::cout << line << std::endl;
-	  %>
+	%>
 	
 	file.close();
-
 %>
 
 bool BitcoinExchange::checkData(const int &i, const std::string &date, const std::string &mount) const <%
 	
 	int tmp = std::atoi(mount.data());
 	
-	if (tmp < 0)
+	if (checkDate(date, i))
+		return (true);
+	else if (tmp < 0)
 		return (std::cerr << "Error: not a positive number." << std::endl, true);
 	else if (tmp > INT_MAX)
 		return (std::cerr << "Error: too large a number." << std::endl, true);
-	else if (checkDate(date, i))
-		return (true);
 	return (false);
 %>
 
