@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 21:03:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:37:48 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,11 @@ void BitcoinExchange::open(const std::string &fileName)<%
 		if (checkData(i, date, month))
 		  continue;
 		else <%
-		  std::map<size_t, float>::iterator it;
-		  it = db.find(getDate(date));
+		  std::map<size_t, float>::iterator it = db.lower_bound(getDate(date));
 		  if (it != db.end())
-			std::cout << date << " >= " << month << " = " << it->second << std::endl;
-		  else 
-			  std::cout << line << std::endl;
+			  std::cout << std::setprecision(2) << date << " >= " << month << " = " << it->second << std::endl;
+		  else
+			  std::cout << std::setprecision(2) << date << " >= " << month << " = " << static_cast<float>(--it->second) << std::endl;
 		%>
 	%>
 	
@@ -101,8 +100,7 @@ bool BitcoinExchange::checkData(const int &i, const std::string &date, const std
 	
    long int tmp = static_cast<long int>(atof(mount.data()));
 
-   //std::cout << tmp << std::endl;
-	if (tmp >= 2147483648)
+	if (tmp > 1000)
 		return (std::cerr << "Error: too large a number." << std::endl, true);
 	else if (tmp < 0)
 		return (std::cerr << "Error: not a positive number." << std::endl, true);

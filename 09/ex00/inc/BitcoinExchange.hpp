@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:06:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 21:00:30 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:05:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <climits>
 # include <sstream>
 # include <string>
+# include <iomanip>
 
 class BitcoinExchange <%
 	private:
