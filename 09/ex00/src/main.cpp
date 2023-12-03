@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 22:57:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 13:06:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:12:52 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,12 @@ int	main(int ac, const char **av) <%
 		BitcoinExchange tmp;
 
 		tmp = tm;
-	 
-		(void)av;
+		tmp.open(av[1]);
 	%>
 	catch(std::exception &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
 
-/*	
-	std::ifstream file(av[1]);
 
-	if (!file.is_open()) <%
-		std::cerr << "error file no open " << std::endl;
-		return (0);
-	%>
-
-	std::string line;
-
-	while (std::getline(file, line)) <%
-		std::cout << line << std::endl;
-	%>
-	
-	file.close();
-*/	return (0);
+	return (0);
 %>
