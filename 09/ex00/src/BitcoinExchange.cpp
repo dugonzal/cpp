@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 19:07:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:03:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ std::size_t BitcoinExchange::getDate(const std::string &line) const <%
 	
 	std::istringstream	ss(line);
 	std::ostringstream	tmp;
-	std::string 		concat;
 	float 				year, month, day;
 	char 				dash[2];
 	
@@ -59,13 +58,12 @@ std::size_t BitcoinExchange::getDate(const std::string &line) const <%
 void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
 	std::size_t	date;
 	float 		month;
-	char 		*c;
 	int			i;
 	
 	while (getline(fileDb, line)) <%
 		i = line.find_first_of(',');
 		date = getDate(line.substr(0, i));
-		month = std::strtof(line.substr(++i).data(), &c );
+		month = static_cast<float>(atof(line.substr(++i).data()));
 		db.insert( std::pair< std::size_t, float >( date, month));
 	%>
 %>
@@ -83,10 +81,17 @@ void BitcoinExchange::open(const std::string &fileName)<%
 	while (getline(file, line)) <%
 		i = line.find_first_of("|");
 		date = line.substr(0, i);
-		month = line.substr(i + 1);
+		month = line.substr(++i);
 		if (checkData(i, date, month))
 		  continue;
-		std::cout << line << std::endl;
+		else <%
+		  std::map<size_t, float>::iterator it;
+		  it = db.find(getDate(date));
+		  if (it != db.end())
+			std::cout << date << " >= " << month << " = " << it->second << std::endl;
+		  else 
+			  std::cout << line << std::endl;
+		%>
 	%>
 	
 	file.close();
@@ -94,14 +99,15 @@ void BitcoinExchange::open(const std::string &fileName)<%
 
 bool BitcoinExchange::checkData(const int &i, const std::string &date, const std::string &mount) const <%
 	
-	int tmp = std::atoi(mount.data());
-	
-	if (checkDate(date, i))
-		return (true);
+   long int tmp = static_cast<long int>(atof(mount.data()));
+
+   //std::cout << tmp << std::endl;
+	if (tmp >= 2147483648)
+		return (std::cerr << "Error: too large a number." << std::endl, true);
 	else if (tmp < 0)
 		return (std::cerr << "Error: not a positive number." << std::endl, true);
-	else if (tmp > INT_MAX)
-		return (std::cerr << "Error: too large a number." << std::endl, true);
+	else if (checkDate(date, i))
+		return (true);
 	return (false);
 %>
 
@@ -111,12 +117,13 @@ bool BitcoinExchange::checkDate(const std::string &date, const int &i) const <%
 	float 				year, month, day;
 	char				dash[2];
 	
-	(void)i;
 	ss >> year >> dash[0] >> month >> dash[1] >> day;
-	
+
 	if (dash[0] != '-' || dash[1] != '-')
 		return (std::cerr << ("Error bad input >= ") << date << std::endl, true);
-	else if (month < 0 || month > 12 || day < 0 || day > 31 || year < 0 || year > 2022)
+	else if (month < 0 || month > 12 || day < 0 || day > 31)
+		return (std::cerr << ("Error bad input >= ") << date << std::endl, true);
+	else if (i < 0)
 		return (std::cerr << ("Error bad input >= ") << date << std::endl, true);
 	return (false);
 %>

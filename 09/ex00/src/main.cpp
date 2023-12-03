@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 22:57:08 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 17:12:52 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:25:26 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, const char **av) <%
 	try <%
 		BitcoinExchange p;
 		BitcoinExchange tm(p);
-
 		BitcoinExchange tmp;
 
 		tmp = tm;
@@ -33,7 +32,5 @@ int	main(int ac, const char **av) <%
 	catch(std::exception &e) <%
 		std::cerr << e.what() << std::endl;
 	%>
-
-
 	return (0);
 %>

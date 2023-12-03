@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:06:34 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 18:57:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:00:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class BitcoinExchange <%
 		bool		checkData(const int &i, const std::string &date, const std::string &mount)const ;
 		bool		checkDate(const std::string &date, const int &i) const ;
 		std::size_t getDate(const std::string &line) const;
-	
 	public:
 		BitcoinExchange(void);
 		~BitcoinExchange(void);
