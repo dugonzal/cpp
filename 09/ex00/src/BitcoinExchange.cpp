@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 14:52:14 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 16:22:47 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,20 @@ void BitcoinExchange::parserData(std::ifstream &fileDb, std::string &line) <%
 	%>
 %>
 
-bool BitcoinExchange::checkData(std::string &date, std::string &mount) <%
+bool BitcoinExchange::checkData(const std::string &date, const std::string &mount) <%
 
+	std::istringstream ss(date);
+	
+	float year, month, day;
+	
+	char dash[2];
+	ss >> year >> dash[0] >> month >> dash[1] >> day;
+
+	(void)month;
+	(void)day;
+	(void)dash;
+	std::cout << year << "  " << dash[0] <<  " " \
+	  << month << "  " << dash[1] << "  " << day << std::endl;
 	if (std::atoi(mount.data()) < 0)
 		throw std::runtime_error("mount is < 0");
 	(void)date;
