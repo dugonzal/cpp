@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 16:22:47 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/03 16:57:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,38 +44,33 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) <%
 
 void BitcoinExchange::parserData(std::ifstream &fileDb, std::string &line) <%
 
-	std::string date;
-  	std::string mount;
-	int 		i;
+	int	i;
 
 	while (getline(fileDb, line)) <%
 	
 		i = line.find_first_of(',');
-		if (i < 0)
-			throw std::runtime_error("Error data db");
-		date = line.substr(0, i);
-		mount = line.substr(++i);
-		checkData(date, mount);
-		db.insert( std::pair< std::string, std::string >(date, mount) );
+		db.insert( std::pair< std::string, std::string >(line.substr(0, i), line.substr(i + 1)) );
 	%>
 %>
 
-bool BitcoinExchange::checkData(const std::string &date, const std::string &mount) <%
+void BitcoinExchange::checkData(const std::string &date, const std::string &mount) <%
 
-	std::istringstream ss(date);
-	
-	float year, month, day;
-	
-	char dash[2];
-	ss >> year >> dash[0] >> month >> dash[1] >> day;
-
-	(void)month;
-	(void)day;
-	(void)dash;
-	std::cout << year << "  " << dash[0] <<  " " \
-	  << month << "  " << dash[1] << "  " << day << std::endl;
 	if (std::atoi(mount.data()) < 0)
 		throw std::runtime_error("mount is < 0");
-	(void)date;
-	return (false);
+	
+	checkDate(date);	
 %>
+
+void BitcoinExchange::checkDate(const std::string &date) const <%
+
+	std::istringstream ss(date);
+
+	float year, month, day;
+	char dash[2];
+	ss >> year >> dash[0] >> month >> dash[1] >> day;
+	if (dash[0] != '-' || dash[1] != '-')
+		throw std::runtime_error("Error format db [-]");
+	else if (month < 0 || month > 12 || day < 0 || day > 31)
+		throw std::runtime_error("Error format db [y-m-d]");
+%>
+
