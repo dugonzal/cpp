@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:24:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/04 20:47:57 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:00:03 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 # include <iostream>
 # include <stack>
+# include <cstdlib>
+# include <cstring>
 
 class RPN <%
 
-	private:
-		RPN(void);
-		~RPN(void);
 	
 	private:
-		mutable std::stack<int> list;
+		std::stack<int> list;
 	
 	private:
+		void	parser(const char *av, int len); 
 
 	public:
+		RPN(void);
+		~RPN(void);
 		RPN(const RPN &other);
 		RPN	&operator=(const RPN &other);
-		static void open(const char **av, int const &ac);
-
+		void open(const char **av, int const &ac);
+		void in(std::string &s);
 
 
 %>;
