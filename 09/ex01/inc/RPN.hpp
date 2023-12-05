@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:24:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/04 22:00:03 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/05 01:10:42 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stack>
 # include <cstdlib>
 # include <cstring>
-
+# include <climits>
+# include <cctype>
 class RPN <%
 
 	
@@ -24,7 +25,9 @@ class RPN <%
 		std::stack<int> list;
 	
 	private:
-		void	parser(const char *av, int len); 
+		void	parser(const char *av, int len) const; 
+		bool	aritmetics(char const &c) const;
+		bool	isNumber(char const &c) const;
 
 	public:
 		RPN(void);
@@ -32,7 +35,5 @@ class RPN <%
 		RPN(const RPN &other);
 		RPN	&operator=(const RPN &other);
 		void open(const char **av, int const &ac);
-		void in(std::string &s);
-
 
 %>;
