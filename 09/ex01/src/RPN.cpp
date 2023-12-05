@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:15:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/05 09:58:39 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/05 11:33:48 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,40 @@ RPN::RPN(void) <% %>
 RPN::~RPN(void)<% %>
 
 RPN::RPN(const RPN &other): list(other.list) <% %>
-//av[i][j] != '+' && av[i][j] != '-' && av[i][j] != '/' && av[i][j] != '*'
-
 
 bool	RPN::aritmetics(char const &c) const <%
-	return (c != '+' && c != '-' && c != '/' && c != '*');
+	return (c == '+' || c == '-' || c == '/' || c == '*');
 %>
 
+void	RPN::parser(const char *av, int len) const<%
+	for (int j = 0; j < len; j++)
+		if ((!std::isdigit(av[j])) && !aritmetics(av[j]))
+			throw std::runtime_error("numbers and aritmetics"); 
+%>
+
+//./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
 void	RPN::open(const char **av, int const &ac) <%
 
-	if (ac < 1)
+	if (ac < 3)
 		throw std::runtime_error("no arguments");
 	
-	int tmp;
-  	for (int i = 0; i < ac; i++ ) <%
+	int i = -1;
+  	while (++i < ac)<%
+
+	  parser(av[i], strlen(av[i]));
 	
-	  int t = strlen(av[i]);
-	  for (int j = 0; j < t; j++)
-		  if ((!std::isdigit(av[i][j])) && aritmetics(av[i][j]))
-			  throw std::runtime_error("no number"); 
-	  tmp = atoi(av[i]);
-	  if (tmp < 0 || tmp > INT_MAX)
+	  int tmp = atoi(av[i]);
+	  if (tmp < 0 || tmp > 10)
 		  throw std::runtime_error("min or max int");
-	  
-	  std::cout <<  av[i] << std::endl;
-	  list.push(tmp);
+	
+	  if (!aritmetics(av[i][0]))
+		list.push(tmp);
 	%>
+
+	if (!aritmetics(av[i - 1][0]))
+	  throw std::runtime_error("no operator");
+	int top = list.top();
+	std::cout << top << std::endl;
 %>
 		
 RPN	&RPN::operator=(const RPN &other) <%
