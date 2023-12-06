@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/03 23:32:50 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:26:31 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ BitcoinExchange::BitcoinExchange(void) <%
 BitcoinExchange::~BitcoinExchange(void) <% %>
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) <% 
-	
 	*this = other;
-
 %>
 		
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) <%
@@ -64,7 +62,7 @@ void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
 		i = line.find_first_of(',');
 		date = getDate(line.substr(0, i));
 		value = static_cast<float>(atof(line.substr(++i).data()));
-		db.insert( std::pair< size_t, float >( date, value));
+		db.insert(std::pair<size_t, float>(date, value));
 	%>
 %>
 
@@ -91,7 +89,6 @@ void BitcoinExchange::open(const std::string &fileName)<%
 				break;
 			%>
 	%>
-	
 	file.close();
 %>
 
@@ -101,10 +98,10 @@ bool BitcoinExchange::checkData(const int &i, const std::string &date, const std
 
 	if (checkDate(date, i))
 		return (true);
-	else if (tmp > 1000)
-		return (std::cerr << "Error: too large a number." << std::endl, true);
 	else if (tmp < 0)
 		return (std::cerr << "Error: not a positive number." << std::endl, true);
+	else if (tmp > 1000)
+		return (std::cerr << "Error: too large a number." << std::endl, true);
 	return (false);
 %>
 
