@@ -6,11 +6,11 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 14:05:24 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/12/04 20:29:25 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/12/05 11:48:05 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= arc 
+NAME		:= RPN 
 
 C			:= c++ -Wall -Werror -Wextra -pedantic -std=c++98 -fsanitize=address
 
