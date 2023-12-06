@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:05:04 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 19:23:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/06 21:07:04 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 # include <vector>
 # include <list>
 # include <ctime>
+# include <unistd.h>
+# include <cstring>
+# include <cstdlib>
 
 class PmergeMe <%
 
-	private:
-	  PmergeMe(void);
 
 	private:
 	  mutable std::vector<int>	a;
 	  mutable std::list<int>	b;
-
+	
+	private:
+	  PmergeMe(void);
+	  void parser(const char *str, int const &len) const;
 	public:
 	  ~PmergeMe(void);
 	  PmergeMe(const char **av);
