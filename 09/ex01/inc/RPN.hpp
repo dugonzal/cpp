@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:24:12 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 12:15:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:24:20 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <cstring>
 # include <climits>
 # include <cctype>
+
 class RPN <%
 
 	
@@ -26,9 +27,9 @@ class RPN <%
 	
 	private:
 		bool	aritmetics(char const &c) const;
-		bool	isNumber(char const &c) const;
 		void	parser(const std::string &intput); 
 		void	operate(const char &operando);
+	
 	public:
 		RPN(void);
 		~RPN(void);
