@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:15:55 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 16:52:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:08:08 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,13 @@ void	RPN::operate(const char &operando) <%
 
 void	RPN::open(const std::string &input) <%
 
-	if (input.empty())
-		throw std::runtime_error("Error");
-	
 	parser(input);
 	for (std::string::const_iterator it = input.begin(); it != input.end(); it++)<%
 		if (std::isdigit(*it)) <%
+			
 			const char *strTmp = &(*it);
 			int tmp = atof(strTmp);
+			
 			if (tmp > 9)
 				throw std::runtime_error("Error");
 			list.push(tmp);
@@ -88,6 +87,6 @@ void	RPN::open(const std::string &input) <%
 	%>
 	if (list.size() == 1)
 		std::cout << list.top() << std::endl;
-	else 
+	else
 		throw std::runtime_error("Error");
 %>
