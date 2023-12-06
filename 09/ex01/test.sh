@@ -4,9 +4,9 @@ make re
 
 compare() {
 	if [ "$1" = "$2" ]; then
-		echo "Test exitoso. El resultado es el esperado: $2"
+		echo "Test exitoso. El resultado es el esperado: $1"
 	else
-		echo "Test fallido. El resultado actual ($1) no coincide con el esperado ($resultado_esperado)"
+		echo "Test fallido. El resultado actual ($1) no coincide con el esperado ($2)"
 	fi
 }
 
@@ -20,5 +20,5 @@ compare "$(./RPN "(1 + 1)")" "Error"
 
 compare "$(./RPN "2 3 * 4 + 5 -")" "5"
 
-compare "$(./RPN "2 3 * 4 + -5 -")" "5"
+compare "$(./RPN "2 3 * 4 + -5 -")" "no hay suficientes elemetos en la lista para operar"
 make fclean
