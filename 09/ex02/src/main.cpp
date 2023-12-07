@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:17:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/07 17:42:01 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/07 20:41:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int ac, const char **av) <%
 
 		  tmp = p;
 
+		  tmp.print();
 		  (void)av;
 
 	%>
