@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:17:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 19:40:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/06 21:14:19 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int	main(int ac, const char **av) <%
 	clock_t inicio = clock();
 
 	try <%
-		  PmergeMe		tmp(++av);
+		  PmergeMe		p(++av);
+		  PmergeMe		tmp(p);
+
+		  tmp = p;
 
 		  (void)av;
-	usleep(3);
 
 	clock_t fin = clock();
 	std::cout << (static_cast<double>(fin - inicio) / CLOCKS_PER_SEC) << std::endl;
