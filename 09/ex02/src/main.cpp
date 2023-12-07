@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:17:27 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 21:14:19 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:42:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int ac, const char **av) <%
 
 	if (ac < 2)
 	  return (std::cerr << "error inpurt" << std::endl, -42);
-	clock_t inicio = clock();
 
 	try <%
 		  PmergeMe		p(++av);
@@ -26,8 +25,6 @@ int	main(int ac, const char **av) <%
 
 		  (void)av;
 
-	clock_t fin = clock();
-	std::cout << (static_cast<double>(fin - inicio) / CLOCKS_PER_SEC) << std::endl;
 	%>
 	catch (const std::exception &e) <%
 		std::cerr << e.what() << std::endl;

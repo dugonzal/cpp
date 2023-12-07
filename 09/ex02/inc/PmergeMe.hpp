@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:05:04 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/07 12:30:54 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:51:32 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <cstring>
 # include <cstdlib>
 # include <climits>
+# include <algorithm>
+# include <iomanip>
 
 class PmergeMe <%
 
@@ -27,7 +29,10 @@ class PmergeMe <%
 	
 	private:
 		PmergeMe(void);
-		void parser(const char *str, int const &len) const;
+		
+		template <typename T>
+		void	printData(const T &begin, const T &end, const std::string &message) const;
+		void	parser(const char *str, int const &len) const;
 	
 	public:
 		~PmergeMe(void);
