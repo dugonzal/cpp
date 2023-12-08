@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:04:47 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/07 21:08:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/08 11:37:45 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,44 +51,50 @@ PmergeMe::PmergeMe(const char **av) <%
 		throw std::runtime_error("Error");
 	else if (isSorted(a.begin(), a.end()))
 		exit(0);
-/*
-	printData(a.begin(), a.end(), "before");
-	
-	clock_t inicio = clock();
-	std::sort(a.begin(), a.end());
-	clock_t fin = clock();
-	printData(a.begin(), a.end(), "after ");
-	std::cout << "Time to process a range of " << a.size() << " elements with std::vetor<int> : " \
-	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin - inicio) / CLOCKS_PER_SEC) << std::endl;
-*/
 %>
 
-void	PmergeMe::mergeInsertSortVector(void) <%
-	
-	std::vector<int>::iterator it = a.begin();
-	for(; it != a.end(); it++) <%
-		if (it != a.end()) <%
-			std::vector<int>::iterator it1 = it;
-			it1++;
+template <class T>
+void	PmergeMe::mergeInsertSort(T &arr) <%
 
-		std::cout << *it << "  " << *it1 <<  std::endl;
-		%>
-	%>
+	if (arr.size() < 2)
+		return ;
+	
+	class T::iterator middle = arr.begin() + arr.size() / 2;
+    T left(arr.begin(), middle);
+    T right(middle, arr.end());
+
+	printData(left.begin(), left.end(), "<-");
+	printData(right.begin(), right.end(), "<-");
+	std::cout << std::endl;
+	printData(arr.begin(), arr.end(), "-> arra");
+
+	mergeInsertSort(left);
+    mergeInsertSort(right);
+
+	std::inplace_merge(arr.begin(), middle, arr.end());
+	
 %>
 
 void PmergeMe::print(void)<%
+	
+	printData(a.begin(), a.end(), "before");
 	clock_t inicio = clock();
-	std::sort(a.begin(), a.end());
+	mergeInsertSort(a);
 	clock_t fin = clock();
 
+	exit(0);
 	clock_t inicio1 = clock();
-	b.sort();
+	mergeInsertSort(b);
 	clock_t fin1 = clock();
-	printData(a.begin(), a.end(), "before");
+
 	printData(a.begin(), a.end(), "after ");
-	std::cout << "Time to process a range of " << a.size() << " elements with std::vetor<int> : " \
+	
+	std::cout << std::endl;	
+	
+	std::cout << "Time to process a range of " << a.size() << " elements with std::vector<int> : " \
 	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin - inicio) / CLOCKS_PER_SEC) << std::endl;
-	std::cout << "Time to process a range of " << b.size() << " elements with std::list<int> : " \
+	
+	std::cout << "Time to process a range of " << b.size() << " elements with std::deque<int> : " \
 	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin1 - inicio1) / CLOCKS_PER_SEC) << std::endl;
 %>
 
