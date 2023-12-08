@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:04:47 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/08 13:25:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:03:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	PmergeMe::parser(const char *str, int const &len) const <%
 %>
 
 template <class iter>
-bool PmergeMe::isSorted(const iter &begin, const iter end) const <%
+bool	PmergeMe::isSorted(const iter &begin, const iter end) const <%
     return (std::adjacent_find(begin, end, std::greater<typename iter::value_type>()) == end);
 %>
 
@@ -41,7 +41,7 @@ PmergeMe::PmergeMe(const char **av) <%
 		
 		parser(av[i], strlen(av[i]));
 		long int tmp = atof(av[i]);
-		if (tmp < 0 || tmp > INT_MAX)
+		if (tmp > INT_MAX)
 			throw std::out_of_range("Error");
 		a.push_back(tmp);
 		b.push_back(tmp);
@@ -65,12 +65,14 @@ void	PmergeMe::mergeInsertSort(T &arr) <%
 
     mergeInsertSort(left);
     mergeInsertSort(right);
+	
 	std::merge(left.begin(), left.end(), right.begin(), right.end(), arr.begin());
 %>
 
-void PmergeMe::print(void)<%
+void	PmergeMe::print(void)<%
 	
 	printData(a.begin(), a.end(), "before");
+	
 	clock_t inicio = clock();
 	mergeInsertSort(a);
 	clock_t fin = clock();
@@ -79,11 +81,6 @@ void PmergeMe::print(void)<%
 	mergeInsertSort(b);
 	clock_t fin1 = clock();
 
-	if (!isSorted(a.begin(), a.end()) || !isSorted(b.begin(), b.end())) <%
-		std::cerr << "error no se ordeno" << std::endl;
-		exit(0);
-	  
-	%>
 	printData(a.begin(), a.end(), "after ");
 	
 	std::cout << std::endl;
@@ -91,12 +88,14 @@ void PmergeMe::print(void)<%
 	std::cout << "Time to process a range of " << a.size() << " elements with std::vector<int> : " \
 	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin - inicio) / CLOCKS_PER_SEC) << std::endl;
 	
+	std::cout << std::endl;
+	
 	std::cout << "Time to process a range of " << b.size() << " elements with std::deque<int>  : " \
 	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin1 - inicio1) / CLOCKS_PER_SEC) << std::endl;
 %>
 
 template <class iter>
-void PmergeMe::printData(const iter &begin, const iter &end, const std::string &message) const <%
+void	PmergeMe::printData(const iter &begin, const iter &end, const std::string &message) const <%
 	
 	if (!message.empty())
 		std::cout << message << " : ";
@@ -107,7 +106,7 @@ void PmergeMe::printData(const iter &begin, const iter &end, const std::string &
 	std::cout << std::endl;
 %>
 
-PmergeMe &PmergeMe::operator=(const PmergeMe &other) <%
+PmergeMe	&PmergeMe::operator=(const PmergeMe &other) <%
 	
 	a = other.a;
 	b = other.b;
