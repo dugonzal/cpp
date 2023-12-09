@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/06 17:26:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:49:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,11 @@ void BitcoinExchange::open(const std::string &fileName)<%
 	int 			i;
 
 	if (!file.is_open() || (std::getline(file, line) \
-		  && line.compare("date | value")))
+		  && line.compare("date | value"))) <%
+		std::cout << "example file: \n\ndate | value" << std::endl;
+		std::cout << "2011-01-03 | 3\n" << std::endl;
 		throw std::runtime_error("Error: could not open file.");
-	
+	%>
 	while (getline(file, line)) <%
 		i = line.find_first_of("|");
 		date = line.substr(0, i);
@@ -94,7 +96,7 @@ void BitcoinExchange::open(const std::string &fileName)<%
 
 bool BitcoinExchange::checkData(const int &i, const std::string &date, const std::string &mount) const <%
 	
-   long int tmp = static_cast<long int>(atof(mount.data()));
+	int tmp = static_cast<int>(atof(mount.data()));
 
 	if (checkDate(date, i))
 		return (true);

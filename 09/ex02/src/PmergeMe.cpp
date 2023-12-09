@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:04:47 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/08 14:03:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:36:58 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	PmergeMe::parser(const char *str, int const &len) const <%
 			throw std::logic_error("Error");
 %>
 
-template <class iter>
-bool	PmergeMe::isSorted(const iter &begin, const iter end) const <%
+template <typename iter>
+bool	PmergeMe::isSorted(const iter &begin, const iter &end) const <%
     return (std::adjacent_find(begin, end, std::greater<typename iter::value_type>()) == end);
 %>
 
@@ -53,13 +53,13 @@ PmergeMe::PmergeMe(const char **av) <%
 		exit(0);
 %>
 
-template <class T>
+template <typename T>
 void	PmergeMe::mergeInsertSort(T &arr) <%
 	
 	if (arr.size() < 2)
 		return;
 
-    class T::iterator middle = arr.begin() + arr.size() / 2;
+    typename T::iterator middle = arr.begin() + arr.size() / 2;
     T left(arr.begin(), middle);
     T right(middle, arr.end());
 
@@ -69,7 +69,7 @@ void	PmergeMe::mergeInsertSort(T &arr) <%
 	std::merge(left.begin(), left.end(), right.begin(), right.end(), arr.begin());
 %>
 
-void	PmergeMe::print(void)<%
+void	PmergeMe::print(void) <%
 	
 	printData(a.begin(), a.end(), "before");
 	
@@ -94,7 +94,7 @@ void	PmergeMe::print(void)<%
 	  << std::fixed << std::setprecision(6) << (static_cast<float>(fin1 - inicio1) / CLOCKS_PER_SEC) << std::endl;
 %>
 
-template <class iter>
+template <typename iter>
 void	PmergeMe::printData(const iter &begin, const iter &end, const std::string &message) const <%
 	
 	if (!message.empty())
@@ -110,5 +110,6 @@ PmergeMe	&PmergeMe::operator=(const PmergeMe &other) <%
 	
 	a = other.a;
 	b = other.b;
+	
 	return (*this);
 %>
