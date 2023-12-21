@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:07:07 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/12/09 10:49:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/12/21 22:40:01 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ BitcoinExchange::BitcoinExchange(void) <%
 BitcoinExchange::~BitcoinExchange(void) <% %>
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) <% 
+	
 	*this = other;
 %>
 		
@@ -44,16 +45,19 @@ size_t BitcoinExchange::getDate(const std::string &line) const <%
 	
 	std::istringstream	ss(line);
 	std::ostringstream	tmp;
-	float 				year, month, day;
+	size_t 				year, month, day;
 	char 				dash[2];
 	
 	ss >> year >> dash[0] >> month >> dash[1] >> day;
-	tmp << year << month << day;
 	
-	return (static_cast<size_t>(atof(tmp.str().data())));
+	tmp << std::setw(4) << std::setfill('0') << static_cast<size_t>(year) \
+	  << std::setw(2) << std::setfill('0') << static_cast<size_t>(month) \
+	  << std::setw(2) << std::setfill('0') << static_cast<size_t>(day);
+	return (static_cast<size_t>(atoi(tmp.str().data())));
 %>
 
 void BitcoinExchange::getDb(std::ifstream &fileDb, std::string &line) <%
+	
 	size_t		date;
 	float 		value;
 	int			i;
@@ -90,6 +94,8 @@ void BitcoinExchange::open(const std::string &fileName)<%
 				std::cout << date << " >= " << value << " = " << (it->second * atof(value.data())) << std::endl;
 				break;
 			%>
+		std::map<size_t, float>::iterator it = db.begin();
+		std::cout << date << " >= " << value << " = " << (it->second * atof(value.data())) << std::endl;
 	%>
 	file.close();
 %>

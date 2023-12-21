@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 22:50:09 by Dugonzal          #+#    #+#              #
-#    Updated: 2023/12/02 23:42:05 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/12/21 22:34:08 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,11 @@ NAME		:= btc
 
 C			:= c++ -g3 -Wall -Werror -Wextra -pedantic -std=c++98 -fsanitize=address
 
-SRC_DIR			:= src/
+SRC_DIR		:= src/
 
-OBJ_DIR			:= obj/
+OBJ_DIR		:= obj/
 
 SRC_FILES	:= main	BitcoinExchange
-
 
 SRC			:= $(addprefix ${SRC_DIR}, $(addsuffix .cpp, ${SRC_FILES}))
 
@@ -39,4 +38,5 @@ clean:
 
 fclean: clean
 	rm -rf ${OBJ_DIR}
+
 re: fclean all
